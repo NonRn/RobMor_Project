@@ -17,6 +17,9 @@ public class Favorite {
     private int userId;
     private int myLating;
 
+    public Favorite() {
+    }
+
     public int getFoodId() {
         return foodId;
     }
@@ -41,7 +44,7 @@ public class Favorite {
         this.myLating = myLating;
     }
     
-    private void addFavorite(Favorite f){
+    public void addFavorite(Favorite f){
         String sql = "insert into favorite (client_id,food_id,my_rating) value(?,?,?)";
         Connection conn = null ;
         try {
@@ -52,6 +55,20 @@ public class Favorite {
             ps.setInt(3, f.getMyLating());
             ps.executeUpdate();
             conn.close();
+        } catch (Exception e){
+            System.out.println(e);
+        }
+    }
+    public void deleteFavorite(Favorite f){
+        String SQL = "DELETE FROM favorite WHERE user_id = ? AND food_id = ?" ;
+        Connection con = null;
+        try {
+            con = ConnectionBuilder.getConnection();
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.setInt(1, f.getUserId());
+            ps.setInt(2, f.getFoodId());
+            ps.executeUpdate() ;
+            con.close();
         } catch (Exception e){
             System.out.println(e);
         }

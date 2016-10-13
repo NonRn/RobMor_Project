@@ -17,6 +17,9 @@ public class Comment {
     private String detail;
     private int userId;
 
+    public Comment() {
+    }
+
     public int getFoodId() {
         return foodId;
     }
@@ -62,8 +65,19 @@ public class Comment {
         
     }
     
-    private void deleteComment(){
-        
+    private void deleteComment(Comment c){
+        String SQL = "DELETE FROM comment WHERE user_id = ? AND food_id = ?" ;
+        Connection con = null;
+        try {
+            con = ConnectionBuilder.getConnection();
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.setInt(1, c.getUserId());
+            ps.setInt(2, c.getFoodId());
+            ps.executeUpdate() ;
+            con.close();
+        } catch (Exception e){
+            System.out.println(e);
+        }
     }
     public static void main(String[] args) {
         Comment com = new Comment();
