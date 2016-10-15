@@ -5,8 +5,10 @@
  */
 package Project.int303.servlet;
 
+import Project.int303.model.User;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Date;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Ratchanon
  */
-public class NewServlet extends HttpServlet {
+public class RegisterUserServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -29,19 +31,37 @@ public class NewServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+//        request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet NewServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet NewServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+//        String message = "";
+//        User u = new User();
+//        u.setFname(request.getParameter("fname"));
+//        u.setLname(request.getParameter("lname"));
+//        if (u.checkEmail(request.getParameter("email"))){
+//            u.setEmail(request.getParameter("email"));
+//        } else {
+//            message = "This email has been use for an account";
+//            getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
+//            return;
+//        }
+//        u.setGender(request.getParameter("gender"));
+//        u.setTelno(request.getParameter("tel"));
+//        Date d = new Date((Integer.parseInt(request.getParameter("year"))-1900),Integer.parseInt(request.getParameter("month")),Integer.parseInt(request.getParameter("day")));
+//        u.setDob(d);
+//        u.setUsername(request.getParameter("username"));
+//        String password = request.getParameter("pass");
+//        String confirmPass = request.getParameter("passcon");
+//        if (password.equals(confirmPass)){
+//            u.register(u, password);
+//        } else {
+//            message = "Confirm password is not same password";
+//            getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
+//            return;
+//        }
+//        message = "Register success";
+//        getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
+            
+          getServletContext().getRequestDispatcher("/SearchFood.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

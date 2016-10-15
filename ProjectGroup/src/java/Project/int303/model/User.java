@@ -90,7 +90,7 @@ public class User {
         this.email = email;
     }
     
-    private void register(User u,String password){
+    public void register(User u,String password){
         Connection conn = null ;
         String sql1 = "insert into user (fname,lname,gender,dob,telno,username) value(?,?,?,?,?,?)" ;
         String sql2 = "insert into login (username,password,email,regis_date)value(?,?,?,?)";
@@ -109,16 +109,16 @@ public class User {
             ps2.setString(2,password);
             ps2.setString(3, u.getEmail());
             ps2.setString(4, sdf.format(now));
-            ps1.executeUpdate();
             ps2.executeUpdate();
+            ps1.executeUpdate();
             conn.close();
         } catch (Exception e){
             System.out.println(e);
         }
     }
     
-    private void editProfile(User u){
-        Connection conn = ConnectionBuilder.getCon();
+    public void editProfile(User u){
+        Connection conn = ConnectionBuilder.getConnection();
         String sql = "update user set fname=? , lname=? , gender=? , telno=? where user_id=?";
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -133,4 +133,22 @@ public class User {
         }
     }
 
+    public boolean checkEmail(String email){
+        String SQL = "select email from user";
+        Connection con = ConnectionBuilder.getConnection();
+        try {
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                if(!(rs.getString(1).equals(email))){
+                    return true ;
+                } else {
+                    return false ;
+                }
+            }
+        } catch (Exception e){
+            System.out.println(e);
+        }
+        return false ;
+    }
 }
