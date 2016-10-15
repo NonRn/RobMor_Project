@@ -16,6 +16,10 @@
         <servlet-name>EditUserServlet</servlet-name>
         <servlet-class>Project.int303.servlet.EditUserServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>Project.int303.servlet.LogoutServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SearchFoodServlet</servlet-name>
         <url-pattern>/SearchFoodServlet</url-pattern>
@@ -33,6 +37,10 @@
     <servlet-mapping>
         <servlet-name>EditUserServlet</servlet-name>
         <url-pattern>/EditUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/Logout</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
