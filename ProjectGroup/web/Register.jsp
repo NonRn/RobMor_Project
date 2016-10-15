@@ -55,5 +55,11 @@
             <input type="password" name="passcon" required=""><br>
             <input type="submit">
         </form>
+        <%
+            if(request.getAttribute("message")!=null){ %>
+        <script> 
+                window.alert("${requestScope.message}");
+        </script>
+        <%}%>
     </body>
 </html>

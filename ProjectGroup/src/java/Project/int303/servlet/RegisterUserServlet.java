@@ -31,37 +31,40 @@ public class RegisterUserServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-//        request.setCharacterEncoding("UTF-8");
+        request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
-//        String message = "";
-//        User u = new User();
-//        u.setFname(request.getParameter("fname"));
-//        u.setLname(request.getParameter("lname"));
-//        if (u.checkEmail(request.getParameter("email"))){
-//            u.setEmail(request.getParameter("email"));
-//        } else {
-//            message = "This email has been use for an account";
-//            getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
-//            return;
-//        }
-//        u.setGender(request.getParameter("gender"));
-//        u.setTelno(request.getParameter("tel"));
-//        Date d = new Date((Integer.parseInt(request.getParameter("year"))-1900),Integer.parseInt(request.getParameter("month")),Integer.parseInt(request.getParameter("day")));
-//        u.setDob(d);
-//        u.setUsername(request.getParameter("username"));
-//        String password = request.getParameter("pass");
-//        String confirmPass = request.getParameter("passcon");
-//        if (password.equals(confirmPass)){
-//            u.register(u, password);
-//        } else {
-//            message = "Confirm password is not same password";
-//            getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
-//            return;
-//        }
-//        message = "Register success";
-//        getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
+        String message = "";
+        User u = new User();
+        u.setFname(request.getParameter("fname"));
+        u.setLname(request.getParameter("lname"));
+        if (u.checkEmail(request.getParameter("email"))){
+            u.setEmail(request.getParameter("email"));
+        } else {
+            message = "This email has been use for an account";
+            request.setAttribute("message", message);
+            getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);   
+            return;
+        }
+        u.setGender(request.getParameter("gender"));
+        u.setTelno(request.getParameter("tel"));
+        Date d = new Date((Integer.parseInt(request.getParameter("year"))-1900),Integer.parseInt(request.getParameter("month")),Integer.parseInt(request.getParameter("day")));
+        u.setDob(d);
+        u.setUsername(request.getParameter("username"));
+        String password = request.getParameter("pass");
+        String confirmPass = request.getParameter("passcon");
+        if (password.equals(confirmPass)){
+            u.register(u, password);
+        } else {
+            message = "Confirm password is not same password";
+            request.setAttribute("message", message);
+            getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
+            return;
+        }
+        message = "Register success";
+        request.setAttribute("message", message);
+        getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
             
-          getServletContext().getRequestDispatcher("/SearchFood.jsp").forward(request, response);
+//          getServletContext().getRequestDispatcher("/SearchFood.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -92,11 +92,11 @@ public class User {
     
     public void register(User u,String password){
         Connection conn = null ;
-        String sql1 = "insert into user (fname,lname,gender,dob,telno,username) value(?,?,?,?,?,?)" ;
-        String sql2 = "insert into login (username,password,email,regis_date)value(?,?,?,?)";
+        String sql1 = "insert into userr(fname,lname,gender,dob,telno,username) values(?,?,?,?,?,?)" ;
+        String sql2 = "insert into login(username,pass,email,regis_date) values(?,?,?,?)";
         Date now = new Date();
         try {
-            conn = ConnectionBuilder.getCon();
+            conn = ConnectionBuilder.getConnection();
             PreparedStatement ps1 = conn.prepareStatement(sql1);
             PreparedStatement ps2 = conn.prepareStatement(sql2);
             ps1.setString(1,u.getFname());
@@ -119,7 +119,7 @@ public class User {
     
     public void editProfile(User u){
         Connection conn = ConnectionBuilder.getConnection();
-        String sql = "update user set fname=? , lname=? , gender=? , telno=? where user_id=?";
+        String sql = "update userr set fname=? , lname=? , gender=? , telno=? where user_id=?";
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, u.getFname());
@@ -134,7 +134,7 @@ public class User {
     }
 
     public boolean checkEmail(String email){
-        String SQL = "select email from user";
+        String SQL = "select email from login";
         Connection con = ConnectionBuilder.getConnection();
         try {
             PreparedStatement ps = con.prepareStatement(SQL);
