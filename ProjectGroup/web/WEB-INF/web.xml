@@ -12,6 +12,10 @@
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>Project.int303.servlet.LoginServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditUserServlet</servlet-name>
+        <servlet-class>Project.int303.servlet.EditUserServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SearchFoodServlet</servlet-name>
         <url-pattern>/SearchFoodServlet</url-pattern>
@@ -26,9 +30,13 @@
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/Login</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditUserServlet</servlet-name>
+        <url-pattern>/EditUser</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
-            30
+            100
         </session-timeout>
     </session-config>
 </web-app>

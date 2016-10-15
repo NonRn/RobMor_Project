@@ -25,6 +25,15 @@ public class User {
     private String telno;
     private String username;
     private String email;
+    private Date regis;
+
+    public Date getRegis() {
+        return regis;
+    }
+
+    public void setRegis(Date regis) {
+        this.regis = regis;
+    }
 
     public int getUserId() {
         return userId;
@@ -117,7 +126,7 @@ public class User {
         }
     }
     
-    public void editProfile(User u){
+    public static void editProfile(User u){
         Connection conn = ConnectionBuilder.getConnection();
         String sql = "update userr set fname=? , lname=? , gender=? , telno=? where user_id=?";
         try {
@@ -129,7 +138,7 @@ public class User {
             ps.setInt(5, u.getUserId());
             ps.executeUpdate();
         } catch (Exception e){
-            System.out.println(u);
+            System.out.println(e);
         }
     }
 
@@ -150,5 +159,48 @@ public class User {
             System.out.println(e);
         }
         return false ;
+    }
+    public boolean checkUsername(String username){
+        String SQL = "select username from login";
+        Connection con = ConnectionBuilder.getConnection();
+        try {
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                if(!(rs.getString(1).equals(username))){
+                    return true ;
+                } else {
+                    return false ;
+                }
+            }
+        } catch (Exception e){
+            System.out.println(e);
+        }
+        return false ;
+    }
+    public static User getUser(String username){
+        String SQL = "SELECT * FROM userr u JOIN login l ON l.username = u.username where l.username = ?";
+        Connection con = ConnectionBuilder.getConnection();
+        User u = null ;
+        try {
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.setString(1, username);
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()){
+                u = new User();
+                u.setUserId(rs.getInt("user_id"));
+                u.setFname(rs.getString("fname"));
+                u.setLname(rs.getString("lname"));
+                u.setGender(rs.getString("gender"));
+                u.setDob(rs.getDate("dob"));
+                u.setTelno(rs.getString("telno"));
+                u.setUsername(rs.getString("username"));
+                u.setEmail(rs.getString("email"));
+                u.setRegis(rs.getDate("regis_date"));
+            }
+        } catch (Exception e){
+            System.out.println(e);
+        }
+        return u ;
     }
 }

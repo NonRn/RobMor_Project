@@ -5,7 +5,7 @@
  */
 package Project.int303.servlet;
 
-import Project.int303.model.Login;
+import Project.int303.model.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Ratchanon
  */
-public class LoginServlet extends HttpServlet {
+public class EditUserServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,22 +31,32 @@ public class LoginServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
+//        String cid = request.getParameter("id");
+        HttpSession session = request.getSession(false);
         String message = "";
-        String user = request.getParameter("username");
-        Login l = new Login();
-        l.setUsername(user);
-        l.setPassword(request.getParameter("password"));
-        if (l.CheckUser(l)){
-            HttpSession session = request.getSession();
-            session.setAttribute("user", user);
-            getServletContext().getRequestDispatcher("/Index.jsp").forward(request, response);
-            return;
-        } else {
-            message = "Incorrect username or password";
+        User u = null;
+        if(session!=null && session.getAttribute("user")!=null){
+            if (request.getParameter("username")==null){
+                u = User.getUser((String)session.getAttribute("user"));
+            } else { 
+                System.out.println("1111"); 
+                User us = new User();
+                us.setTelno(request.getParameter("telno"));
+                us.setUserId(Integer.parseInt(request.getParameter("id")));
+                us.setFname(request.getParameter("fname"));
+                us.setLname(request.getParameter("lname"));
+                us.setGender(request.getParameter("gender"));
+                User.editProfile(us);
+                u = User.getUser((String)session.getAttribute("user"));
+                message = "Edit Success";
+            }
+            request.setAttribute("user", u);
             request.setAttribute("message", message);
-            getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/EditProfile.jsp").forward(request, response);
+            return;
+        } else{
+            getServletContext().getRequestDispatcher("/Login.jsp").forward(request,response);
             return;
         }
     }

@@ -3,14 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/src/java/Project/int303/servlet/RegisterUserServlet.java</file>
-            <file>file:/D:/Non/RobMor-Project/INT303_proj_RobMor/ProjectGroup/web/WEB-INF/web.xml</file>
-            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/src/java/Project/int303/model/Login.java</file>
-            <file>file:/D:/Non/RobMor-Project/INT303_proj_RobMor/ProjectGroup/web/Register.jsp</file>
-            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/src/java/Project/int303/servlet/SearchFoodServlet.java</file>
-            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/src/java/Project/int303/model/Comment.java</file>
-            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/src/java/Project/int303/model/Favorite.java</file>
+            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/src/java/Project/int303/servlet/EditUserServlet.java</file>
+            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/src/java/Project/int303/servlet/LoginServlet.java</file>
+            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/web/EditProfile.jsp</file>
             <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/src/java/Project/int303/model/User.java</file>
+            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/web/WEB-INF/web.xml</file>
         </group>
     </open-files>
 </project-private>

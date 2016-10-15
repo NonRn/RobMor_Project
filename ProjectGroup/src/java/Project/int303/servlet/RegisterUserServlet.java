@@ -49,7 +49,14 @@ public class RegisterUserServlet extends HttpServlet {
         u.setTelno(request.getParameter("tel"));
         Date d = new Date((Integer.parseInt(request.getParameter("year"))-1900),Integer.parseInt(request.getParameter("month")),Integer.parseInt(request.getParameter("day")));
         u.setDob(d);
-        u.setUsername(request.getParameter("username"));
+        if (u.checkUsername(request.getParameter("username"))){
+            u.setUsername(request.getParameter("username"));            
+        } else {
+            message = "Username is duplicate with other person";
+            request.setAttribute("message", message);
+            getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);   
+            return;
+        }
         String password = request.getParameter("pass");
         String confirmPass = request.getParameter("passcon");
         if (password.equals(confirmPass)){
