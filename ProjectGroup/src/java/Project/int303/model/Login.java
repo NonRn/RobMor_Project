@@ -34,20 +34,20 @@ public class Login {
         this.password = password;
     }
     
-    private boolean CheckUser(Login l){
-        String sql = "select username , password , email from login where username = ?";
+    public boolean CheckUser(Login l){
+        String sql = "select username , pass from login where username = ?";
         Connection conn = null;
         boolean a = false ;
         try {
-            conn = ConnectionBuilder.getCon();
+            conn = ConnectionBuilder.getConnection();
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setString(1, l.username);
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
-                if(rs.getString(password)==l.getPassword()){
+                if(rs.getString("pass").equals(l.getPassword())){
                     a = true ;
                 }
-                else {
+                else { 
                     a = false ;
                 }
             } else {
