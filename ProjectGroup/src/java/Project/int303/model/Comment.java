@@ -79,8 +79,4 @@ public class Comment {
             System.out.println(e);
         }
     }
-    public static void main(String[] args) {
-        Comment com = new Comment();
-        com.adComment(com);
-    }
 }

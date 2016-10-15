@@ -259,22 +259,4 @@ public class Food {
             e.printStackTrace();
         }
     }
-    public static void main(String[] args) {
-//        Food f = new Food();
-//        List<Food> foods = f.searchFood("");
-//        for(Food food:foods){
-//            System.out.println(food.getFoodId());
-//            System.out.println(food.getFoodName());
-//            System.out.println(food.getType());
-//            System.out.println(food.getPrice());
-//            System.out.println(food.getRating());
-//            System.out.println("--------------");
-//            
-//        }
-        List<Food> f = Food.searchFood("Somtam");
-        System.out.println(f);
-        
-        
-        
-    }
 }
