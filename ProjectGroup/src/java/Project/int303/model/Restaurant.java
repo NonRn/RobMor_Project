@@ -6,6 +6,9 @@
 package Project.int303.model;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
 /**
  *
@@ -61,14 +64,59 @@ public class Restaurant {
         this.rating = rating;
     }
     
-    public Restaurant getRest(int id){
+    public static int getId(String name){
         Restaurant r = null ;
+        String SQL = "SELECT rest_id FROM restaurant WHERE rest_name = ?";
         Connection con = null ;
-        return r;
+        int i = 0 ;
+        try {
+            con = ConnectionBuilder.getConnection();
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.setString(1, name);
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()){
+                i = rs.getInt("rest_id");
+            }
+        } catch (Exception e){
+            System.out.println(e);
+        }
+        return i ;
     }
     
-    public void addRest(Restaurant r){
-        
+    public static void addRest(Restaurant r){
+        String SQL = "insert into restaurant(rest_name,address,seat,rating) values(?,?,?,0.0)";
+        Connection con = null ;
+        try {
+            con = ConnectionBuilder.getConnection();
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.setString(1, r.getName());
+            ps.setString(2, r.getAddress());
+            ps.setInt(3, r.getSeat());
+            ps.executeUpdate();
+        } catch (Exception e){
+            System.out.println(e);
+        }
     }
-    
+    public static ArrayList<Restaurant> findRest(){
+        ArrayList<Restaurant> rests = new ArrayList();
+        String SQL = "SELECT * FROM restaurant";
+        Connection con = null ;
+        try {
+            con = ConnectionBuilder.getConnection();
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                Restaurant r = new Restaurant();
+                r.setName(rs.getString("rest_name"));
+                r.setAddress(rs.getString("address"));
+                r.setSeat(rs.getInt("seat"));
+                r.setRating(rs.getDouble("rating"));
+                r.setRestId(rs.getInt("rest_id"));
+                rests.add(r);
+            }
+        } catch (Exception e){
+            System.out.println(e);
+        }
+        return rests ;
+    }
 }

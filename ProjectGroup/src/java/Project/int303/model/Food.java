@@ -234,18 +234,20 @@ public class Food {
     
     public void addFood(Food f){
         Connection con = null;
-        String SQL = "INSERT INTO Food (food_name,price,food_type,rest_id,rating,detail) "
-                + "VALUES (?,?,?,?,?,?)";
+        String SQL = "INSERT INTO Food (food_name,price,food_type,rest_id,rating,detail,writer) "
+                + "VALUES (?,?,?,?,?,?,?)";
+        String SQL2 = "Select MAX(food_id) from food";
+        String SQL3 = "INSERT INTO rating values(?,0,0,0,0,0)";
         try {
             con = ConnectionBuilder.getConnection();
             PreparedStatement ps = con.prepareStatement(SQL);
             ps.setString(1, f.getFoodName());
             ps.setString(2, f.getPrice());
             ps.setString(3, f.getType());
-            ps.setString(4, f.getRestuarant());
-            ps.setDouble(5, f.getRating());
+            ps.setInt(4, Restaurant.getId(f.getRestuarant()));
+            ps.setDouble(5, 0);
             ps.setString(6, f.getDetail());
-//            ps.setInt(7, Integer.parseInt(id));
+            ps.setInt(7, User.getUser(f.getWriter()).getUserId());
             
             
             int complete = ps.executeUpdate();
@@ -253,6 +255,12 @@ public class Food {
                 System.out.println("Add Food Complete");
             }else
                 System.out.println("Add Food Fail");
+            PreparedStatement ps2 = con.prepareStatement(SQL2);
+            ResultSet rs2 = ps2.executeQuery();
+            rs2.next();
+            PreparedStatement ps3 = con.prepareStatement(SQL3);
+            ps3.setInt(1, rs2.getInt(1));
+            ps3.executeUpdate();
             con.close();
             ps.close();
         } catch (Exception e) {

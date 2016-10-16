@@ -18,9 +18,9 @@
         <%}%>
         <a href="Register.jsp">Register</a><br>
         <a href="SearchFoodServlet">Search Food</a><br>
-        <a href="EditProfile.jsp">Edit Profile</a><br>
+        <a href="EditUser">Edit Profile</a><br>
         <% if(session.getAttribute("user")!=null){ %>
         <a href="Logout">Logout</a><br>
-        <%}%>
+        <%}%>    
     </body>
 </html>
