@@ -3,12 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/src/java/Project/int303/servlet/RegisterUserServlet.java</file>
-            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/src/java/Project/int303/servlet/EditUserServlet.java</file>
-            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/src/java/Project/int303/servlet/LoginServlet.java</file>
+            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/src/java/Project/int303/servlet/AddFoodServlet.java</file>
+            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/web/AddFood.jsp</file>
             <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/src/java/Project/int303/model/Restaurant.java</file>
-            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/src/java/Project/int303/model/Comment.java</file>
+            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/web/Index.jsp</file>
+            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/src/java/Project/int303/servlet/AddRestaurantServlet.java</file>
             <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/src/java/Project/int303/model/Food.java</file>
+            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/web/AddRest.jsp</file>
+            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/src/java/Project/int303/model/User.java</file>
         </group>
     </open-files>
 </project-private>

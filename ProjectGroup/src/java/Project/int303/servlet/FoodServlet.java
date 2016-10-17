@@ -5,7 +5,7 @@
  */
 package Project.int303.servlet;
 
-import Project.int303.model.Restaurant;
+import Project.int303.model.Food;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Ratchanon
  */
-public class AddRestaurantServlet extends HttpServlet {
+public class FoodServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,16 +34,10 @@ public class AddRestaurantServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
-        String message = "";
-        Restaurant r = new Restaurant();
-        r.setName(request.getParameter("name"));
-        r.setAddress(request.getParameter("address"));
-        r.setSeat(Integer.parseInt(request.getParameter("seat")));
-        r.setRating(0);
-        Restaurant.addRest(r);
-        message = "Add resturant complete.";
-        request.setAttribute("message", message);
-        return;
+        int i = Integer.parseInt(request.getParameter("id"));
+        Food f = Food.getFood(i);
+        request.setAttribute("food", f);
+        getServletContext().getRequestDispatcher("/Food.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

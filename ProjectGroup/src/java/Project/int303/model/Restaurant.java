@@ -119,4 +119,22 @@ public class Restaurant {
         }
         return rests ;
     }
+    public static String getName(int id){
+        Restaurant r = null ;
+        String SQL = "SELECT rest_name FROM restaurant WHERE rest_id = ?";
+        Connection con = null ;
+        String name = "";
+        try {
+            con = ConnectionBuilder.getConnection();
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.setString(1, name);
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()){
+                name = rs.getString("rest_name");
+            }
+        } catch (Exception e){
+            System.out.println(e);
+        }
+        return name ;
+    }
 }

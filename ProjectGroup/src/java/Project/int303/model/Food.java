@@ -41,8 +41,9 @@ public class Food {
         foodName = rs.getString("FOOD_NAME");
         price = rs.getString("PRICE");   // price ต้องการใช้ String หรือ Double
         type = rs.getString("FOOD_TYPE");
-        restuarant = rs.getString("REST_NAME");
+        int i = rs.getInt("REST_ID") ;
         rating = rs.getDouble("RATING");
+        detail = rs.getString("detail");
         
     }
     
@@ -150,7 +151,7 @@ public class Food {
         this.rate5 = rate5;
     }
     
-    private void addRate(int i,int foodId){
+    public void addRate(int i,int foodId){
         String SQL = "SELECT ? FROM rating WHERE food_id = " + foodId ;
         String SQL2 = "UPDATE rating SET ? = ? WHERE food_id = " + foodId ;
         try {
@@ -266,5 +267,39 @@ public class Food {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    public static Food getFood(int id){
+        Food f = null ;
+        String SQL = "SELECT * FROM food WHERE food_id = ?";
+        Connection con = null ;
+        try {
+            con = ConnectionBuilder.getConnection();
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()){
+                f = new Food(rs);
+            }
+        } catch (Exception e){
+            System.out.println(e);
+        }
+        return f ;
+    }
+    public static ArrayList<Food> findFood(){
+        ArrayList<Food> foods = new ArrayList();
+        String SQL = "SELECT * FROM Food";
+        Connection con = null ;
+        try {
+            con = ConnectionBuilder.getConnection();
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                Food f = new Food(rs);
+                foods.add(f);
+            }
+        } catch (Exception e){
+            System.out.println(e);
+        }
+        return foods ;
     }
 }

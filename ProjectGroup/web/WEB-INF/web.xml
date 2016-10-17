@@ -28,6 +28,10 @@
         <servlet-name>AddFoodServlet</servlet-name>
         <servlet-class>Project.int303.servlet.AddFoodServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>FoodServlet</servlet-name>
+        <servlet-class>Project.int303.servlet.FoodServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SearchFoodServlet</servlet-name>
         <url-pattern>/SearchFoodServlet</url-pattern>
@@ -57,6 +61,10 @@
     <servlet-mapping>
         <servlet-name>AddFoodServlet</servlet-name>
         <url-pattern>/AddFood</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FoodServlet</servlet-name>
+        <url-pattern>/Food</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

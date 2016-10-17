@@ -38,7 +38,6 @@ public class AddFoodServlet extends HttpServlet {
         HttpSession session = request.getSession();
         String message = "";
         if (request.getParameter("fromrest")!=null){
-            System.out.println("1111");
             Restaurant r = new Restaurant();
             r.setName(request.getParameter("name"));
             r.setAddress(request.getParameter("address"));
@@ -47,10 +46,10 @@ public class AddFoodServlet extends HttpServlet {
             message = "Add Restaurant Complete";
             request.setAttribute("message", message);
             getServletContext().getRequestDispatcher("/AddRest.jsp").forward(request, response);
+            return;
         }
         if (session.getAttribute("user")!=null){
             if (request.getParameter("name")!=null) { 
-                System.out.println("2222");
                 Food f = new Food(); 
                 f.setFoodName(request.getParameter("name"));
                 f.setPrice(request.getParameter("price"));
@@ -64,15 +63,15 @@ public class AddFoodServlet extends HttpServlet {
                 ArrayList<Restaurant> ar = Restaurant.findRest();
                 request.setAttribute("rest", ar);
                 getServletContext().getRequestDispatcher("/AddFood.jsp").forward(request, response);
+                return;
             } else {
-                System.out.println("3333");
                 ArrayList<Restaurant> ar = Restaurant.findRest();
                 request.setAttribute("rest", ar);
                 request.setAttribute("message", message);
                 getServletContext().getRequestDispatcher("/AddFood.jsp").forward(request, response);
+                return;
             }
         } else {
-            System.out.println("4444");
             getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
         } 
     }
