@@ -6,10 +6,9 @@
 package Project.int303.servlet;
 
 import Project.int303.model.Comment;
-import Project.int303.model.Food;
+import Project.int303.model.User;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,7 +19,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Ratchanon
  */
-public class FoodServlet extends HttpServlet {
+public class CommentServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,12 +35,22 @@ public class FoodServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
-        int i = Integer.parseInt(request.getParameter("id"));
-        Food f = Food.getFood(i);
-        request.setAttribute("food", f);
-        ArrayList<Comment> ac = Comment.getCommentByFood(i);
-        request.setAttribute("ArComment", ac);
-        getServletContext().getRequestDispatcher("/Food.jsp").forward(request, response);
+        String message = "";
+        Comment com = null ;
+        if (session.getAttribute("user")!=null){
+            User u = User.getUser((String)session.getAttribute("user"));
+            int userId = u.getUserId();
+            com = new Comment();
+            com.setDetail(request.getParameter("comment"));
+            com.setUserId(userId);
+            com.setFoodId(Integer.parseInt((String)request.getParameter("foodId")));
+            com.adComment(com);
+            message = "Add Comment Success";
+            request.setAttribute("message", message);
+            getServletContext().getRequestDispatcher("/Food?id="+Integer.parseInt(request.getParameter("foodId"))).forward(request, response);
+        } else {
+            getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

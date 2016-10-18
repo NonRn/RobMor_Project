@@ -203,4 +203,28 @@ public class User {
         }
         return u ;
     }
+    public User getUserById(int id){
+        String SQL = "SELECT * FROM Userr WHERE user_id = "+id ;
+        User u = null ;
+        try {
+            Connection con = ConnectionBuilder.getConnection();
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()){
+                u = new User();
+                u.setUserId(rs.getInt("user_id"));
+                u.setFname(rs.getString("fname"));
+                u.setLname(rs.getString("lname"));
+                u.setGender(rs.getString("gender"));
+                u.setDob(rs.getDate("dob"));
+                u.setTelno(rs.getString("telno"));
+                u.setUsername(rs.getString("username"));
+                u.setEmail(rs.getString("email"));
+                u.setRegis(rs.getDate("regis_date"));
+            }
+        } catch (Exception e){
+            System.out.println(e);
+        }
+        return u ;
+    }
 }
