@@ -41,10 +41,16 @@ public class CommentServlet extends HttpServlet {
         Comment com = null ;
         Cookie[] cks = request.getCookies() ;
         int i =0 ;
+        int id = 0 ;
         for(Cookie cr : cks) {
             if (cr.getName().equals("Rate")) {
                i = Integer.parseInt(cr.getValue());
+            } else if (cr.getName().equals("Id")) {
+               id = Integer.parseInt(cr.getValue());
             }
+        }
+        if(id!=User.getUser((String)session.getAttribute("user")).getUserId()){
+            i = 0 ;
         }
         if (session.getAttribute("user")!=null){
             if (request.getParameter("rate")==null){
