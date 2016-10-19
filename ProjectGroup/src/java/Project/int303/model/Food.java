@@ -151,46 +151,51 @@ public class Food {
         this.rate5 = rate5;
     }
     
-    public void addRate(int i,int foodId){
-        String SQL = "SELECT ? FROM rating WHERE food_id = " + foodId ;
-        String SQL2 = "UPDATE rating SET ? = ? WHERE food_id = " + foodId ;
+    public static void addRate(int i,int foodId){
+        String SQL = "SELECT rating"+i+" FROM rating WHERE food_id = " + foodId ;
+        String SQL2 = "UPDATE rating SET rating"+i+" = ? WHERE food_id = " + foodId ;
         try {
             Connection con = ConnectionBuilder.getConnection();
             PreparedStatement ps = con.prepareStatement(SQL);
             PreparedStatement ps2 = con.prepareStatement(SQL2);
-            switch(i){
-                case 1 : ps.setString(1, "rating1");
-                    break ;
-                case 2 : ps.setString(1, "rating2");
-                    break ;
-                case 3 : ps.setString(1, "rating3");
-                    break ;
-                case 4 : ps.setString(1, "rating4");
-                    break ;
-                case 5 : ps.setString(1, "rating5");
-                    break ;
-                default: 
-                    System.out.println("Error");
-            }
+//            switch(i){
+//                case 1 : ps.setString(1, "rating1");
+//                    break ;
+//                case 2 : ps.setString(1, "rating2");
+//                    break ;
+//                case 3 : ps.setString(1, "rating3");
+//                    break ;
+//                case 4 : ps.setString(1, "rating4");
+//                    break ;
+//                case 5 : ps.setString(1, "rating5");
+//                    break ;
+//                default: 
+//                    System.out.println("Error");
+//            }
             ResultSet rs = ps.executeQuery();
             rs.next();
             int before = rs.getInt(1);
             before++ ;
-            switch(i){
-                case 1 : ps2.setString(1, "rating1");
-                    break ;
-                case 2 : ps2.setString(1, "rating2");
-                    break ;
-                case 3 : ps2.setString(1, "rating3");
-                    break ;
-                case 4 : ps2.setString(1, "rating4");
-                    break ;
-                case 5 : ps2.setString(1, "rating5");
-                    break ;
-                default: 
-                    System.out.println("Error");
-            }
-            ps2.setInt(2, before);
+//            switch(i){
+//                case 1 : 
+//                    ps2.setString(1, "rating1");
+//                    break ;
+//                case 2 : 
+//                    ps2.setString(1, "rating2");
+//                    break ;
+//                case 3 : 
+//                    ps2.setString(1, "rating3");
+//                    break ;
+//                case 4 : 
+//                    ps2.setString(1, "rating4");
+//                    break ;
+//                case 5 : 
+//                    ps2.setString(1, "rating5");
+//                    break ;
+//                default: 
+//                    System.out.println("Error");
+//            }
+            ps2.setInt(1, before);
             ps2.executeUpdate();
             ps.close();
             ps2.close();

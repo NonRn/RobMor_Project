@@ -6,6 +6,7 @@
 package Project.int303.servlet;
 
 import Project.int303.model.Comment;
+import Project.int303.model.Food;
 import Project.int303.model.User;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -38,14 +39,33 @@ public class CommentServlet extends HttpServlet {
         String message = "";
         Comment com = null ;
         if (session.getAttribute("user")!=null){
-            User u = User.getUser((String)session.getAttribute("user"));
-            int userId = u.getUserId();
-            com = new Comment();
-            com.setDetail(request.getParameter("comment"));
-            com.setUserId(userId);
-            com.setFoodId(Integer.parseInt((String)request.getParameter("foodId")));
-            com.adComment(com);
-            message = "Add Comment Success";
+            if (request.getParameter("rate")==null){
+                if (request.getParameter("comment").equals("")){
+                    message = "คุณไม่ได้ใส่อะไร จะ submit มาทำเหี้ยอะไรครับ";
+                }else {
+                    User u = User.getUser((String)session.getAttribute("user"));
+                    int userId = u.getUserId();
+                    com = new Comment();
+                    com.setDetail(request.getParameter("comment"));
+                    com.setUserId(userId);
+                    com.setFoodId(Integer.parseInt((String)request.getParameter("foodId")));
+                    com.adComment(com);
+                    message = "Add Comment Success";
+                }
+            } else if (request.getParameter("comment").equals("")){
+                Food.addRate(Integer.parseInt(request.getParameter("rate")), Integer.parseInt(request.getParameter("foodId")));
+                message = "Add Rate Success";
+            } else {
+                User u = User.getUser((String)session.getAttribute("user"));
+                int userId = u.getUserId();
+                com = new Comment();
+                com.setDetail(request.getParameter("comment"));
+                com.setUserId(userId);
+                com.setFoodId(Integer.parseInt((String)request.getParameter("foodId")));
+                com.adComment(com);
+                Food.addRate(Integer.parseInt(request.getParameter("rate")), Integer.parseInt(request.getParameter("foodId")));
+                message = "Add Comment Success";
+            }
             request.setAttribute("message", message);
             getServletContext().getRequestDispatcher("/Food?id="+Integer.parseInt(request.getParameter("foodId"))).forward(request, response);
         } else {

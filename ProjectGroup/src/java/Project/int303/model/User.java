@@ -204,7 +204,7 @@ public class User {
         return u ;
     }
     public User getUserById(int id){
-        String SQL = "SELECT * FROM Userr WHERE user_id = "+id ;
+        String SQL = "SELECT * FROM Userr u JOIN login l ON u.username = l.username WHERE user_id = "+id ;
         User u = null ;
         try {
             Connection con = ConnectionBuilder.getConnection();
@@ -218,7 +218,7 @@ public class User {
                 u.setGender(rs.getString("gender"));
                 u.setDob(rs.getDate("dob"));
                 u.setTelno(rs.getString("telno"));
-                u.setUsername(rs.getString("username"));
+                u.setUsername(rs.getString("username"));               
                 u.setEmail(rs.getString("email"));
                 u.setRegis(rs.getDate("regis_date"));
             }
