@@ -11,6 +11,7 @@ import Project.int303.model.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -38,6 +39,13 @@ public class CommentServlet extends HttpServlet {
         HttpSession session = request.getSession();
         String message = "";
         Comment com = null ;
+        Cookie[] cks = request.getCookies() ;
+        int i =0 ;
+        for(Cookie cr : cks) {
+            if (cr.getName().equals("Rate")) {
+               i = Integer.parseInt(cr.getValue());
+            }
+        }
         if (session.getAttribute("user")!=null){
             if (request.getParameter("rate")==null){
                 if (request.getParameter("comment").equals("")){
@@ -52,19 +60,31 @@ public class CommentServlet extends HttpServlet {
                     com.adComment(com);
                     message = "Add Comment Success";
                 }
-            } else if (request.getParameter("comment").equals("")){
-                Food.addRate(Integer.parseInt(request.getParameter("rate")), Integer.parseInt(request.getParameter("foodId")));
-                message = "Add Rate Success";
-            } else {
-                User u = User.getUser((String)session.getAttribute("user"));
-                int userId = u.getUserId();
-                com = new Comment();
-                com.setDetail(request.getParameter("comment"));
-                com.setUserId(userId);
-                com.setFoodId(Integer.parseInt((String)request.getParameter("foodId")));
-                com.adComment(com);
-                Food.addRate(Integer.parseInt(request.getParameter("rate")), Integer.parseInt(request.getParameter("foodId")));
-                message = "Add Comment Success";
+            } else if (i == 0 || Integer.parseInt(request.getParameter("rate"))!=i) {
+                if (request.getParameter("comment").equals("")){
+                    Food.addRate(Integer.parseInt(request.getParameter("rate")), Integer.parseInt(request.getParameter("foodId")));
+                    Food.ChangeRate(i, Integer.parseInt(request.getParameter("foodId")));
+                    Food.CalRate(Integer.parseInt(request.getParameter("foodId")));
+                    Cookie ck =new Cookie("Rate", request.getParameter("rate")) ;
+                    ck.setMaxAge(20*12*30*24*60*60);
+                    response.addCookie(ck);
+                    message = "Add Rate Success";
+                } else {
+                    User u = User.getUser((String)session.getAttribute("user"));
+                    int userId = u.getUserId();
+                    com = new Comment();
+                    com.setDetail(request.getParameter("comment"));
+                    com.setUserId(userId);
+                    com.setFoodId(Integer.parseInt((String)request.getParameter("foodId")));
+                    com.adComment(com);
+                    Food.addRate(Integer.parseInt(request.getParameter("rate")), Integer.parseInt(request.getParameter("foodId")));
+                    Food.ChangeRate(i, Integer.parseInt(request.getParameter("foodId")));
+                    Food.CalRate(Integer.parseInt(request.getParameter("foodId")));
+                    Cookie ck =new Cookie("Rate", request.getParameter("rate")) ;
+                    ck.setMaxAge(20*12*30*24*60*60);
+                    response.addCookie(ck);
+                    message = "Add Comment Success";
+                }
             }
             request.setAttribute("message", message);
             getServletContext().getRequestDispatcher("/Food?id="+Integer.parseInt(request.getParameter("foodId"))).forward(request, response);

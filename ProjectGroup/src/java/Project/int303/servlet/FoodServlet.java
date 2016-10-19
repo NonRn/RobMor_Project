@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -36,10 +37,18 @@ public class FoodServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
+        Cookie[] cks = request.getCookies() ;
+        int r =0 ;
+        for(Cookie cr : cks) {
+            if (cr.getName().equals("Rate")) {
+               r = Integer.parseInt(cr.getValue());
+            }
+        }
         int i = Integer.parseInt(request.getParameter("id"));
         Food f = Food.getFood(i);
-        request.setAttribute("food", f);
         ArrayList<Comment> ac = Comment.getCommentByFood(i);
+        request.setAttribute("food", f);
+        request.setAttribute("OldRate", r);
         request.setAttribute("ArComment", ac);
         getServletContext().getRequestDispatcher("/Food.jsp").forward(request, response);
     }

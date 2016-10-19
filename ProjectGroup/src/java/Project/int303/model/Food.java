@@ -307,4 +307,50 @@ public class Food {
         }
         return foods ;
     }
+    public static void CalRate(int foodId){
+        String SQL1 = "SELECT rating1,rating2,rating3,rating4,rating5 FROM rating WHERE food_id = "+foodId ;
+        String SQL2 = "UPDATE food SET rating = ? WHERE food_id = "+foodId ;
+        try {
+            Connection con = ConnectionBuilder.getConnection();
+            PreparedStatement ps = con.prepareStatement(SQL1);
+            PreparedStatement ps2 = con.prepareStatement(SQL2);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()){
+                int Rate1 = rs.getInt(1)*1 ;
+                int Rate2 = rs.getInt(2)*2 ;
+                int Rate3 = rs.getInt(3)*3 ;
+                int Rate4 = rs.getInt(4)*4 ;
+                int Rate5 = rs.getInt(5)*5 ;
+                double avgRate = (double)(Rate1 + Rate2 + Rate3 + Rate4 + Rate5) / (double)(rs.getInt(1)+rs.getInt(2)+rs.getInt(3)+rs.getInt(4)+rs.getInt(5)) ;
+                System.out.println(avgRate);
+                ps2.setDouble(1, avgRate);
+                ps2.executeUpdate();
+                con.close();
+            } else {
+                
+            }
+        } catch (Exception e){
+            System.out.println(e);
+        }        
+    }
+    public static void ChangeRate(int oldRate,int foodId){
+        String SQL = "SELECT rating"+oldRate+" FROM rating WHERE food_id = " + foodId ;
+        String SQL2 = "UPDATE rating SET rating"+oldRate+" = ? WHERE food_id = " + foodId ;
+        try {
+            Connection con = ConnectionBuilder.getConnection();
+            PreparedStatement ps = con.prepareStatement(SQL);
+            PreparedStatement ps2 = con.prepareStatement(SQL2);
+            ResultSet rs = ps.executeQuery();
+            rs.next();
+            int before = rs.getInt(1);
+            before-- ;
+            ps2.setInt(1, before);
+            ps2.executeUpdate();
+            ps.close();
+            ps2.close();
+            con.close();
+        } catch (Exception e){
+            System.out.println(e);
+        }
+    }
 }

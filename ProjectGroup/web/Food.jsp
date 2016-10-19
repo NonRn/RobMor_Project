@@ -30,6 +30,9 @@
         <form action="Comment" method="GET">
             <input type="text" name="foodId" hidden="" value="${food.foodId}">
             Comment : <textarea name="comment"></textarea><br>
+            <%
+//                int i = Integer.parseInt((String)request.getAttribute("OldRate"));
+            %>
             Rate : <input type="radio" name="rate" value="1">1 &nbsp;&nbsp;&nbsp;&nbsp;
             <input type="radio" name="rate" value="2">2 &nbsp;&nbsp;&nbsp;&nbsp;
             <input type="radio" name="rate" value="3">3 &nbsp;&nbsp;&nbsp;&nbsp;
