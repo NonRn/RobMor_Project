@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 
 /**
  *
@@ -57,7 +58,9 @@ public class AddFoodServlet extends HttpServlet {
                 f.setRestuarant(request.getParameter("restaurant"));
                 f.setDetail(request.getParameter("detail"));
                 f.setWriter((String)session.getAttribute("user"));
-                f.addFood(f);
+                int id = f.addFood(f);
+                Part picturePart = request.getPart("picture");
+                picturePart.write(id+".png");
                 message = "Add Food Complete";
                 request.setAttribute("message", message);
                 ArrayList<Restaurant> ar = Restaurant.findRest();

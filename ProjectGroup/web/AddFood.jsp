@@ -20,7 +20,7 @@
                 window.location.assign("/ProjectGroup/AddRest.jsp");
             }
         </script>
-        <form action="AddFood" method="GET">
+        <form enctype="multipart/form-data" action="AddFood" method="POST">
             Food : <input type="text" name="name" required=""><br>
             Price : <input type="number" name="price" required=""><br>
             Type : <select name="type">
@@ -38,7 +38,7 @@
             <%}%>
             </select><input type="button" value="Add Restaurant" onclick="j()"> <br>
             Detail : <textarea rows='3' cols='45' placeholder="บรรยาย" wrap="hard" name="detail"></textarea><br>
-            Picture : <input type="file" name="pic"><br><br>
+            Picture : <input type="file" name="picture"><br><br>
             <input type="submit"><hr>
         </form>
             <% 

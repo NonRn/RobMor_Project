@@ -17,6 +17,7 @@
     </head>
     <body>
         <h1>${food.foodName}</h1><hr>
+        <img src="pic/${food.foodId}.png" width="50%" height="50%">
         ${food.price}<br>
         ${food.type}<br>
         ${food.detail}<br>

@@ -238,7 +238,7 @@ public class Food {
     }
     
     
-    public void addFood(Food f){
+    public int addFood(Food f){
         Connection con = null;
         String SQL = "INSERT INTO Food (food_name,price,food_type,rest_id,rating,detail,writer) "
                 + "VALUES (?,?,?,?,?,?,?)";
@@ -265,13 +265,16 @@ public class Food {
             ResultSet rs2 = ps2.executeQuery();
             rs2.next();
             PreparedStatement ps3 = con.prepareStatement(SQL3);
-            ps3.setInt(1, rs2.getInt(1));
+            int o = rs2.getInt(1);
+            ps3.setInt(1, o);
             ps3.executeUpdate();
             con.close();
             ps.close();
+            return o;
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return 0;
     }
     public static Food getFood(int id){
         Food f = null ;

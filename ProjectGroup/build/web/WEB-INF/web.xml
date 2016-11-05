@@ -27,6 +27,9 @@
     <servlet>
         <servlet-name>AddFoodServlet</servlet-name>
         <servlet-class>Project.int303.servlet.AddFoodServlet</servlet-class>
+        <multipart-config>
+            <location>/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/web/pic</location>
+        </multipart-config>
     </servlet>
     <servlet>
         <servlet-name>FoodServlet</servlet-name>
