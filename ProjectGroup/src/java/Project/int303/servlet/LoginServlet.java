@@ -6,9 +6,11 @@
 package Project.int303.servlet;
 
 import Project.int303.model.Login;
+import Project.int303.model.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -39,8 +41,10 @@ public class LoginServlet extends HttpServlet {
         l.setUsername(user);
         l.setPassword(request.getParameter("password"));
         if (l.CheckUser(l)){
+            Cookie ck = new Cookie("Id", User.getUser(user).getUserId()+"");
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
+            response.addCookie(ck);
             getServletContext().getRequestDispatcher("/Index.jsp").forward(request, response);
             return;
         } else {

@@ -56,19 +56,6 @@ CREATE TABLE Food
 );
 
 
-
-CREATE TABLE Viewing
-(    
-   user_id integer,
-   food_id integer,
-   viewDate date,
-   foreign key (food_id) references food(food_id),
-   foreign key (user_id) references USERR(user_id)
-       
-);
-
-
-
 CREATE TABLE Favorite
 (    
    user_id integer,
@@ -82,7 +69,10 @@ CREATE TABLE Favorite
 
 
 CREATE TABLE Comment
-(    
+(  
+   comment_id integer not null primary key
+        GENERATED ALWAYS AS IDENTITY
+        (START WITH 4000001, INCREMENT BY 1),
    user_id integer,
    food_id integer,
    comments varchar(255),

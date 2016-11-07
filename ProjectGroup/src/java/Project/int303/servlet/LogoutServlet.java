@@ -8,6 +8,7 @@ package Project.int303.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -33,6 +34,13 @@ public class LogoutServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
         session.invalidate();
+        Cookie[] cks = request.getCookies() ;
+        for(Cookie cr : cks) {
+            if (cr.getName().equals("Id")) {
+                cr.setMaxAge(0);
+                response.addCookie(cr);
+            }
+        }
         getServletContext().getRequestDispatcher("/Index.jsp").include(request, response);
         try (PrintWriter out = response.getWriter()) {
             out.print("<script>window.alert(\"logout\")</script>");

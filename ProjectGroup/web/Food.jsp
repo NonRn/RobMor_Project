@@ -47,7 +47,8 @@
         <script> window.alert("${message}"); </script>
         <%}%>
         <h3>C o m m e n t ::</h3>
-        <%
+        <%  
+            session = request.getSession();
             ArrayList<Comment> ac = (ArrayList)request.getAttribute("ArComment");
             for (Comment c : ac) {
                 User u = new User();
@@ -56,7 +57,18 @@
         <div>
             <p><%=u2.getFname()%> <%=u2.getLname()%></p>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%=c.getDetail()%> </p>
-            <p><%=c.getLikeCount()%></p>
+            <p><%=c.getLikeCount()%>
+            <form action="Like?id=" method="GET">
+                <input type="submit" value="Like">
+            </form>
+                <% if( u2.getUserId() == User.getUser((String)session.getAttribute("user")).getUserId()){ %>
+                <form action="Delete?id=" method="GET">
+                    <input type="submit" value="delete">
+                </form>  
+                
+                <%}%>
+            
+        </p>
         </div>
         <%}%>
         

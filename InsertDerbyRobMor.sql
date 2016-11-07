@@ -12,6 +12,4 @@ insert into FAVORITE(USER_ID,FOOD_ID,MY_RATING) values(2000001,1000001,4);
 insert into FAVORITE(USER_ID,FOOD_ID,MY_RATING) values(2000002,1000002,3);
 insert into COMMENT(USER_ID,FOOD_ID,COMMENTS,LIKE_COUNT) values(2000001,1000001,'โปเกม่อนโปเกม้อนตื๊ดตือตื๊ดตือ',3);
 insert into COMMENT(USER_ID,FOOD_ID,COMMENTS,LIKE_COUNT) values(2000002,1000002,'โปเกม่อนโปเกม้อนตื๊ดตือตื๊ดตือนาจาาาาา',4);
-insert into VIEWING(USER_ID,FOOD_ID,VIEWDATE) values(2000001,1000001,'2016-01-16');
-insert into VIEWING(USER_ID,FOOD_ID,VIEWDATE) values(2000002,1000002,'2016-06-16');
 

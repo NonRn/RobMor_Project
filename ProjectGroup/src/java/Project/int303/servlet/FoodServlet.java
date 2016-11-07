@@ -41,7 +41,7 @@ public class FoodServlet extends HttpServlet {
         int r =0 ;
         for(Cookie cr : cks) {
             if (cr.getName().equals("Rate")) {
-               r = Integer.parseInt(cr.getValue());
+               r = Integer.parseInt(cr.getValue().substring(0, 1));
             }
         }
         int i = Integer.parseInt(request.getParameter("id"));

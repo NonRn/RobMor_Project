@@ -38,21 +38,23 @@ public class CommentServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
         String message = "";
-        Comment com = null ;
-        Cookie[] cks = request.getCookies() ;
-        int i =0 ;
-        int id = 0 ;
-        for(Cookie cr : cks) {
-            if (cr.getName().equals("Rate")) {
-               i = Integer.parseInt(cr.getValue());
-            } else if (cr.getName().equals("Id")) {
-               id = Integer.parseInt(cr.getValue());
-            }
-        }
-        if(id!=User.getUser((String)session.getAttribute("user")).getUserId()){
-            i = 0 ;
-        }
         if (session.getAttribute("user")!=null){
+            Comment com = null ;
+            Cookie[] cks = request.getCookies() ;
+            int i =0 ;
+            int id = 0 ;
+            int food = 0 ;
+            for(Cookie cr : cks) {
+                if (cr.getName().equals("Rate")) {
+                   i = Integer.parseInt(cr.getValue().substring(0, 1));
+                   food = Integer.parseInt(cr.getValue().substring(2, cr.getValue().length()));
+                } else if (cr.getName().equals("Id")) {
+                   id = Integer.parseInt(cr.getValue());
+                }
+            }
+            if(id!=User.getUser((String)session.getAttribute("user")).getUserId()){
+                i = 0 ;
+            }
             if (request.getParameter("rate")==null){
                 if (request.getParameter("comment").equals("")){
                     message = "คุณไม่ได้ใส่อะไร จะ submit มาทำเหี้ยอะไรครับ";
@@ -66,14 +68,15 @@ public class CommentServlet extends HttpServlet {
                     com.adComment(com);
                     message = "Add Comment Success";
                 }
-            } else if (i == 0 || Integer.parseInt(request.getParameter("rate"))!=i) {
+            } else if (food!= Integer.parseInt(request.getParameter("foodId"))||(i == 0 || Integer.parseInt(request.getParameter("rate"))!=i)) {
                 if (request.getParameter("comment").equals("")){
                     Food.addRate(Integer.parseInt(request.getParameter("rate")), Integer.parseInt(request.getParameter("foodId")));
                     Food.ChangeRate(i, Integer.parseInt(request.getParameter("foodId")));
                     Food.CalRate(Integer.parseInt(request.getParameter("foodId")));
-                    Cookie ck =new Cookie("Rate", request.getParameter("rate")) ;
+                    Cookie ck =new Cookie("Rate", request.getParameter("rate")+"-"+request.getParameter("foodId")) ;
                     ck.setMaxAge(20*12*30*24*60*60);
                     response.addCookie(ck);
+//                    System.out.println(i);
                     message = "Add Rate Success";
                 } else {
                     User u = User.getUser((String)session.getAttribute("user"));
@@ -86,11 +89,17 @@ public class CommentServlet extends HttpServlet {
                     Food.addRate(Integer.parseInt(request.getParameter("rate")), Integer.parseInt(request.getParameter("foodId")));
                     Food.ChangeRate(i, Integer.parseInt(request.getParameter("foodId")));
                     Food.CalRate(Integer.parseInt(request.getParameter("foodId")));
-                    Cookie ck =new Cookie("Rate", request.getParameter("rate")) ;
+                    Cookie ck =new Cookie("Rate", request.getParameter("rate")+"-"+request.getParameter("foodId")) ;
                     ck.setMaxAge(20*12*30*24*60*60);
                     response.addCookie(ck);
                     message = "Add Comment Success";
-                }
+                } 
+            } else {
+//                System.out.println(food);
+//                System.out.println(request.getParameter("foodId"));
+//                System.out.println(i);
+//                System.out.println(request.getParameter("rate"));
+                message = "Err!";
             }
             request.setAttribute("message", message);
             getServletContext().getRequestDispatcher("/Food?id="+Integer.parseInt(request.getParameter("foodId"))).forward(request, response);
