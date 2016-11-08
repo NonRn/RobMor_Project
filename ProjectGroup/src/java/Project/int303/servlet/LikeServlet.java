@@ -6,10 +6,9 @@
 package Project.int303.servlet;
 
 import Project.int303.model.Comment;
-import Project.int303.model.Food;
+import Project.int303.model.User;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
@@ -21,7 +20,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author Ratchanon
  */
-public class FoodServlet extends HttpServlet {
+public class LikeServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,20 +36,34 @@ public class FoodServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
+        String message = "";
         Cookie[] cks = request.getCookies() ;
-        int r =0 ;
-//        for(Cookie cr : cks) {
-//            if (cr.getName().equals("Rate")) {
-//               r = Integer.parseInt(cr.getValue().substring(0, 1));
-//            }
-//        }
-        int i = Integer.parseInt(request.getParameter("id"));
-        Food f = Food.getFood(i);
-        ArrayList<Comment> ac = Comment.getCommentByFood(i);
-        request.setAttribute("food", f);
-        request.setAttribute("OldRate", r);
-        request.setAttribute("ArComment", ac);
-        getServletContext().getRequestDispatcher("/Food2.jsp").forward(request, response);
+        int o = 0 ;
+        
+//        System.out.println(request.getParameter("comId"));
+//        System.out.println(request.getParameter("id"));
+        if (session.getAttribute("user")!=null){
+            int UID = User.getUser((String)session.getAttribute("user")).getUserId() ;
+        int comId = Integer.parseInt(request.getParameter("comId"));
+        for(Cookie cr : cks) {
+            if (cr.getName().equals("C"+UID+""+comId)) {
+               o = 1;
+            } 
+        }
+            if (o==0){        
+                Comment.like(comId);
+                Cookie c = new Cookie("C"+UID+""+comId, "true");
+                c.setMaxAge(100*12*30*24*60*60);
+                response.addCookie(c);
+                message = "Like";
+            } else {
+                message = "You can like only 1 time";
+            }
+            request.setAttribute("message", message);
+            getServletContext().getRequestDispatcher("/Food?id="+Integer.parseInt(request.getParameter("id"))).forward(request, response);
+        } else {
+            getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

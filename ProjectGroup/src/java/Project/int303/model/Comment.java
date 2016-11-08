@@ -129,5 +129,24 @@ public class Comment {
     public void setCommentId(int commentId) {
         this.commentId = commentId;
     }
-    
+    public static void like(int commentId){
+        Connection con = null ;
+        String SQL = "SELECT like_count FROM comment WHERE comment_id = "+commentId;
+        String SQL2 = "UPDATE comment SET like_count = ? WHERE comment_id = ?";
+        try {
+            con = ConnectionBuilder.getConnection();
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ResultSet rs = ps.executeQuery();
+            rs.next();
+            int l = rs.getInt(1);
+            ++l ;
+            PreparedStatement ps2 = con.prepareStatement(SQL2);
+            ps2.setInt(1, l);
+            ps2.setInt(2, commentId);
+            ps2.executeUpdate();
+            con.close();
+        } catch (Exception e){
+            
+        }
+    }
 }

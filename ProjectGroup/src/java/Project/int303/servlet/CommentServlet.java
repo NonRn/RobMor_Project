@@ -74,7 +74,7 @@ public class CommentServlet extends HttpServlet {
                     Food.ChangeRate(i, Integer.parseInt(request.getParameter("foodId")));
                     Food.CalRate(Integer.parseInt(request.getParameter("foodId")));
                     Cookie ck =new Cookie("Rate"+request.getParameter("foodId")+(User.getUser((String)session.getAttribute("user")).getUserId()), request.getParameter("rate")+"-"+request.getParameter("foodId")) ;
-                    ck.setMaxAge(20*12*30*24*60*60);
+                    ck.setMaxAge(100*12*30*24*60*60);
                     response.addCookie(ck);
 //                    System.out.println(i);
                     message = "Add Rate Success";
@@ -90,7 +90,7 @@ public class CommentServlet extends HttpServlet {
                     Food.ChangeRate(i, Integer.parseInt(request.getParameter("foodId")));
                     Food.CalRate(Integer.parseInt(request.getParameter("foodId")));
                     Cookie ck =new Cookie("Rate"+request.getParameter("foodId")+(User.getUser((String)session.getAttribute("user")).getUserId()), request.getParameter("rate")+"-"+request.getParameter("foodId")) ;
-                    ck.setMaxAge(20*12*30*24*60*60);
+                    ck.setMaxAge(100*12*30*24*60*60);
                     response.addCookie(ck);
                     message = "Add Comment Success";
                 } 

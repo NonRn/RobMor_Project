@@ -39,6 +39,10 @@
         <servlet-name>CommentServlet</servlet-name>
         <servlet-class>Project.int303.servlet.CommentServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LikeServlet</servlet-name>
+        <servlet-class>Project.int303.servlet.LikeServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SearchFoodServlet</servlet-name>
         <url-pattern>/SearchFoodServlet</url-pattern>
@@ -76,6 +80,10 @@
     <servlet-mapping>
         <servlet-name>CommentServlet</servlet-name>
         <url-pattern>/Comment</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LikeServlet</servlet-name>
+        <url-pattern>/Like</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
