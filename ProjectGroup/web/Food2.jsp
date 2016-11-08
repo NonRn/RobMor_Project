@@ -1,23 +1,22 @@
 <%-- 
-    Document   : Food
-    Created on : Oct 17, 2016, 6:47:55 PM
+    Document   : Food2
+    Created on : Nov 8, 2016, 6:09:58 PM
     Author     : Ratchanon
 --%>
 
 <%@page import="Project.int303.model.User"%>
 <%@page import="Project.int303.model.Comment"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="Project.int303.model.Food"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Food Page</title>
+        <title>${food.foodName}</title>
     </head>
     <body>
-        <h1>${food.foodName}</h1><hr>
-        <img src="pic/${food.foodId}.png" width="50%" height="50%">
+        <h1>${food.foodName}</h1>
+        <img src="pic/${food.foodId}.png" width="30%" height="30%">
         ${food.price}<br>
         ${food.type}<br>
         ${food.detail}<br>
@@ -31,9 +30,6 @@
         <form action="Comment" method="GET">
             <input type="text" name="foodId" hidden="" value="${food.foodId}">
             Comment : <textarea name="comment"></textarea><br>
-            <%
-                int i = Integer.parseInt((String)request.getAttribute("OldRate"));
-            %>
             Rate : <input type="radio" name="rate" value="1">1 &nbsp;&nbsp;&nbsp;&nbsp;
             <input type="radio" name="rate" value="2">2 &nbsp;&nbsp;&nbsp;&nbsp;
             <input type="radio" name="rate" value="3">3 &nbsp;&nbsp;&nbsp;&nbsp;
@@ -41,7 +37,7 @@
             <input type="radio" name="rate" value="5">5 <br>
             <input type="submit">
         </form>
-         <% 
+            <% 
             if(request.getAttribute("message")!=null){ 
         %>
         <script> window.alert("${message}"); </script>
@@ -54,23 +50,22 @@
                 User u = new User();
                 User u2 = u.getUserById(c.getUserId());
         %>
-        <div>
-            <p><%=u2.getFname()%> <%=u2.getLname()%></p>
+        <p><%=u2.getFname()%> <%=u2.getLname()%></p>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%=c.getDetail()%> </p>
             <p><%=c.getLikeCount()%>
-            <form action="Like?id=" method="GET">
-                <input type="submit" value="Like">
-            </form>
-                <% if( u2.getUserId() == User.getUser((String)session.getAttribute("user")).getUserId()){ %>
+                <form action="Like?id=" method="GET">
+                    <input type="text" name="foodId" hidden="" value="${food.foodId}">
+                    <input type="submit" value="Like">
+                </form>
+                <% if (session.getAttribute("user")!=null) {
+                    int ppp = User.getUser((String)session.getAttribute("user")).getUserId();
+                    if (u2.getUserId()==ppp) { %>
+                
                 <form action="Delete?id=" method="GET">
                     <input type="submit" value="delete">
                 </form>  
-                
-                <%}%>
-            
-        </p>
-        </div>
+                <% }} %>
         <%}%>
-        
+        </form>
     </body>
 </html>
