@@ -15,6 +15,7 @@ import java.util.ArrayList;
  * @author ยีนส์
  */
 public class Comment {
+    private int commentId;
     private int foodId;
     private String detail;
     private int userId;
@@ -33,6 +34,7 @@ public class Comment {
 
     public Comment(ResultSet rs){
         try {
+            this.commentId = rs.getInt("comment_id");
             this.foodId = rs.getInt("food_id");
             this.userId = rs.getInt("user_id");
             this.detail = rs.getString("comments");
@@ -88,7 +90,7 @@ public class Comment {
     }
     
     public void deleteComment(Comment c){
-        String SQL = "DELETE FROM comment WHERE user_id = ? AND food_id = ?" ;
+        String SQL = "DELETE FROM comment WHERE comment_id = ?" ;
         Connection con = null;
         try {
             con = ConnectionBuilder.getConnection();
@@ -118,6 +120,14 @@ public class Comment {
             System.out.println(e);
         }
         return ac ;
+    }
+
+    public int getCommentId() {
+        return commentId;
+    }
+
+    public void setCommentId(int commentId) {
+        this.commentId = commentId;
     }
     
 }

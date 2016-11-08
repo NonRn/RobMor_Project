@@ -53,15 +53,16 @@
         <p><%=u2.getFname()%> <%=u2.getLname()%></p>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%=c.getDetail()%> </p>
             <p><%=c.getLikeCount()%>
-                <form action="Like?id=" method="GET">
-                    <input type="text" name="foodId" hidden="" value="${food.foodId}">
+                <form action="Like?id=${food.foodId}" method="GET">
+                    <input type="text" name="comId" hidden="" value="<%=c.getCommentId()%>">
                     <input type="submit" value="Like">
                 </form>
                 <% if (session.getAttribute("user")!=null) {
                     int ppp = User.getUser((String)session.getAttribute("user")).getUserId();
                     if (u2.getUserId()==ppp) { %>
                 
-                <form action="Delete?id=" method="GET">
+                <form action="Delete?id=${food.foodId}" method="GET">
+                    <input type="text" name="comId" hidden="" value="<%=c.getCommentId()%>">
                     <input type="submit" value="delete">
                 </form>  
                 <% }} %>

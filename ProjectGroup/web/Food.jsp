@@ -58,7 +58,8 @@
             <p><%=u2.getFname()%> <%=u2.getLname()%></p>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%=c.getDetail()%> </p>
             <p><%=c.getLikeCount()%>
-            <form action="Like?id=" method="GET">
+            <form action="Like?id=${food.foodId}" method="GET">
+                <input type="hidden" value="<%=c.getCommentId()%>" name="com">
                 <input type="submit" value="Like">
             </form>
                 <% if( u2.getUserId() == User.getUser((String)session.getAttribute("user")).getUserId()){ %>
