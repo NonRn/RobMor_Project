@@ -3,7 +3,7 @@
     Created on : Nov 9, 2016, 1:54:35 PM
     Author     : commo
 --%>
-
+<%@taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <head>
     <link rel="stylesheet" type="text/css" href="../css/myStyle.css">
