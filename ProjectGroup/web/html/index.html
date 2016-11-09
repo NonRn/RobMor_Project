@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Robmor</title>
+	<meta charset="UTF-8">
+	<mata name="viewport" content="width=device-width , initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="myStyle.css">
+	<link rel="stylesheet" type="text/css" href="myStyle1.css">
+	
+
+</head>
+<body >
+	<!-- menu -->
+	<div class="nav">
+		<div class="navpic">
+			<a href="index.html"><img class="logo"src="header/header1.png"></a>
+		</div>
+
+		<div class="navcontent">
+			<ul class="navcontent">
+				<li><a class="link" href="food.html">Food</a></li>
+				<li><a class="link" href="dessert.html">Dessert</a></li>
+				<li><a class="link" href="drink.html">Drink</a></li>
+				<li></li>
+				<li><a class="link" href="Javascript:onclick=log()">Login</a></li>
+			</ul>
+			<div style="color: #FFFFFF" id='showId'></div>
+			<div class='login' id="login">
+			<p><input type='text' id='usrname' placeholder="Username"></p>
+			<p><input type='password' id='passw' placeholder="Password"></p>
+			<p><button type="button" onclick="inlog()">login</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- header -->
+	<div id="header">
+		<img class="poster" id="poster" src="poster/poster.jpg">
+
+	</div>
+	
+	<!-- body -->
+	<div class="container">
+		<div class="body">
+			<div class="row">
+				<div class="colum">
+					<div class="caption">
+						<h4>Food</h4>
+						<img src="pic/Hokkaido/hokkaido.jpg " alt="hokkaido" class="picfood">
+						<p>Hokkaido Curry เป็นร้านอาหารญี่ปุ่น แสนลึกลับ ที่รับรองว่าคุ้มค่ากับการดั้นด้นไปกิน อาหารที่นี่จะเน้นเป็นเมนูข้าวแกงกะหรี่เสียส่วนใหญ่ แต่ก็ยังมีหลายแบบให้เลือกสั่ง ไม่ว่าจะเป็น ไก่ซังกิ ไก่โคร๊อคเกะ ที่เข้ากันดีกับน้ำแกงกะหรี่ของทางร้าน ที่เสิร์ฟมาในจานใบใหญ่ เสริมทัพด้วย น้ำชาจากข้าวบาร์เลย์ แสนหอม รีฟิลเพียงแก้วละ 5 บาท ที่ช่วยขับให้รสชาติของอาหารอร่อยขึ้นได้อย่างไม่น่าเชื่อ นอกจากนั้นทางร้านยังมีเมนูขนมหวาน และไอติมรสชาติแปลกใหม่ ที่นำเข้าจากญี่ปุ่นอีกหลายชนิด รอให้ลูกค้าได้เลือกชิมอีกด้วย</p>
+						<a href="food5.html" class="read">อ่านต่อ</a>
+					</div>
+				</div>
+
+				<div class="colum">
+					<div class="caption">
+						<h4>Food</h4>
+						<img src="pic/บ้านกิ้นเส้น/บ้านกินเส้น1.jpg " alt="บ้านกินเส้น" class="picfood">
+						<p>ร้านบ้านกินเส้น เป็นร้านก๋วยเตี๋ยวรูปแบบใหม่ มีการจัดตกแต่งร้านที่สวยงาม แอร์เย็นนั่งสบาย เนื้อที่ในร้านถึงจะไม่ได้กว้างมาก แต่ก็มีการจัดการให้ที่นั่งกระจายกันอย่างพอดิบพอดี ไม่ให้ลูกค้ารู้สึกว่าแน่นจนเกินไป ในส่วนของเมนู มีเมนูก๋วยเตี๋ยวให้เลือกหลายแบบ ทั้งแบบที่เราเลือกสั่งได้เองตามความต้องการ หรือจะสั่งเป็นเซ็ตที่ทางร้านจัดไว้ก็ได้ รสชาติของน้ำซุปจัดกำลังดี เข้มข้น รับรู้ได้ถึงความพิถีพิถันในการปรุง นอกจากนั้นยังมีอาหารว่าง และ น้ำสมุนไพรรสอร่อย ให้ลูกค้าได้สั่งมากินเล่น หรือดับกระหายจากอากาศร้อนๆแบบนี้อีกด้วย</p>
+						<a href="food7.html" class="read">อ่านต่อ</a>
+					</div>
+				</div>
+
+				<div class="colum">
+					<div class="caption">
+						<h4>Food</h4>
+						<img src="pic/โจ๊กเปิดหม้อ/โจ๊ก index.jpg " alt="โจ๊กเปิดหม้อ" class="picfood">
+						<p>ร้านโจ๊กเปิดหม้อสาขาประชาอุทิศ มีจุดเด่นอยู่ตรงที่เราสามารถเลือกเครื่องต่างๆของโจ๊กมาใส่ได้เองตามที่เราต้องการ โดยจะคิดราคาตามจำนวนแต่ละชนิดที่เราเลือกมา อาทิเช่นเนื้อหมู กุ้ง ปลาหมึก หรือไข่ โดยหากผู้ใดไม่ต้องการที่จะเลือกเอง ทางร้านได้มีเมนูที่จัดเป็นเซ็ตไว้เพื่อให้เราเลือกสรรตามที่เราต้องการได้</p><br>
+						<a href="food10.html" class="read">อ่านต่อ</a>
+						<br><br><br><br>
+					</div>
+				</div>
+
+				<div class="colum">
+					<div class="caption">
+						<h4>Dessert</h4>
+						<img src="pic/TheFirst/TheFirst index.jpg" alt="the first" class="picfood">
+						<p>The First Korean Dessert Café เป็นร้านบิงซู น้ำแข็งใส แบบเกาหลี เกล็ดน้ำแข็งรสนม เนื้อสัมผัสนุ่ม กินแล้วรู้สึกละมุนลิ้น อีกทั้งยังมีท็อปปิ้งหลากหลาย ให้เลือกลิ้มชิมรส บริเวณในร้านไม่เล็กไม่ใหญ่ เน้นการตกแต่งไปทางโทนสีขาวสะอาดตา ที่นั่งถูกจัดวางอย่างพอดี แต่ละโต๊ะเว้นระยะห่างไม่ใกล้กันจนเกินไป นอกจากเมนูน้ำแข็งใสแล้ว ที่นี่ยังมีเมนูของคาว อย่าง ต็อกบกกี ให้ได้ลองชิมกันอีกด้วย</p>
+						<br>
+						<a href="dessert1.html" class="read">อ่านต่อ</a>
+						<br><br><br>
+					</div>
+				</div>
+
+				<div class="colum">
+					<div class="caption">
+						<h4>Dessert</h4>
+						<img src="pic/cando/Can Do.jpg " alt="Café Can Do" class="picfood">
+						<p>ร้าน Study Room Café (หรือร้าน Café Can Do) เป็นร้านกาแฟน่านั่ง มีทั้งส่วนอินดอร์และเอาท์ดอร์ ให้เลือกนั่งได้ตามความต้องการด้านในร้าน ให้บรรยากาศอบอุ่น เหมือนอยู่บ้าน มีเกมหลายอย่างให้ลูกค้าเลือกหยิบไปเล่นที่โต๊ะได้ เหมาะสำหรับการมาสังสรรค์เป็นกลุ่ม หรือจะอยากนั่งอ่านหนังสือชิลๆ ทางร้านก็มีหนังสือหลายประเภทให้เลือกอ่านอีกเช่นกัน ในส่วนของอาหาร ที่นี่มีเมนูแนะนำอยู่หลายอย่าง ไม่ว่าจะเครื่องดื่ม หรือของหวานก็ดีไปหมด ในราคาที่ไม่แพงจนเกินไปนัก รับรองได้ว่าถ้าได้ลองมาสักครั้ง จะต้องติดใจอยากกลับมาอีกแน่นอน</p>
+						<a href="dessert3.html" class="read">อ่านต่อ</a>
+					</div>
+				</div>
+
+				<div class="colum">
+					<div class="caption">
+						<h4>Dessert</h4>
+						<img src="pic/โรตีโอ่ง/โรตีโอ่ง.jpg " alt="โรตีโอ่ง" class="picfood">
+						<p>โรตีเป็นอาหารขึ้นชื่อของต่างประเทศในแถบอินเดียหรือปากีสถาน ที่นิยมทานแผ่นโรตีแทนข้าว โดยทานคู่กับแกงต่างๆ จำพวกแกงไก่ แกงเนื้อ รสชาติอร่อยหวานมัน ร้านโรตีโอ่งนี้ก็เช่นกัน มีเมนูโรตีมากมายหลากหลายที่บางท่านอาจจะไม่เคยได้ยิน เช่นนานชีส (แผ่นโรตีใส่ชีส) พาทาร่า (แผ่นโรตีแป้งหนา) จาปาตี (แผ่นโรตีแป้งบาง) รับประมานคู่กับแกงสูตรเด็ดของทางร้าน นอกจากนี้ยังมีเมนูของหวานที่รสชาติอร่อยน่าลองไม่แพ้กัน คือ คัสตาร์ด และ ซูยี (ทำมาจากข้าว) เมนูเครื่องดื่มที่แนะนำของร้านนี้คือโยเกิร์ตปั่น ซึ่งทางร้านทำขึ้นมาเองเป็นสูตรเฉพาะ</p>
+						<a href="dessert7.html" class="read">อ่านต่อ</a>
+					</div>
+				</div>
+
+				<div class="colum">
+					<div class="caption">
+						<h4>Drink</h4>
+						<img src="pic/ลุงหนุ่ม/ลุงหนุ่ม index.jpg" alt="ลุงหนุ่ม" class="picfood">
+						<p>ร้านลุงหนุ่มเป็นร้านขายน้ำปั่น หอม หวานชื่นใจ มีน้ำหลายชนิด และหลายราคาให้เลือก นอกจากในส่วนของเครื่องดื่มแล้ว ทางร้านยังมีทาโกยากิ ลูกใหญ่ ที่ทางร้านจะราดซอสให้จนฉ่ำ กินคู่กับสาหร่ายกรอบ อร่อยเข้ากันดี จุดเด่นของร้านนี้ นอกจากเรื่องอาหารแล้ว ยังมีเรื่องของอัธยาศัยที่ดีของผู้ขาย และหลายกิจกรรมที่ทางร้านจัดขึ้นเพื่อให้ลูกค้าร่วมสนุก ทำให้ลูกค้าอดไม่ได้ที่จะประทับใจ ต้องพาตัวเองแวะเวียนกลับมาซื้ออยู่อีกบ่อยๆ</p>
+						<br>
+						<a href="drink1.html" class="read">อ่านต่อ</a>
+						<br><br><br>
+					</div>
+				</div>
+
+				<div class="colum">
+					<div class="caption">
+						<h4>Drink</h4>
+						<img src="pic/เก่าโกปี/เก่าโกปี1.jpg" alt="เก่าโกปี" class="picfood">
+						<p>ร้านน้ำชา กาแฟ และนม ที่เป็นขวัญใจของนักศึกษาม.พระจอมเกล้าธนบุรี หากถามใครๆก็คงหนีไม่พ้นร้านเก่าโกปี ซึ่งเป็นร้านที่ตกแต่งและมีบรรยากาศน่าสนใจ เหมือนร้านขายกาแฟในสมัยก่อน แหล่งรวมเหล่าวัยรุ่นยามเย็น ทีไปเมื่อไหร่เป็นต้องเจอคนแน่นขนัดในทุกครั้ง มีเมนูให้เลือกทานมากมาย เช่นนมปั่น โกโก้ปั่น กาแฟ โรตี หรือขนมปังปิ้ง ในราคาประมาณ 20 -40 บาท และมีน้ำชารสชาติอร่อยบริการไว้ให้ทานฟรี อีกทั้งสามารถสั่งอาหารจากร้านข้างเคียงเข้ามานั่งรับประทานอาหารได้ด้วย</p>
+						<br>
+						<a href="drink3.html" class="read">อ่านต่อ</a>
+						<br><br>
+					</div>
+				</div>
+
+				<div class="colum">
+					<div class="caption">
+						<h4>Drink</h4>
+						<img src="pic/SomePlace/Some place.jpg" alt="Some place" class="picfood">
+						<p>ร้าน Some place เป็นร้านกาแฟขนาดเล็กที่ตกแต่งสวยงามน่านั่ง ตั้งอยู่ข้างอู่ซ่อมรถ ลูกค้าส่วนใหญ่จึงเป็นลูกค้าจากอู่ที่มานั่งรอค่าเวลาในขณะที่รถยังซ่อมไม่เสร็จ สามารถนั่งได้นานเงียบสงบ เหมาะแก่การอ่านหนังสือ ในส่วนของอาหารจะมีขนมปังปิ้ง รสชาติอร่อย หวานนม ไม่แข็งมาก กับเมนูชาและกาแฟ ราคาไม่แพงมากนัก </p>
+						<a href="drink7.html" class="read">อ่านต่อ</a>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div>
+	<div class="rew">
+	<fieldset align='center'><legend><h2> รีวิวโดยผู้เยี่ยมชม </h2></legend>
+	<table align='center'>
+	<tr>
+	<td>
+	<form align='center' method='POST' target="_self">
+	
+	<p><input type='text' placeholder="ชื่อร้านค้า" id='name' required>     
+	<input type='text' placeholder="เมนูที่จะแนะนำ" id='userfood' required></p>
+	<!--<p>รูปภาพ(ถ้ามี) ...<input type='file' accept="image/*" id='userPic'></p>-->
+	<p><textarea rows='10' cols='45' placeholder="บรรยาย" id="areaReview" wrap="hard"></textarea></p>
+	<p>ให้คะแนน <input type="radio" value="1" name='star'>1 
+	<input type="radio" value="2" name='star'>2 <input type="radio" value="3" name='star'>3
+	<input type="radio" value="4" name='star'>4 <input type="radio" value="5" name='star'>5
+	<span> </span>
+	<button type="button" onclick="sub()">ส่ง </button> </p>
+	</form>
+	</td>
+	<td id='u'>
+		<div class="colum">
+			<div class="caption">
+				<h4 id='nn'></h4>
+				<!--<img src="" class="picfood" id='picfood'>-->
+				<h5 id='ff'></h5>
+				<p id='area'></p>
+				<p id='stRate' align="center"></p>
+			</div>
+		</div>
+	</td>
+	</tr>
+	</table>
+	</fieldset>
+	</div>
+	<br>
+
+	<!-- script -->
+	<script type="text/javascript">
+		function sub(){
+			document.getElementById('u').style.display = 'inline' ; 
+			//window.alert("222")	;
+			var na = document.getElementById('name').value ;
+			var fo = document.getElementById('userfood').value ;
+			var ar = document.getElementById('areaReview').value ;
+			var rate = document.getElementsByName('star') ;			
+			for (i = 0; i < rate.length ; i++) {        		
+        		if (rate[i].checked) {
+            		rate = rate[i].value;
+       			}
+  		 	}
+  		 	document.getElementById('nn').innerHTML = na ;
+  		 	document.getElementById('ff').innerHTML = "Menu : "+fo ;
+  		 	document.getElementById('area').innerHTML = ar ;
+  		 	if (rate == 1) {
+  		 		document.getElementById('stRate').innerHTML = "♥" ;
+  		 	}
+  		 	if (rate == 2) {
+  		 		document.getElementById('stRate').innerHTML = "♥ ♥" ;
+  		 	}
+  		 	if (rate == 3) {
+  		 		document.getElementById('stRate').innerHTML = "♥ ♥ ♥" ;
+  		 	}
+  		 	if (rate == 4) {
+  		 		document.getElementById('stRate').innerHTML = "♥ ♥ ♥ ♥" ;
+  		 	}
+  		 	if (rate == 5) {
+  		 		document.getElementById('stRate').innerHTML = "♥ ♥ ♥ ♥ ♥" ;
+  		 	}
+  		 	//document.getElementById('picfood').src = document.getElementById('userPic').value ;
+  		 	//window.alert(document.getElementById('userPic').value);
+		}
+		function log(){
+			document.getElementById('login').style.display = 'inline' ;
+
+		}
+		function inlog(){
+			if (document.getElementById('usrname').value === 'WebTech' && document.getElementById('passw').value === 'INT106'){
+				document.getElementById('showId').innerHTML = "ID : " + document.getElementById('usrname').value ;
+				document.getElementById('login').style.display = 'none' ;
+				window.alert("Login success");
+			} else if (document.getElementById('usrname').value === '581305000xx' && document.getElementById('passw').value === '123456789'){
+				document.getElementById('showId').innerHTML = "ID : " + document.getElementById('usrname').value ;
+				document.getElementById('login').style.display = 'none' ;
+				window.alert("Login success");
+			} else if (document.getElementById('usrname').value === 'Information Techlonogy' && document.getElementById('passw').value === 'SIT21TH'){
+				document.getElementById('showId').innerHTML = "ID : " + document.getElementById('usrname').value ;
+				document.getElementById('login').style.display = 'none' ;
+				window.alert("Login success");
+			} else if (document.getElementById('usrname').value === 'Robmor' && document.getElementById('passw').value === 'Robmor'){
+				document.getElementById('showId').innerHTML = "ID : " + document.getElementById('usrname').value ;
+				document.getElementById('login').style.display = 'none' ;
+				window.alert("Login success");
+			} else {
+				document.getElementById('login').style.display = 'none' ;
+				window.alert("Unsuccess");
+			}		
+		}
+		function floatShow(n) {
+			var x = document.getElementById("adLay");
+			setTimeout(function(){x.style.opacity=0.9}, 50);
+			setTimeout(function(){x.style.opacity=0.8}, 100);
+	setTimeout(function(){x.style.opacity=0.7}, 200);
+	setTimeout(function(){x.style.opacity=0.6}, 400);
+	setTimeout(function(){x.style.opacity=0.5}, 600);
+	setTimeout(function(){x.style.opacity=0.4}, 800);
+	setTimeout(function(){x.style.opacity=0.3}, 1000);
+	setTimeout(function(){x.style.opacity=0.2}, 1200);
+	setTimeout(function(){x.style.opacity=0.1}, 1400);
+	setTimeout(function(){x.style.opacity=0.0}, 1600);
+}
+function show(){
+	var x = document.getElementById("adLay");
+	setTimeout(function(){x.style.opacity=0.1}, 100);
+	setTimeout(function(){x.style.opacity=0.2}, 200);
+	setTimeout(function(){x.style.opacity=0.3}, 300);
+	setTimeout(function(){x.style.opacity=0.4}, 400);
+	setTimeout(function(){x.style.opacity=0.5}, 500);
+	setTimeout(function(){x.style.opacity=0.6}, 600);
+	setTimeout(function(){x.style.opacity=0.7}, 700);
+	setTimeout(function(){x.style.opacity=0.8}, 800);
+	setTimeout(function(){x.style.opacity=0.9}, 900);
+	setTimeout(function(){x.style.opacity=1}, 1000);
+}
+	</script>
+	
+
+	<!-- footer -->	
+	<div class="footer">
+		<table class="container">
+			<tr>
+				<td class="footertext">Copy right &copy 2016 Rob Mor</td>
+				<td class="footertext"><a class="link" href="team.html">About us</a></td>
+				<td class="footertext"><a class="link" href="map.html">Site Map</a></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

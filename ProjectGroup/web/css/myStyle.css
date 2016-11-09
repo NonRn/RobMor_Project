@@ -1,0 +1,156 @@
+@font-face{
+	font-family: 'sukhumvitset';
+	src:url('sukhumvitset.eot');
+	src:url('sukhumvitset.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+#header{
+	margin-bottom: -10px;
+}
+body{
+	margin: 0;
+	font-family: "sukhumvitset";
+	font-size: 10pt;
+	background-color: #fff;
+}
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.nav{
+	height: 60px;
+	text-align: center;
+	background-color: #0B486B;
+	position: fixed;
+	width: 100%;
+}
+.navpic{
+	float: left;
+	margin-left: 30px;
+	margin-right: 5%;	
+}
+.navcontent{
+	list-style: none;
+	margin-right: 5%;
+	text-align: right;
+}
+.navcontent li{
+	font-size: 14pt;
+	display: inline;
+	margin: 15px;
+}
+.logo{
+	height: 55px
+}
+.link{
+	text-decoration: none;
+}
+.readmore{
+	color: #000;
+	text-align: center;
+	text-decoration: none;
+}
+
+a:link{
+	color: #fff;
+}
+a:visited{
+	color: #fff;
+}
+a:hover{
+	color: #f38630;
+}
+a:link.read{
+	color: #000;
+	text-decoration: none;
+	float: right;
+}
+a:visited.read{
+	color: #000;
+}
+a:hover.read{
+	color: #f38630;
+}
+.poster{
+	width: 100%;
+	height: auto;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+.body{
+	/*width: auto%;*/
+	margin-right: 30px;
+	margin-left: 30px;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+h4{
+	text-align: center;
+	margin: 0px;
+	background-color: #f38630;
+	padding: 10px;
+	font-size: 18pt;
+	color: #fff;
+}
+.colum{
+	display: inline-block;
+	text-align: left;
+	width: 365px;
+	margin-top: 20px;
+	float: left;
+	margin-right: 5px;
+	margin-left: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.row{
+	width: 100%;
+	text-align: center;
+	margin-right: -15px;
+	margin-left: -15px;
+	margin-top: 20px;
+}
+.data{
+	font-size: 10pt;
+}
+.caption{
+	padding-right: 15px;
+	padding-left: 15px;
+	float: left;
+	width: 100%;
+	margin-bottom: 50px;
+
+}
+
+.picfood{
+	width: 100%;	
+}
+.footer{
+	text-align: center;
+	background-color: #0B486B;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	clear: both;
+	
+}
+.footertext{
+	color: #fff;
+	padding-left: 50px;
+	padding-right: 50px;
+	font-size: 14pt;
+}
+#u {
+	display: none ;
+}
+#stRate {
+	font-size: 15pt;
+}
+#area {
+	width: 100% ;
+}
+.rew {
+	clear: both ;
+}
