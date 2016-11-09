@@ -9,11 +9,17 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="../css/myStyle.css">
+        <link rel="stylesheet" type="text/css" href="../css/myStyle1.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Home Page</title>
     </head>
     <body>
-
+        <jsp:include page="../jsp/Header.jsp"/>
+        <div id="header">
+            <img class="poster" id="poster" src="../pic/poster/poster.jpg">
+	</div>
+       
         <% if(session.getAttribute("user")==null){ %>
         <a href="Login.jsp">Login</a><br>
         <%}%>
@@ -28,5 +34,6 @@
         <h2>Food ::</h2>
         <jsp:include page="../jsp/ListFood.jsp"></jsp:include>
         <hr>
+        <jsp:include page="../jsp/Footer.jsp"></jsp:include>
     </body>
 </html>
