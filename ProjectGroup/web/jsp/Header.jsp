@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../css/myStyle.css">
     <link rel="stylesheet" type="text/css" href="../css/myStyle1.css">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>RobMor</title>
+    
 </head>
 
 <div class="nav">
@@ -22,7 +22,7 @@
             <li><a class="link" href="food.html" >Food</a></li>
             <li><a class="link" href="dessert.html">Dessert</a></li>
             <li><a class="link" href="drink.html">Drink</a></li>
-            <li></li>	
+            	
         </ul>
     </div>
 </div>
