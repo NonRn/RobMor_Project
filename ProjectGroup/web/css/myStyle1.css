@@ -1,0 +1,104 @@
+.aside{
+	float: left;
+	background-color: #666;
+	color: #fff;
+	padding: 30px;
+	height: 100%;
+	width:15%;
+}
+.headaside{
+	font-size: 18pt;
+
+}
+.sidebar{
+	padding: 15px;
+	font-size: 14pt;
+	float: none;
+	list-style: none;
+	width:100%;
+}
+.format{
+	padding: 10px;
+}
+a:link.test1{
+	color: #fff;
+	text-decoration: none;
+	text-align: center;
+}
+a:visited.test1{
+	color: #fff;
+}
+a:hover.test1{
+	color: #f38630;
+}
+.section{
+	text-align: center;
+	width: 75%;
+	padding: 2.625%;
+	float: right;
+}
+.colum1{
+	display: inline-block;
+	width: 365px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-right: 5px;
+	margin-left: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top:80px;
+}
+.section-caption{
+	text-align: justify;
+	padding-bottom: 50px;
+    padding-top: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+a:link.map{
+	color: #000;
+	text-decoration:none;
+}
+a:visited.map{
+	color: #000;
+}
+a:hover.map{
+	color: #f38630;
+}
+.colum-map{
+	display: inline-block;
+    width: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 5px;
+    margin-left: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+
+}
+.row-map{
+	text-align: center;
+}
+.head-map{
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
+.login {
+	background-color: #FFFFFF;
+	z-index: 99 ;
+	display: none;
+	margin: 10px ; 
+}
+.adFloat {
+	display:block;
+	position:fixed;
+	visibility:visible;
+	height:auto;
+	width:auto;
+	left:180;
+	top:100;
+	opacity:0 ;
+	margin-top: 200px ;
+	margin-left: 100px ;
+	}
