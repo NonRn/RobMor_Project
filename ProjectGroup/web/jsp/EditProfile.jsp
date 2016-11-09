@@ -12,6 +12,7 @@
         <title>EditProfile Page</title>
     </head>
     <body>
+        <jsp:include page="Header.jsp"/>
         <h1>Edit Profile :: </h1> <hr>
         <form action="EditUser" Method="GET">
         <table>
