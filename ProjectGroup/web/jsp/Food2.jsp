@@ -67,8 +67,9 @@
                         int ppp = User.getUser((String) session.getAttribute("user")).getUserId();
                         if (u2.getUserId() == ppp) {%>
 
-        <form action="Delete?id=${food.foodId}" method="GET">
+        <form action="DC" method="GET"> <!-- DC = Delete Comment -->
             <input type="text" name="comId" hidden="" value="<%=c.getCommentId()%>">
+            <input type="text" name="id" hidden="" value="${food.foodId}">
             <input type="submit" value="delete">
         </form>  
         <% }
