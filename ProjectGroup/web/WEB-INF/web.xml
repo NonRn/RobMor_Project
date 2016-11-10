@@ -99,6 +99,7 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
+        <welcome-file>Index.jsp</welcome-file>
         <welcome-file>jsp/Index.jsp</welcome-file>
     </welcome-file-list>
 </web-app>
