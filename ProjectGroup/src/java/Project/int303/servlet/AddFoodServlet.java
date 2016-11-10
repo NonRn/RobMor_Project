@@ -38,12 +38,7 @@ public class AddFoodServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
         String message = "";
-<<<<<<< HEAD
-        System.out.println("111111");
-        if (request.getParameter("fromrest")!=null){
-=======
         if (request.getParameter("fromrest") != null) {
->>>>>>> 628f114b24ccbb8a54a869a102a75cf13add1cca
             Restaurant r = new Restaurant();
             r.setName(request.getParameter("name"));
             r.setAddress(request.getParameter("address"));
