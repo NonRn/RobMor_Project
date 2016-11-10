@@ -48,7 +48,7 @@ public class LoginServlet extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
             response.addCookie(ck);
-            getServletContext().getRequestDispatcher("/jsp/index.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/jsp/Index.jsp").forward(request, response);
             return;
         } else {
                     // Hi

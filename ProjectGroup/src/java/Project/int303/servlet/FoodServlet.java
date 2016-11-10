@@ -50,7 +50,7 @@ public class FoodServlet extends HttpServlet {
         request.setAttribute("food", f);
         request.setAttribute("OldRate", r);
         request.setAttribute("ArComment", ac);
-        getServletContext().getRequestDispatcher("/Food2.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/jsp/Food2.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

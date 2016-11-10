@@ -2,6 +2,17 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/ยีนส์/Documents/Project/ProjectGroup/src/java/Project/int303/servlet/LoginServlet.java</file>
+            <file>file:/C:/Users/ยีนส์/Documents/Project/ProjectGroup/web/jsp/Register.jsp</file>
+            <file>file:/C:/Users/ยีนส์/Documents/Project/ProjectGroup/src/java/Project/int303/servlet/SearchFoodServlet.java</file>
+            <file>file:/C:/Users/ยีนส์/Documents/Project/ProjectGroup/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/ยีนส์/Documents/Project/ProjectGroup/web/jsp/SearchFood.jsp</file>
+            <file>file:/C:/Users/ยีนส์/Documents/Project/ProjectGroup/web/jsp/Index.jsp</file>
+            <file>file:/C:/Users/ยีนส์/Documents/Project/ProjectGroup/web/jsp/Login.jsp</file>
+            <file>file:/C:/Users/ยีนส์/Documents/Project/ProjectGroup/web/jsp/Header.jsp</file>
+            <file>file:/C:/Users/ยีนส์/Documents/Project/ProjectGroup/web/html/drink4.html</file>
+            <file>file:/C:/Users/ยีนส์/Documents/Project/ProjectGroup/src/java/Project/int303/servlet/RegisterUserServlet.java</file>
+        </group>
     </open-files>
 </project-private>

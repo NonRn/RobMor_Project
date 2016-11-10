@@ -14,10 +14,15 @@
         <title>Add Food Page</title>
     </head>
     <body>
+        <jsp:include page="../jsp/Header.jsp"/>
+        <div id="header">
+            <img class="poster" id="poster" src="pic/poster/poster.jpg">
+        </div>
+        <div style="margin-bottom: 5%"></div>
         <h1>Add Food ::</h1><hr>
         <script>
-            function j(){
-                window.location.assign("/ProjectGroup/AddRest.jsp");
+            function j() {
+                window.location.assign("/ProjectGroup/jsp/AddRest.jsp");
             }
         </script>
         <form enctype="multipart/form-data" action="AddFood" method="POST">
@@ -30,21 +35,24 @@
             </select><br>
             Restaurant : <select name="restaurant">
                 <option> </option>
-            <% 
-                ArrayList<Restaurant> ars = (ArrayList)request.getAttribute("rest"); 
-                for(Restaurant r : ars) { 
-            %>
-            <option value="<%=r.getName()%>"><%=r.getName()%></option>    
-            <%}%>
+                <%
+                    ArrayList<Restaurant> ars = (ArrayList) request.getAttribute("rest");
+                    for (Restaurant r : ars) {
+                %>
+                <option value="<%=r.getName()%>"><%=r.getName()%></option>    
+                <%}%>
             </select><input type="button" value="Add Restaurant" onclick="j()"> <br>
             Detail : <textarea rows='3' cols='45' placeholder="บรรยาย" wrap="hard" name="detail"></textarea><br>
             Picture : <input type="file" name="picture"><br><br>
             <input type="submit"><hr>
         </form>
-            <% 
-            if((!(request.getAttribute("message").equals(""))) && request.getAttribute("message")!=null ){ 
+        <%
+            if ((!(request.getAttribute("message").equals(""))) && request.getAttribute("message") != null) {
         %>
-        <script> window.alert("${message}"); </script>
+        <script> window.alert("${message}");</script>
         <%}%>
+        <jsp:include page="../jsp/ListFood.jsp"></jsp:include>
+            <hr>
+        <jsp:include page="../jsp/Footer.jsp"></jsp:include>
     </body>
 </html>

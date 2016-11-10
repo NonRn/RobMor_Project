@@ -14,20 +14,24 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <jsp:include page="../jsp/Header.jsp"/><br><br><br><br>
+        <jsp:include page="../jsp/Header.jsp"/>
+        <div id="header">
+            <img class="poster" id="poster" src="pic/poster/poster.jpg">
+        </div>
+        <div style="margin-bottom: 5%"></div>
         <%
-        List<Food> foods = (List)request.getAttribute("foods");
-        String msg = (String)request.getAttribute("msg");
+            List<Food> foods = (List) request.getAttribute("foods");
+            String msg = (String) request.getAttribute("msg");
         %>
         <h1>Food List</h1>
         <form action="SearchFoodServlet" method="get">
             <input type="text" name="search">ค้นหา <br>
             <input type="submit" value="Enter">
         </form>
-        
-        <%if(foods!=null){%>
+
+        <%if (foods != null) {%>
         <table>
-            <% for(Food f:foods){%>
+            <% for (Food f : foods) {%>
             <tr>
                 <td><%=f.getFoodId()%></td>
                 <td><%=f.getFoodName()%></td>
@@ -37,9 +41,11 @@
             </tr>
             <%}%>
         </table>
-        <%}else{%>
+        <%} else {%>
         <%=msg%>
         <%}%>
-        
+        <jsp:include page="../jsp/ListFood.jsp"></jsp:include>
+            <hr>
+        <jsp:include page="../jsp/Footer.jsp"></jsp:include>
     </body>
 </html>

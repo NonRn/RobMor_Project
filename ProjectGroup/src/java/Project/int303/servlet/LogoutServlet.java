@@ -41,7 +41,7 @@ public class LogoutServlet extends HttpServlet {
                 response.addCookie(cr);
             }
         }
-        getServletContext().getRequestDispatcher("/Index.jsp").include(request, response);
+        getServletContext().getRequestDispatcher("/jsp/Index.jsp").include(request, response);
         try (PrintWriter out = response.getWriter()) {
             out.print("<script>window.alert(\"logout\")</script>");
         }

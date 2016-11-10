@@ -62,7 +62,7 @@ public class LikeServlet extends HttpServlet {
             request.setAttribute("message", message);
             getServletContext().getRequestDispatcher("/Food?id="+Integer.parseInt(request.getParameter("id"))).forward(request, response);
         } else {
-            getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/jsp/Login.jsp").forward(request, response);
         }
     }
 
