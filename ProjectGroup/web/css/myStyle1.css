@@ -86,9 +86,7 @@ a:hover.map{
 }
 .login {
 	background-color: #FFFFFF;
-	z-index: 99 ;
-	display: none;
-	margin: 10px ; 
+	text-align: center; 
 }
 .adFloat {
 	display:block;

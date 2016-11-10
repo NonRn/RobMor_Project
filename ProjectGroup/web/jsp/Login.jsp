@@ -4,6 +4,10 @@
     Author     : Ratchanon
 --%>
 
+    <body background="pic/poster/poster7.jpg" >
+        <jsp:include page="../jsp/Header.jsp"/>
+        <br><br><br><br><br>
+ 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -11,15 +15,18 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login Page</title>
     </head>
-    <body>
-        <js
-        <h1>Login ::</h1><hr>
-        <form action="Login" method="GET">
-        username : <input type="text" value="${param.username}" name="username" required=""><br>
-        password : <input type="password" name="password" required=""<br>
-        <input type="submit">
-        </form>
-        ${message}<br>
-        <a href="/Forgotpass.jsp"> Forgot Password </a>
+    
+    <div class="form">
+         <h1 style="color: #fff">Login </h1><br><br>
+            <form action="Login" method="GET">
+                <h2 style="color: #fff" class="login-input">Username :
+                    <input type="text" value="${param.username}" name="username" class="block" placeholder=" Username" style="color: #000"></h2> 
+                <h2 style="color: #fff" class="login-input">Password : &nbsp
+                    <input type="password" name="password"  class="block" placeholder=" Password" style="color: #000"></h2><br><br>
+                    <input type="submit" class="block" value="Submit"><br><br>
+                <a href="jsp/Register.jsp">Register</a>
+            </form>
+    </div>        
+ 
     </body>
 </html>

@@ -12,7 +12,7 @@ body{
 	margin: 0;
 	font-family: "sukhumvitset";
 	font-size: 10pt;
-	background-color: #ff3333;
+	background-color: #fff;
 }
 .container {
     padding-right: 15px;
@@ -26,13 +26,16 @@ body{
 	background-color: #0B486B;
 	position: fixed;
 	width: 100%;
+        z-index: 999;
 }
 .navpic{
 	float: left;
 	margin-left: 30px;
-	margin-right: 5%;	
+	margin-right: 5%;
+        z-index: 999;
 }
 .navcontent{
+        margin-top: 15px;
 	list-style: none;
 	margin-right: 5%;
 	text-align: right;
@@ -133,7 +136,8 @@ h4{
 	background-color: #0B486B;
 	padding-top: 20px;
 	padding-bottom: 20px;
-	clear: both;
+	clear: both;      
+        width: 100%;
 	
 }
 .footertext{
@@ -142,6 +146,14 @@ h4{
 	padding-right: 50px;
 	font-size: 14pt;
 }
+.login{
+    text-align: center;
+    width: 100%;
+    margin-left: 10%;
+  
+    
+}
+
 #u {
 	display: none ;
 }
@@ -154,3 +166,18 @@ h4{
 .rew {
 	clear: both ;
 }
+.form{
+    text-align: center;
+    padding-bottom: 10%;
+    padding-top: 9%;
+}
+.login-input{
+    font-size: 14pt;
+}
+
+
+/*boostap*/
+.col-md-4{
+    width: 35%;
+}
+

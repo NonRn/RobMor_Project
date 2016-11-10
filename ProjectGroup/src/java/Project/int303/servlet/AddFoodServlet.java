@@ -38,8 +38,12 @@ public class AddFoodServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
         String message = "";
+<<<<<<< HEAD
         System.out.println("111111");
         if (request.getParameter("fromrest")!=null){
+=======
+        if (request.getParameter("fromrest") != null) {
+>>>>>>> 628f114b24ccbb8a54a869a102a75cf13add1cca
             Restaurant r = new Restaurant();
             r.setName(request.getParameter("name"));
             r.setAddress(request.getParameter("address"));
@@ -47,37 +51,37 @@ public class AddFoodServlet extends HttpServlet {
             r.addRest(r);
             message = "Add Restaurant Complete";
             request.setAttribute("message", message);
-            getServletContext().getRequestDispatcher("/AddRest.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/jsp/AddRest.jsp").forward(request, response);
             return;
         }
-        if (session.getAttribute("user")!=null){
-            if (request.getParameter("name")!=null) { 
-                Food f = new Food(); 
+        if (session.getAttribute("user") != null) {
+            if (request.getParameter("name") != null) {
+                Food f = new Food();
                 f.setFoodName(request.getParameter("name"));
                 f.setPrice(request.getParameter("price"));
                 f.setType(request.getParameter("type"));
                 f.setRestuarant(request.getParameter("restaurant"));
                 f.setDetail(request.getParameter("detail"));
-                f.setWriter((String)session.getAttribute("user"));
+                f.setWriter((String) session.getAttribute("user"));
                 int id = f.addFood(f);
                 Part picturePart = request.getPart("picture");
-                picturePart.write(id+".png");
+                picturePart.write(id + ".png");
                 message = "Add Food Complete";
                 request.setAttribute("message", message);
                 ArrayList<Restaurant> ar = Restaurant.findRest();
                 request.setAttribute("rest", ar);
-                getServletContext().getRequestDispatcher("/AddFood.jsp").forward(request, response);
+                getServletContext().getRequestDispatcher("/jsp/AddFood.jsp").forward(request, response);
                 return;
             } else {
                 ArrayList<Restaurant> ar = Restaurant.findRest();
                 request.setAttribute("rest", ar);
                 request.setAttribute("message", message);
-                getServletContext().getRequestDispatcher("/AddFood.jsp").forward(request, response);
+                getServletContext().getRequestDispatcher("/jsp/AddFood.jsp").forward(request, response);
                 return;
             }
         } else {
-            getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
-        } 
+            getServletContext().getRequestDispatcher("/jsp/Login.jsp").forward(request, response);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

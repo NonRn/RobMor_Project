@@ -9,21 +9,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="../css/myStyle.css">
-        <link rel="stylesheet" type="text/css" href="../css/myStyle1.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Home Page</title>
     </head>
     <body>
         <jsp:include page="../jsp/Header.jsp"/>
         <div id="header">
-            <img class="poster" id="poster" src="../pic/poster/poster.jpg">
+            <img class="poster" id="poster" src="pic/poster/poster.jpg">
 	</div>
+        <div style="margin-bottom: 5%"></div>
        
         <% if(session.getAttribute("user")==null){ %>
-        <a href="Login.jsp">Login</a><br>
+        <a href="Login">Login</a><br>
         <%}%>
-        <a href="Register.jsp">Register</a><br>
+        <a href="jsp/Register.jsp">Register</a><br>
         <a href="SearchFoodServlet">Search Food</a><br>
         <a href="EditUser">Edit Profile</a><br>
         <a href="AddFood">Add Food</a><br>
