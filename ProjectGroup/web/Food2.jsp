@@ -27,7 +27,10 @@
         ${food.detail}<br>
         ${food.rating}<br>
         .
-        .
+        <form action="Favorite" method="get">
+             <input type="text" name="foodId" hidden="" value="${food.foodId}">
+             <input type="submit" value="Favorite">
+        </form>
         .
         <br>
         <br>

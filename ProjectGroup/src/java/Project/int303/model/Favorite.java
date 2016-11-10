@@ -7,6 +7,8 @@ package Project.int303.model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
 /**
  *
@@ -15,11 +17,45 @@ import java.sql.PreparedStatement;
 public class Favorite {
     private int foodId;
     private int userId;
-    private int myLating;
+    private int myRating;
 
     public Favorite() {
     }
 
+    public Favorite(int foodId, int userId) {
+        this.foodId = foodId;
+        this.userId = userId;
+        String SQL = "INSERT INTO favorite (user_id,food_id) values(?,?)";
+        Connection con = ConnectionBuilder.getConnection();
+        try {
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.setInt(1, userId);
+            ps.setInt(2, foodId);
+            ps.executeUpdate();
+            con.close();
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
+
+    public Favorite(int foodId, int userId, int myRating) {
+        this.foodId = foodId;
+        this.userId = userId;
+        this.myRating = myRating;
+        String SQL = "INSERT INTO favorite (user_id,food_id,my_rating) values(?,?,?)";
+        Connection con = ConnectionBuilder.getConnection();
+        try {
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.setInt(1, userId);
+            ps.setInt(2, foodId);
+            ps.setInt(3, myRating);
+            ps.executeUpdate();
+            con.close();
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
+    
     public int getFoodId() {
         return foodId;
     }
@@ -36,41 +72,48 @@ public class Favorite {
         this.userId = userId;
     }
 
-    public int getMyLating() {
-        return myLating;
+    public int getMyRating() {
+        return myRating;
     }
 
-    public void setMyLating(int myLating) {
-        this.myLating = myLating;
+    public void setMyRating(int myRating) {
+        this.myRating = myRating;
     }
-    
-    public void addFavorite(Favorite f){
-        String sql = "insert into favorite (client_id,food_id,my_rating) value(?,?,?)";
-        Connection conn = null ;
-        try {
-            conn = ConnectionBuilder.getCon();
-            PreparedStatement ps = conn.prepareStatement(sql);
-            ps.setInt(1, f.getUserId());
-            ps.setInt(2, f.getFoodId());
-            ps.setInt(3, f.getMyLating());
-            ps.executeUpdate();
-            conn.close();
-        } catch (Exception e){
-            System.out.println(e);
-        }
-    }
-    public void deleteFavorite(Favorite f){
+
+    public void deleteFavorite(int userId,int foodId){
         String SQL = "DELETE FROM favorite WHERE user_id = ? AND food_id = ?" ;
         Connection con = null;
         try {
             con = ConnectionBuilder.getConnection();
             PreparedStatement ps = con.prepareStatement(SQL);
-            ps.setInt(1, f.getUserId());
-            ps.setInt(2, f.getFoodId());
+            ps.setInt(1, userId);
+            ps.setInt(2, foodId);
             ps.executeUpdate() ;
             con.close();
         } catch (Exception e){
             System.out.println(e);
         }
+    }
+    
+    public static ArrayList<Favorite> getFavoriteByUserId(int userId){
+        String SQL = "SELECT * FROM favorite WHERE user_id = "+userId ;
+        Connection con = ConnectionBuilder.getConnection();
+        ArrayList<Favorite> af = new ArrayList();
+        try {
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                Favorite f = new Favorite();
+                f.setFoodId(rs.getInt("food_id"));
+                f.setUserId(rs.getInt("user_id"));
+                f.setMyRating(rs.getInt("my_rating"));
+                af.add(f);
+            }
+            con.close();
+            return af ;
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return null ;
     }
 }
