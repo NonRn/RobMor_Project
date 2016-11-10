@@ -45,12 +45,12 @@ public class LoginServlet extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
             response.addCookie(ck);
-            getServletContext().getRequestDispatcher("/Index.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/jsp/index.jsp").forward(request, response);
             return;
         } else {
             message = "Incorrect username or password";
             request.setAttribute("message", message);
-            getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/jsp/Login.jsp").forward(request, response);
             return;
         }
     }

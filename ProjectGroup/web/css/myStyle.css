@@ -15,7 +15,6 @@ body{
 	background-color: #fff;
 }
 .container {
-    
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
@@ -152,25 +151,7 @@ h4{
   
     
 }
-.form-control{
-    width: 30%;
-}
 
-.form-horizontal{
-    margin-left: 30%;
-}
-.checkbox{
-    margin-left: -70%;
-}
-.btn-default{
-    margin-left: 0%;
-}
-.col-sm-offset-2{
-    margin-left: 24%;
-}
-.col-sm-2 control-label{
-    color: #fff;
-}
 #u {
 	display: none ;
 }
@@ -191,3 +172,10 @@ h4{
 .login-input{
     font-size: 14pt;
 }
+
+
+/*boostap*/
+.col-md-4{
+    width: 35%;
+}
+

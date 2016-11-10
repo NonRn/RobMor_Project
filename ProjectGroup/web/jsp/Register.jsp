@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="../css/myStyle.css">
         <link rel="stylesheet" type="text/css" href="../css/myStyle1.css">
+        <link rel="stylesheet" type="text/css" href="../css/myStyle2.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Register Page</title>
     </head>
@@ -21,8 +22,9 @@
             <img class="poster">
         </div>
         <div style="margin-bottom: 5%"></div>
-        <form class="form-horizontal">
-                <form action="RegisterUser" method="GET">
+        <div>
+        <form class="form-horizontal" >
+                <form action="../RegisterUser" method="GET">
                     <h1 style="text-align: center">Register</h1><hr>
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="fname">First name</label>  
@@ -37,7 +39,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-4 control-label" for="email">Email</label>  
+                        <label class="col-md-4 control-label " for="email">Email</label>  
                         <div class="col-md-4">
                             <input id="email" name="email" type="email" placeholder="Enter your Email Address" class="form-control input-md" required="">
                         </div>
@@ -125,6 +127,7 @@
                             </div>
                         </div>
                 </form>
+            </div>
                 <%
                     if (request.getAttribute("message") != null) { %>
                 <script>

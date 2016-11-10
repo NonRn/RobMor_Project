@@ -14,6 +14,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <jsp:include page="../jsp/Header.jsp"/><br><br><br><br>
         <%
         List<Food> foods = (List)request.getAttribute("foods");
         String msg = (String)request.getAttribute("msg");
