@@ -9,10 +9,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="../css/myStyle.css">
-        <link rel="stylesheet" type="text/css" href="../css/myStyle1.css">
-        <link rel="stylesheet" type="text/css" href="../css/myStyle2.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Register Page</title>
     </head>
@@ -24,7 +20,7 @@
         <div style="margin-bottom: 5%"></div>
         <div>
         <form class="form-horizontal" >
-                <form action="../RegisterUser" method="GET">
+                <form action="RegisterUser" method="GET">
                     <h1 style="text-align: center">Register</h1><hr>
                     <div class="form-group">
                         <label class="col-md-4 control-label" for="fname">First name</label>  

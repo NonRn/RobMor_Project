@@ -12,7 +12,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login Page</title>
     </head>
@@ -24,7 +23,8 @@
                     <input type="text" value="${param.username}" name="username" class="block" placeholder=" Username" style="color: #000"></h2> 
                 <h2 style="color: #fff" class="login-input">Password : &nbsp
                     <input type="password" name="password"  class="block" placeholder=" Password" style="color: #000"></h2><br><br>
-                <input type="submit" class="block" value="Submit">
+                    <input type="submit" class="block" value="Submit"><br><br>
+                <a href="jsp/Register.jsp">Register</a>
             </form>
     </div>        
  
