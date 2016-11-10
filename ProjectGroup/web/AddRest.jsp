@@ -18,7 +18,7 @@
         </div>
         <div style="margin-bottom: 5%"></div>
         <h1>Add Restaurant ::</h1><hr>
-        <form action="../AddFood">
+        <form action="AddFood">
             Name :<input type="text" name="name" required=""><br>
             Address :<textarea rows='10' cols='45' placeholder="ที่อยู่ร้าน" wrap="hard" name="address"></textarea><br>
             Seat :<input type="number" name="seat"> <br>

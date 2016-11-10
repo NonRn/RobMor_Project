@@ -22,7 +22,7 @@
         <h1>Add Food ::</h1><hr>
         <script>
             function j() {
-                window.location.assign("/ProjectGroup/jsp/AddRest.jsp");
+                window.location.assign("/ProjectGroup/AddRest.jsp");
             }
         </script>
         <form enctype="multipart/form-data" action="AddFood" method="POST">

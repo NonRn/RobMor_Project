@@ -16,7 +16,7 @@
 
 <div class="nav">
     <div class="navpic">
-        <a href="/ProjectGroup"><img class="logo" src="pic/header/header1.png"></a>
+        <a href="Index.jsp"><img class="logo" src="pic/header/header1.png"></a>
     </div>
 
     <div class="navcontent">

@@ -65,7 +65,7 @@ public class AddFoodServlet extends HttpServlet {
                 request.setAttribute("message", message);
                 ArrayList<Restaurant> ar = Restaurant.findRest();
                 request.setAttribute("rest", ar);
-                getServletContext().getRequestDispatcher("/jsp/AddFood.jsp").forward(request, response);
+                getServletContext().getRequestDispatcher("/AddFood.jsp").forward(request, response);
                 return;
             } else {
                 ArrayList<Restaurant> ar = Restaurant.findRest();
