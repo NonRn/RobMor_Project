@@ -33,6 +33,8 @@ public class LoginServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        // Hi
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
         String message = "";
@@ -40,6 +42,7 @@ public class LoginServlet extends HttpServlet {
         Login l = new Login();
         l.setUsername(user);
         l.setPassword(request.getParameter("password"));
+                // Hi
         if (l.CheckUser(l)){
             Cookie ck = new Cookie("Id", User.getUser(user).getUserId()+"");
             HttpSession session = request.getSession();
@@ -48,11 +51,14 @@ public class LoginServlet extends HttpServlet {
             getServletContext().getRequestDispatcher("/jsp/index.jsp").forward(request, response);
             return;
         } else {
+                    // Hi
             message = "Incorrect username or password";
             request.setAttribute("message", message);
             getServletContext().getRequestDispatcher("/jsp/Login.jsp").forward(request, response);
             return;
         }
+                // Hi
+                        // Hi
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
