@@ -37,7 +37,6 @@
         <% } else { %>
         <input type="button" class="btn btn-info" value="Back" onclick="history.back();">
         <%}%>
-        <jsp:include page="../jsp/ListFood.jsp"></jsp:include>
             <hr>
         <jsp:include page="../jsp/Footer.jsp"></jsp:include>
     </body>
