@@ -6,6 +6,7 @@
 <%@taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/myStyle.css">
     <link rel="stylesheet" type="text/css" href="css/myStyle1.css">
     <link rel="stylesheet" type="text/css" href="css/myStyle2.css">
@@ -19,7 +20,7 @@
     </div>
 
     <div class="navcontent">
-        <form action="../SearchFoodServlet" method="GET">
+        <form action="SearchFoodServlet" method="GET">
         <ul class="navcontent">
             <li><a class="link" href="food.html" >Food</a></li>
             <li><a class="link" href="dessert.html">Dessert</a></li>

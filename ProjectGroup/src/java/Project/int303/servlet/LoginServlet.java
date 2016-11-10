@@ -57,8 +57,8 @@ public class LoginServlet extends HttpServlet {
             getServletContext().getRequestDispatcher("/jsp/Login.jsp").forward(request, response);
             return;
         }
-                // Hi
-                        // Hi
+        
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
