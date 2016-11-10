@@ -27,6 +27,12 @@
             <li><a class="link" href="drink.html">Drink</a></li>
             <li><input type="text" name="search" class="block"></li>
             <li><input type="submit"  value="Search" class="search-block"></li>
+            
+            <% if(session.getAttribute("user")==null){ %>
+            <li><a class="link" href="Login">Login</a></li>
+            <%}else{%>
+            <li><a class="link" href="Logout">Logout</a></li>
+            <%}%>
             	
         </ul>
         </form>
