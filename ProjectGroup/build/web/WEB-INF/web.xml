@@ -28,7 +28,7 @@
         <servlet-name>AddFoodServlet</servlet-name>
         <servlet-class>Project.int303.servlet.AddFoodServlet</servlet-class>
         <multipart-config>
-            <location>/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/web/pic</location>
+            <location>/C:/Users/ยีนส์/Documents/Project/ProjectGroup/web/pic</location>
         </multipart-config>
     </servlet>
     <servlet>
@@ -99,6 +99,6 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>jsp/Index.jsp</welcome-file>
+        <welcome-file>Index.jsp</welcome-file>
     </welcome-file-list>
 </web-app>
