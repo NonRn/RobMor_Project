@@ -47,8 +47,53 @@ public class RegisterUserServlet extends HttpServlet {
         }
         u.setGender(request.getParameter("gender"));
         u.setTelno(request.getParameter("tel"));
-        Date d = new Date((Integer.parseInt(request.getParameter("year"))-1900),Integer.parseInt(request.getParameter("month")),Integer.parseInt(request.getParameter("day")));
-        u.setDob(d);
+        if ((Integer.parseInt(request.getParameter("year")))%4 == 0 && (Integer.parseInt(request.getParameter("year")))%4 != 0) {
+            if (Integer.parseInt(request.getParameter("month"))==2){
+                if (Integer.parseInt(request.getParameter("day"))<=29){
+                    Date d = new Date((Integer.parseInt(request.getParameter("year"))),Integer.parseInt(request.getParameter("month")),Integer.parseInt(request.getParameter("day")));
+                    u.setDob(d);
+                } else {
+                    message = "Your date of birth is incorrect" ;
+                    request.setAttribute("message", message);
+                    getServletContext().getRequestDispatcher("/jsp/Register.jsp").forward(request, response);   
+                    return;
+                }
+            }
+        } else if (Integer.parseInt(request.getParameter("month"))==2){
+            if ((Integer.parseInt(request.getParameter("year")))%4 == 0 && (Integer.parseInt(request.getParameter("year")))%4 != 0){
+                if (Integer.parseInt(request.getParameter("day"))<=29){
+                    Date d = new Date((Integer.parseInt(request.getParameter("year"))),Integer.parseInt(request.getParameter("month")),Integer.parseInt(request.getParameter("day")));
+                    u.setDob(d);
+                } else {
+                    message = "Your date of birth is incorrect" ;
+                    request.setAttribute("message", message);
+                    getServletContext().getRequestDispatcher("/jsp/Register.jsp").forward(request, response);   
+                    return;
+                }
+            } else if (Integer.parseInt(request.getParameter("day"))<=28){
+                Date d = new Date((Integer.parseInt(request.getParameter("year"))),Integer.parseInt(request.getParameter("month")),Integer.parseInt(request.getParameter("day")));
+                u.setDob(d);
+            } else {
+                message = "Your date of birth is incorrect" ;
+                request.setAttribute("message", message);
+                getServletContext().getRequestDispatcher("/jsp/Register.jsp").forward(request, response);   
+                return;
+            }
+        } else if (Integer.parseInt(request.getParameter("month"))==4 || Integer.parseInt(request.getParameter("month"))==6 || Integer.parseInt(request.getParameter("month"))==9 ||
+                Integer.parseInt(request.getParameter("month"))==11 ){
+            if (Integer.parseInt(request.getParameter("day"))<=30){
+                Date d = new Date((Integer.parseInt(request.getParameter("year"))),Integer.parseInt(request.getParameter("month")),Integer.parseInt(request.getParameter("day")));
+                u.setDob(d);
+            } else {
+                message = "Your date of birth is incorrect" ;
+                request.setAttribute("message", message);
+                getServletContext().getRequestDispatcher("/jsp/Register.jsp").forward(request, response);   
+                return;
+            }            
+        } else {
+            Date d = new Date((Integer.parseInt(request.getParameter("year"))),Integer.parseInt(request.getParameter("month")),Integer.parseInt(request.getParameter("day")));
+            u.setDob(d);
+        }
         if (u.checkUsername(request.getParameter("username"))){
             u.setUsername(request.getParameter("username"));            
         } else {

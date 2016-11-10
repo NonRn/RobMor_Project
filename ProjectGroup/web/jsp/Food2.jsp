@@ -75,8 +75,7 @@
         <% }
                     } %>
         <%}%>
-        <jsp:include page="../jsp/ListFood.jsp"></jsp:include>
-            <hr>
+        <hr>
         <jsp:include page="../jsp/Footer.jsp"></jsp:include>
     </body>
 </html>
