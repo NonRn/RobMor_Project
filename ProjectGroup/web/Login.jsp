@@ -22,7 +22,7 @@
                 <h2 style="color: #fff" class="login-input">Password : &nbsp
                     <input type="password" name="password"  class="block" placeholder=" Password" style="color: #000"></h2><br><br>
                     <input type="submit" class="block" value="Submit"><br><br>
-                <a href="jsp/Register.jsp">Register</a>
+                <a href="Register.jsp">Register</a>
             </form>
     </div>        
  

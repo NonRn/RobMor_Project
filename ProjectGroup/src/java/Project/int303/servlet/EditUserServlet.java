@@ -54,10 +54,10 @@ public class EditUserServlet extends HttpServlet {
             }
             request.setAttribute("user", u);
             request.setAttribute("message", message);
-            getServletContext().getRequestDispatcher("/jsp/EditProfile.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/EditProfile.jsp").forward(request, response);
             return;
         } else{
-            getServletContext().getRequestDispatcher("/jsp/Login.jsp").forward(request,response);
+            getServletContext().getRequestDispatcher("/Login.jsp").forward(request,response);
             return;
         }
     }
