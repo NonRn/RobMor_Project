@@ -26,11 +26,13 @@ body{
 	background-color: #0B486B;
 	position: fixed;
 	width: 100%;
+        z-index: 999;
 }
 .navpic{
 	float: left;
 	margin-left: 30px;
-	margin-right: 5%;	
+	margin-right: 5%;
+        z-index: 999;
 }
 .navcontent{
         margin-top: 15px;

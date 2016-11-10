@@ -28,7 +28,7 @@
         <servlet-name>AddFoodServlet</servlet-name>
         <servlet-class>Project.int303.servlet.AddFoodServlet</servlet-class>
         <multipart-config>
-            <location>/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/web/pic</location>
+            <location>/C:/Users/ยีนส์/Documents/Project/ProjectGroup/web/pic</location>
         </multipart-config>
     </servlet>
     <servlet>
@@ -42,6 +42,10 @@
     <servlet>
         <servlet-name>LikeServlet</servlet-name>
         <servlet-class>Project.int303.servlet.LikeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteCommentServlet</servlet-name>
+        <servlet-class>Project.int303.servlet.DeleteCommentServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>SearchFoodServlet</servlet-name>
@@ -84,6 +88,10 @@
     <servlet-mapping>
         <servlet-name>LikeServlet</servlet-name>
         <url-pattern>/Like</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteCommentServlet</servlet-name>
+        <url-pattern>/DC</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
