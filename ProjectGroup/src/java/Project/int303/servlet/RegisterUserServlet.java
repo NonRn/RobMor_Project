@@ -42,7 +42,7 @@ public class RegisterUserServlet extends HttpServlet {
         } else {
             message = "This email has been use for an account";
             request.setAttribute("message", message);
-            getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);   
+            getServletContext().getRequestDispatcher("/jsp/Register.jsp").forward(request, response);   
             return;
         }
         u.setGender(request.getParameter("gender"));
@@ -54,7 +54,7 @@ public class RegisterUserServlet extends HttpServlet {
         } else {
             message = "Username is duplicate with other person";
             request.setAttribute("message", message);
-            getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);   
+            getServletContext().getRequestDispatcher("/jsp/Register.jsp").forward(request, response);   
             return;
         }
         String password = request.getParameter("pass");
@@ -64,12 +64,12 @@ public class RegisterUserServlet extends HttpServlet {
         } else {
             message = "Confirm password is not same password";
             request.setAttribute("message", message);
-            getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/jsp/Register.jsp").forward(request, response);
             return;
         }
         message = "Register success";
         request.setAttribute("message", message);
-        getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/jsp/Login.jsp").forward(request, response);
             
 //          getServletContext().getRequestDispatcher("/SearchFood.jsp").forward(request, response);
     }
