@@ -46,7 +46,7 @@ public class AddFoodServlet extends HttpServlet {
             r.addRest(r);
             message = "Add Restaurant Complete";
             request.setAttribute("message", message);
-            getServletContext().getRequestDispatcher("/jsp/AddRest.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/AddRest.jsp").forward(request, response);
             return;
         }
         if (session.getAttribute("user") != null) {
@@ -71,11 +71,11 @@ public class AddFoodServlet extends HttpServlet {
                 ArrayList<Restaurant> ar = Restaurant.findRest();
                 request.setAttribute("rest", ar);
                 request.setAttribute("message", message);
-                getServletContext().getRequestDispatcher("/jsp/AddFood.jsp").forward(request, response);
+                getServletContext().getRequestDispatcher("/AddFood.jsp").forward(request, response);
                 return;
             }
         } else {
-            getServletContext().getRequestDispatcher("/jsp/Login.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
         }
     }
 

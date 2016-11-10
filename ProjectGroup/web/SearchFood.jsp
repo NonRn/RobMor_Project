@@ -14,7 +14,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <jsp:include page="../jsp/Header.jsp"/>
+        <jsp:include page="Header.jsp"/>
         <div id="header">
             <img class="poster" id="poster" src="pic/poster/poster.jpg">
         </div>
@@ -45,6 +45,6 @@
         <%=msg%>
         <%}%>
             <hr>
-        <jsp:include page="../jsp/Footer.jsp"></jsp:include>
+        <jsp:include page="Footer.jsp"></jsp:include>
     </body>
 </html>

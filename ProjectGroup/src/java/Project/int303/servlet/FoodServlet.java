@@ -39,7 +39,7 @@ public class FoodServlet extends HttpServlet {
         HttpSession session = request.getSession();
         Cookie[] cks = request.getCookies() ;
         int r =0 ;
-        System.out.println("1111");
+//        System.out.println("1111");
 //        for(Cookie cr : cks) {
 //            if (cr.getName().equals("Rate")) {
 //               r = Integer.parseInt(cr.getValue().substring(0, 1));
@@ -51,7 +51,7 @@ public class FoodServlet extends HttpServlet {
         request.setAttribute("food", f);
         request.setAttribute("OldRate", r);
         request.setAttribute("ArComment", ac);
-        getServletContext().getRequestDispatcher("/jsp/Food2.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/Food2.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
