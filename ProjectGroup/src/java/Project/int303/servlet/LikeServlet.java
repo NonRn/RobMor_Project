@@ -44,12 +44,12 @@ public class LikeServlet extends HttpServlet {
 //        System.out.println(request.getParameter("id"));
         if (session.getAttribute("user")!=null){
             int UID = User.getUser((String)session.getAttribute("user")).getUserId() ;
-        int comId = Integer.parseInt(request.getParameter("comId"));
-        for(Cookie cr : cks) {
-            if (cr.getName().equals("C"+UID+""+comId)) {
-               o = 1;
-            } 
-        }
+            int comId = Integer.parseInt(request.getParameter("comId"));
+            for(Cookie cr : cks) {
+                if (cr.getName().equals("C"+UID+""+comId)) {
+                   o = 1;
+                } 
+            }
             if (o==0){        
                 Comment.like(comId);
                 Cookie c = new Cookie("C"+UID+""+comId, "true");
