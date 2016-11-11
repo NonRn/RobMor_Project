@@ -11,6 +11,8 @@ import Project.int303.model.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -40,10 +42,12 @@ public class ListFavoriteServlet extends HttpServlet {
         String message = "";
         if (session.getAttribute("user")!=null){
             ArrayList<Favorite> af = Favorite.getFavoriteByUserId(User.getUser((String)session.getAttribute("user")).getUserId());
-            ArrayList<Food> fs = new ArrayList();
+            HashMap<Food,Integer> fs = new HashMap();
             for (Favorite f : af){
+                int r = f.getMyRating();
                 Food food = Food.getFood(f.getFoodId());
-                fs.add(food);
+                Integer i = new Integer(r);
+                fs.put(food,i);
             }
             request.setAttribute("ArFood", fs);
             getServletContext().getRequestDispatcher("/MyFavorite.jsp").forward(request, response);

@@ -4,6 +4,9 @@
     Author     : Ratchanon
 --%>
 
+<%@page import="java.util.Iterator"%>
+<%@page import="java.util.Set"%>
+<%@page import="java.util.HashMap"%>
 <%@page import="Project.int303.model.Food"%>
 <%@page import="Project.int303.model.Favorite"%>
 <%@page import="Project.int303.model.Favorite"%>
@@ -21,12 +24,17 @@
     <body>
         <h1>${sessionScope.user}</h1>
         <hr>
-        <%
-            ArrayList<Food> fs = (ArrayList)request.getAttribute("ArFood");
-            for (Food f : fs){
-            request.setAttribute("f",f);
+        <%  
+            HashMap<Food,Integer> fs = (HashMap)request.getAttribute("ArFood");
+            int size = fs.size();
+            Iterator<Food> it=fs.keySet().iterator();
+            while(it.hasNext()){
+            Food f=it.next();
+            int value=fs.get(f); 
+            request.setAttribute("fff", f);
+            request.setAttribute("ratee", value);
         %>
-                ${f.foodName}
+            ${fff.foodName}  ++++ ${ratee}
         <%    }
         %>
     </body>

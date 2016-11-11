@@ -3,8 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/src/java/Project/int303/servlet/RegisterUserServlet.java</file>
-            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/src/java/Project/int303/servlet/SearchFoodServlet.java</file>
+            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/src/java/Project/int303/servlet/FavoriteServlet.java</file>
+            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/src/java/Project/int303/servlet/AddFoodServlet.java</file>
+            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/src/java/Project/int303/servlet/ListFavoriteServlet.java</file>
+            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/web/Index.jsp</file>
+            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/web/MyFavorite.jsp</file>
+            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/src/java/Project/int303/model/Favorite.java</file>
+            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/src/java/Project/int303/model/Food.java</file>
+            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/web/AddRest.jsp</file>
+            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/web/WEB-INF/web.xml</file>
+            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/web/Header.jsp</file>
+            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/src/java/Project/int303/servlet/CommentServlet.java</file>
+            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/web/AddFood.jsp</file>
+            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/web/Food2.jsp</file>
         </group>
     </open-files>
 </project-private>
