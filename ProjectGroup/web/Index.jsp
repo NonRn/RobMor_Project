@@ -26,6 +26,7 @@
         <a href="SearchFoodServlet">Search Food</a><br>
         <a href="EditUser">Edit Profile</a><br>
         <a href="AddFood">Add Food</a><br>
+        <a href="ListFavorite">My Favorite</a><br>
         <% if(session.getAttribute("user")!=null){ %>
         <a href="Logout">Logout</a><br>
         <%}%>    

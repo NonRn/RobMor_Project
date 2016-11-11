@@ -12,13 +12,13 @@
         <title>Restaurant Page</title>
     </head>
     <body>
-        <jsp:include page="../jsp/Header.jsp"/>
+        <jsp:include page="Header.jsp"/>
         <div id="header">
             <img class="poster" id="poster" src="pic/poster/poster.jpg">
         </div>
         <div style="margin-bottom: 5%"></div>
         <h1>Add Restaurant ::</h1><hr>
-        <form action="../AddFood">
+        <form action="AddFood">
             Name :<input type="text" name="name" required=""><br>
             Address :<textarea rows='10' cols='45' placeholder="ที่อยู่ร้าน" wrap="hard" name="address"></textarea><br>
             Seat :<input type="number" name="seat"> <br>
@@ -38,6 +38,6 @@
         <input type="button" class="btn btn-info" value="Back" onclick="history.back();">
         <%}%>
             <hr>
-        <jsp:include page="../jsp/Footer.jsp"></jsp:include>
+        <jsp:include page="Footer.jsp"></jsp:include>
     </body>
 </html>

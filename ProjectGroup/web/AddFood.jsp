@@ -14,7 +14,7 @@
         <title>Add Food Page</title>
     </head>
     <body>
-        <jsp:include page="../jsp/Header.jsp"/>
+        <jsp:include page="Header.jsp"/>
         <div id="header">
             <img class="poster" id="poster" src="pic/poster/poster.jpg">
         </div>
@@ -22,7 +22,7 @@
         <h1>Add Food ::</h1><hr>
         <script>
             function j() {
-                window.location.assign("/ProjectGroup/jsp/AddRest.jsp");
+                window.location.assign("/ProjectGroup/AddRest.jsp");
             }
         </script>
         <form enctype="multipart/form-data" action="AddFood" method="POST">
@@ -52,6 +52,6 @@
         <script> window.alert("${message}");</script>
         <%}%>
             <hr>
-        <jsp:include page="../jsp/Footer.jsp"></jsp:include>
+        <jsp:include page="Footer.jsp"></jsp:include>
     </body>
 </html>

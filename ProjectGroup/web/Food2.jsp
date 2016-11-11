@@ -15,7 +15,7 @@
         <title>${food.foodName}</title>
     </head>
     <body>
-        <jsp:include page="../jsp/Header.jsp"/>
+        <jsp:include page="/Header.jsp"/>
         <div id="header">
             <img class="poster" id="poster" src="pic/poster/poster.jpg">
         </div>
@@ -27,7 +27,10 @@
         ${food.detail}<br>
         ${food.rating}<br>
         .
-        .
+        <form action="Favorite" method="get">
+             <input type="text" name="foodId" hidden="" value="${food.foodId}">
+             <input type="submit" value="Favorite">
+        </form>
         .
         <br>
         <br>
@@ -76,6 +79,6 @@
                     } %>
         <%}%>
         <hr>
-        <jsp:include page="../jsp/Footer.jsp"></jsp:include>
+        <jsp:include page="/Footer.jsp"></jsp:include>
     </body>
 </html>

@@ -14,13 +14,13 @@
         <title>Register Page</title>
     </head>
     <body>
-        <jsp:include page="../jsp/Header1.jsp"/>        
+        <jsp:include page="Header.jsp"/>        
         <div id="header">
             <img class="poster">
         </div>
         <div style="margin-bottom: 5%"></div>
         <div>
-            <form action="../RegisterUser" method="GET" class="form-horizontal">
+            <form action="RegisterUser" method="GET" class="form-horizontal">
                 <h1 style="text-align: center">Register</h1><hr>
                 <div class="form-group">
                     <label class="col-md-4 control-label" for="fname">First name</label>  
@@ -156,6 +156,6 @@
         </script>
         <%}%>
         <hr>
-        <jsp:include page="../jsp/Footer.jsp"></jsp:include>
+        <jsp:include page="Footer.jsp"></jsp:include>
     </body>
 </html>

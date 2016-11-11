@@ -42,7 +42,7 @@ public class RegisterUserServlet extends HttpServlet {
         } else {
             message = "This email has been use for an account";
             request.setAttribute("message", message);
-            getServletContext().getRequestDispatcher("/jsp/Register.jsp").forward(request, response);   
+            getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);   
             return;
         }
         u.setGender(request.getParameter("gender"));
@@ -55,7 +55,7 @@ public class RegisterUserServlet extends HttpServlet {
                 } else {
                     message = "Your date of birth is incorrect" ;
                     request.setAttribute("message", message);
-                    getServletContext().getRequestDispatcher("/jsp/Register.jsp").forward(request, response);   
+                    getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);   
                     return;
                 }
             }
@@ -67,7 +67,7 @@ public class RegisterUserServlet extends HttpServlet {
                 } else {
                     message = "Your date of birth is incorrect" ;
                     request.setAttribute("message", message);
-                    getServletContext().getRequestDispatcher("/jsp/Register.jsp").forward(request, response);   
+                    getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);   
                     return;
                 }
             } else if (Integer.parseInt(request.getParameter("day"))<=28){
@@ -76,7 +76,7 @@ public class RegisterUserServlet extends HttpServlet {
             } else {
                 message = "Your date of birth is incorrect" ;
                 request.setAttribute("message", message);
-                getServletContext().getRequestDispatcher("/jsp/Register.jsp").forward(request, response);   
+                getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);   
                 return;
             }
         } else if (Integer.parseInt(request.getParameter("month"))==4 || Integer.parseInt(request.getParameter("month"))==6 || Integer.parseInt(request.getParameter("month"))==9 ||
@@ -87,7 +87,7 @@ public class RegisterUserServlet extends HttpServlet {
             } else {
                 message = "Your date of birth is incorrect" ;
                 request.setAttribute("message", message);
-                getServletContext().getRequestDispatcher("/jsp/Register.jsp").forward(request, response);   
+                getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);   
                 return;
             }            
         } else {
@@ -99,7 +99,7 @@ public class RegisterUserServlet extends HttpServlet {
         } else {
             message = "Username is duplicate with other person";
             request.setAttribute("message", message);
-            getServletContext().getRequestDispatcher("/jsp/Register.jsp").forward(request, response);   
+            getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);   
             return;
         }
         String password = request.getParameter("pass");
@@ -109,12 +109,12 @@ public class RegisterUserServlet extends HttpServlet {
         } else {
             message = "Confirm password is not same password";
             request.setAttribute("message", message);
-            getServletContext().getRequestDispatcher("/jsp/Register.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
             return;
         }
         message = "Register success";
         request.setAttribute("message", message);
-        getServletContext().getRequestDispatcher("/jsp/Login.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
             
 //          getServletContext().getRequestDispatcher("/SearchFood.jsp").forward(request, response);
     }

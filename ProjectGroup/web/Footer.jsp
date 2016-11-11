@@ -8,8 +8,8 @@
 <!DOCTYPE html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="../css/myStyle.css">
-    <link rel="stylesheet" type="text/css" href="../css/myStyle1.css">
+    <link rel="stylesheet" type="text/css" href="css/myStyle.css">
+    <link rel="stylesheet" type="text/css" href="css/myStyle1.css">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 

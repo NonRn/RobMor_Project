@@ -6,6 +6,7 @@
 package Project.int303.servlet;
 
 import Project.int303.model.Comment;
+import Project.int303.model.Favorite;
 import Project.int303.model.Food;
 import Project.int303.model.User;
 import java.io.IOException;
@@ -76,6 +77,9 @@ public class CommentServlet extends HttpServlet {
                     Cookie ck =new Cookie("Rate"+request.getParameter("foodId")+(User.getUser((String)session.getAttribute("user")).getUserId()), request.getParameter("rate")+"-"+request.getParameter("foodId")) ;
                     ck.setMaxAge(100*12*30*24*60*60);
                     response.addCookie(ck);
+                    if (Favorite.getFavoriteByUserId((User.getUser((String)session.getAttribute("user")).getUserId()))!=null){
+                        Favorite.changeRate(Integer.parseInt(request.getParameter("rate")),(User.getUser((String)session.getAttribute("user")).getUserId()) , Integer.parseInt(request.getParameter("foodId")));
+                    }
 //                    System.out.println(i);
                     message = "Add Rate Success";
                 } else {
@@ -92,6 +96,9 @@ public class CommentServlet extends HttpServlet {
                     Cookie ck =new Cookie("Rate"+request.getParameter("foodId")+(User.getUser((String)session.getAttribute("user")).getUserId()), request.getParameter("rate")+"-"+request.getParameter("foodId")) ;
                     ck.setMaxAge(100*12*30*24*60*60);
                     response.addCookie(ck);
+                    if (Favorite.getFavoriteByUserId((User.getUser((String)session.getAttribute("user")).getUserId()))!=null){
+                        Favorite.changeRate(Integer.parseInt(request.getParameter("rate")),(User.getUser((String)session.getAttribute("user")).getUserId()) , Integer.parseInt(request.getParameter("foodId")));
+                    }
                     message = "Add Comment Success";
                 } 
             } else {
@@ -99,12 +106,12 @@ public class CommentServlet extends HttpServlet {
 //                System.out.println(request.getParameter("foodId"));
 //                System.out.println(i);
 //                System.out.println(request.getParameter("rate"));
-                message = "Same old rate";
+                message = "old rate // not add comment";
             }
             request.setAttribute("message", message);
             getServletContext().getRequestDispatcher("/Food?id="+Integer.parseInt(request.getParameter("foodId"))).forward(request, response);
         } else {
-            getServletContext().getRequestDispatcher("/jsp/Login.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
         }
     }
 
