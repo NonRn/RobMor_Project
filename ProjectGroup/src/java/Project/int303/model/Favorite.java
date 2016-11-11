@@ -116,4 +116,19 @@ public class Favorite {
         }
         return null ;
     }
+    
+    public static void changeRate(int rate,int user,int food){
+        String SQL = "UPDATE favorite SET my_rating = ? WHERE food_id = ? and user_id = ?";
+        Connection con = ConnectionBuilder.getConnection();
+        try{
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.setInt(1, rate);
+            ps.setInt(2, food);
+            ps.setInt(3, user);
+            ps.executeUpdate();
+            con.close();
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
 }
