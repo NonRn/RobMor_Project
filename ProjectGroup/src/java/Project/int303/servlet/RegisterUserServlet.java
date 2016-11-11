@@ -42,19 +42,64 @@ public class RegisterUserServlet extends HttpServlet {
         } else {
             message = "This email has been use for an account";
             request.setAttribute("message", message);
-            getServletContext().getRequestDispatcher("/jsp/Register.jsp").forward(request, response);   
+            getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);   
             return;
         }
         u.setGender(request.getParameter("gender"));
         u.setTelno(request.getParameter("tel"));
-        Date d = new Date((Integer.parseInt(request.getParameter("year"))-1900),Integer.parseInt(request.getParameter("month")),Integer.parseInt(request.getParameter("day")));
-        u.setDob(d);
+        if ((Integer.parseInt(request.getParameter("year")))%4 == 0 && (Integer.parseInt(request.getParameter("year")))%4 != 0) {
+            if (Integer.parseInt(request.getParameter("month"))==2){
+                if (Integer.parseInt(request.getParameter("day"))<=29){
+                    Date d = new Date((Integer.parseInt(request.getParameter("year"))),Integer.parseInt(request.getParameter("month")),Integer.parseInt(request.getParameter("day")));
+                    u.setDob(d);
+                } else {
+                    message = "Your date of birth is incorrect" ;
+                    request.setAttribute("message", message);
+                    getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);   
+                    return;
+                }
+            }
+        } else if (Integer.parseInt(request.getParameter("month"))==2){
+            if ((Integer.parseInt(request.getParameter("year")))%4 == 0 && (Integer.parseInt(request.getParameter("year")))%4 != 0){
+                if (Integer.parseInt(request.getParameter("day"))<=29){
+                    Date d = new Date((Integer.parseInt(request.getParameter("year"))),Integer.parseInt(request.getParameter("month")),Integer.parseInt(request.getParameter("day")));
+                    u.setDob(d);
+                } else {
+                    message = "Your date of birth is incorrect" ;
+                    request.setAttribute("message", message);
+                    getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);   
+                    return;
+                }
+            } else if (Integer.parseInt(request.getParameter("day"))<=28){
+                Date d = new Date((Integer.parseInt(request.getParameter("year"))),Integer.parseInt(request.getParameter("month")),Integer.parseInt(request.getParameter("day")));
+                u.setDob(d);
+            } else {
+                message = "Your date of birth is incorrect" ;
+                request.setAttribute("message", message);
+                getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);   
+                return;
+            }
+        } else if (Integer.parseInt(request.getParameter("month"))==4 || Integer.parseInt(request.getParameter("month"))==6 || Integer.parseInt(request.getParameter("month"))==9 ||
+                Integer.parseInt(request.getParameter("month"))==11 ){
+            if (Integer.parseInt(request.getParameter("day"))<=30){
+                Date d = new Date((Integer.parseInt(request.getParameter("year"))),Integer.parseInt(request.getParameter("month")),Integer.parseInt(request.getParameter("day")));
+                u.setDob(d);
+            } else {
+                message = "Your date of birth is incorrect" ;
+                request.setAttribute("message", message);
+                getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);   
+                return;
+            }            
+        } else {
+            Date d = new Date((Integer.parseInt(request.getParameter("year"))),Integer.parseInt(request.getParameter("month")),Integer.parseInt(request.getParameter("day")));
+            u.setDob(d);
+        }
         if (u.checkUsername(request.getParameter("username"))){
             u.setUsername(request.getParameter("username"));            
         } else {
             message = "Username is duplicate with other person";
             request.setAttribute("message", message);
-            getServletContext().getRequestDispatcher("/jsp/Register.jsp").forward(request, response);   
+            getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);   
             return;
         }
         String password = request.getParameter("pass");
@@ -64,12 +109,12 @@ public class RegisterUserServlet extends HttpServlet {
         } else {
             message = "Confirm password is not same password";
             request.setAttribute("message", message);
-            getServletContext().getRequestDispatcher("/jsp/Register.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/Register.jsp").forward(request, response);
             return;
         }
         message = "Register success";
         request.setAttribute("message", message);
-        getServletContext().getRequestDispatcher("/jsp/Login.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/Login.jsp").forward(request, response);
             
 //          getServletContext().getRequestDispatcher("/SearchFood.jsp").forward(request, response);
     }

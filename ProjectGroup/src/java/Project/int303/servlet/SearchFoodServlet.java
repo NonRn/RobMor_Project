@@ -50,7 +50,7 @@ public class SearchFoodServlet extends HttpServlet {
             }
         }
         request.setAttribute("msg", msg);
-        getServletContext().getRequestDispatcher("/jsp/SearchFood.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher("/SearchFood.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

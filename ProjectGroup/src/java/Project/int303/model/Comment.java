@@ -89,14 +89,13 @@ public class Comment {
         
     }
     
-    public void deleteComment(Comment c){
+    public static void deleteComment(int id){
         String SQL = "DELETE FROM comment WHERE comment_id = ?" ;
         Connection con = null;
         try {
             con = ConnectionBuilder.getConnection();
             PreparedStatement ps = con.prepareStatement(SQL);
-            ps.setInt(1, c.getUserId());
-            ps.setInt(2, c.getFoodId());
+            ps.setInt(1, id);
             ps.executeUpdate() ;
             con.close();
         } catch (Exception e){
