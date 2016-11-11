@@ -20,6 +20,7 @@
         </div>
         <div style="margin-bottom: 5%"></div>
         <div>
+            
             <form action="RegisterUser" method="GET" class="form-horizontal">
                 <h1 style="text-align: center">Register</h1><hr>
                 <div class="form-group">
