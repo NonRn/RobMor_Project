@@ -34,7 +34,7 @@
             request.setAttribute("fff", f);
             request.setAttribute("ratee", value);
         %>
-            ${fff.foodName}  ++++ ${ratee}
+            ${fff.foodName}  ${ratee}
         <%    }
         %>
     </body>
