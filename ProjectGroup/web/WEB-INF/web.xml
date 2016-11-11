@@ -51,6 +51,10 @@
         <servlet-name>FavoriteServlet</servlet-name>
         <servlet-class>Project.int303.servlet.FavoriteServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ListFavoriteServlet</servlet-name>
+        <servlet-class>Project.int303.servlet.ListFavoriteServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SearchFoodServlet</servlet-name>
         <url-pattern>/SearchFoodServlet</url-pattern>
@@ -100,6 +104,10 @@
     <servlet-mapping>
         <servlet-name>FavoriteServlet</servlet-name>
         <url-pattern>/Favorite</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ListFavoriteServlet</servlet-name>
+        <url-pattern>/ListFavorite</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
