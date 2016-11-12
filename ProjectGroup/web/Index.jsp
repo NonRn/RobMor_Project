@@ -40,5 +40,6 @@
         <jsp:include page="ListFood.jsp"></jsp:include>
         <hr>
         <jsp:include page="Footer.jsp"></jsp:include>
+        
     </body>
 </html>
