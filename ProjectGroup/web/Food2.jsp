@@ -21,7 +21,7 @@
         </div>
         <div style="margin-bottom: 5%"></div>
         <h1>${food.foodName}</h1>
-        <img src="pic/${food.foodId}.png" width="30%" height="30%">
+        <img src="pic/${food.foodId}.jpg" width="30%" height="30%">
         ${food.price}<br>
         ${food.type}<br>
         ${food.detail}<br>

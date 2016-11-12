@@ -9,9 +9,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Home Page</title>
-    </head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/myStyle.css">
+    <link rel="stylesheet" type="text/css" href="css/myStyle1.css">
+    <link rel="stylesheet" type="text/css" href="css/myStyle2.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+</head>
     <body>
         <jsp:include page="Header.jsp"/>
         <div id="header">
@@ -32,6 +36,7 @@
         <%}%>    
         <hr>
         <h2>Food ::</h2>
+        
         <jsp:include page="ListFood.jsp"></jsp:include>
         <hr>
         <jsp:include page="Footer.jsp"></jsp:include>

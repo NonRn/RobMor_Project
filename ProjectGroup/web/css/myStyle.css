@@ -57,26 +57,11 @@ body{
 	text-decoration: none;
 }
 
-a:link{
-	color: #fff;
+.link{
+    color: #fff;
+    text-decoration: none;
 }
-a:visited{
-	color: #fff;
-}
-a:hover{
-	color: #f38630;
-}
-a:link.read{
-	color: #000;
-	text-decoration: none;
-	float: right;
-}
-a:visited.read{
-	color: #000;
-}
-a:hover.read{
-	color: #f38630;
-}
+
 .poster{
 	width: 100%;
 	height: auto;
