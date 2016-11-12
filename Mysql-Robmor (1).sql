@@ -48,7 +48,7 @@ CREATE TABLE Food
    food_type VARCHAR(25),     
    rest_id integer,
    rating double,
-   detail varchar(255),
+   detail varchar(500),
    writer integer,
    foreign key (rest_id) references RESTAURANT(rest_id),
    foreign key (writer) references USERR(user_id)
