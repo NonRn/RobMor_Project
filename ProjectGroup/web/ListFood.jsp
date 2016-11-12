@@ -1,8 +1,25 @@
+<%@page import="java.util.List"%>
 <%@page import="Project.int303.model.Food"%>
 <%@page import="java.util.ArrayList"%>
 <%
-    ArrayList<Food> fs = Food.findFood();
+    List<Food> fs = Food.getFood("food");
     for(Food f : fs){
+        request.setAttribute("f", f);
+    
+%>
+<a href="Food?id=${f.foodId}">${f.foodName}</a><br>
+<%}%>
+<%
+    List<Food> des = Food.getFood("dessert");
+    for(Food f : des){
+        request.setAttribute("f", f);
+    
+%>
+<a href="Food?id=${f.foodId}">${f.foodName}</a><br>
+<%}%>
+<%
+    List<Food> drs = Food.getFood("drink");
+    for(Food f : drs){
         request.setAttribute("f", f);
     
 %>

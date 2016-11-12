@@ -356,4 +356,26 @@ public class Food {
             System.out.println(e);
         }
     }
+    public static List<Food> getFood(String type){
+        Food food ;
+        List<Food> foods = null;
+        Connection con = null;
+        String SQL = "SELECT * FROM FOOD f JOIN RESTAURANT r ON f.REST_ID = r.REST_ID WHERE food_type = "+type;
+        try {
+            con = ConnectionBuilder.getConnection();
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()){
+                food = new Food(rs);
+                if(foods ==null){
+                    foods = new ArrayList();
+                }
+                foods.add(food);
+            }
+            con.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return foods;
+    }
 }
