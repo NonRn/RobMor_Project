@@ -1,3 +1,10 @@
+<%-- 
+    Document   : SiteMap
+    Created on : Nov 17, 2016, 2:43:51 PM
+    Author     : Ratchanon
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -22,22 +29,9 @@
         </style>
     </head>
     <body>
-        <!-- menu -->
-        <div class="nav">
-            <div class="navpic">
-                <a href="index.jsp"><img class="logo" src="../pic/header/header1.png"></a>
-            </div>
-            <div class="navcontent">
-                <ul class="navcontent">
-                    <li><a class="link" href="food.html">Food</a></li>
-                    <li><a class="link" href="dessert.html">Dessert</a></li>
-                    <li><a class="link" href="drink.html">Drink</a></li>
-                </ul>
-            </div>
-        </div>
-        <!-- header -->
+        <jsp:include page="/Header.jsp"/>
         <div id="header">
-            <img class="poster" src="poster/poster5.jpg">
+            <img class="poster" src="pic/poster/poster5.jpg">
         </div>
         <!-- body -->
         <div >
@@ -97,22 +91,14 @@
                 <br>
 
                 <div id='div2'>
-                    <h2><li><a class="map" href="team.html">About us</a></li></h2>
+                    <h2><li><a class="map" href="Team.jsp">About us</a></li></h2>
                 </div>	
                 <div id='div2'>
-                    <h2><li><a class="map" href="map.html">Site map</a></li></h2>
+                    <h2><li><a class="map" href="SiteMap.jsp">Site map</a></li></h2>
                 </div>	
             </div>
         </div>
         <!-- footer -->
-        <div class="footer">
-            <table class="container">
-                <tr>
-                    <td class="footertext">Copy right &copy 2016</td>
-                    <td class="footertext"><a class="link" href="team.html">About us</a></td>
-                    <td class="footertext"><a class="link" href="map.html">Site Map</a></td>
-                </tr>
-            </table>
-        </div>
+        <jsp:include page="Footer.jsp"></jsp:include>
     </body>
 </html>

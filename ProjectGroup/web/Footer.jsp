@@ -17,8 +17,8 @@
     <table class="container">
         <tr>
             <td class="footertext">Copy right &copy 2016 Rob Mor</td>
-            <td class="footertext"><a class="link" href="html/team.html">About us</a></td>
-            <td class="footertext"><a class="link" href="html/map.html">Site Map</a></td>
+            <td class="footertext"><a class="link" href="Team.jsp">About us</a></td>
+            <td class="footertext"><a class="link" href="SiteMap.jsp">Site Map</a></td>
         </tr>
     </table>
 </div>
