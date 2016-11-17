@@ -37,7 +37,7 @@ public class ConnectionBuilder {
         Connection con = null ;
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver");
-            con = DriverManager.getConnection("jdbc:derby://localhost:1527/TestRobmor", "test", "test");
+            con = DriverManager.getConnection("jdbc:derby://localhost:1527/Robmor", "robmor", "robmor");
         } catch (Exception e) {
             System.out.println(e);
         }
