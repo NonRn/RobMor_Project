@@ -360,9 +360,11 @@ public class Food {
         Food food ;
         List<Food> foods = null;
         Connection con = null;
-        String SQL = "SELECT * FROM FOOD f JOIN RESTAURANT r ON f.REST_ID = r.REST_ID WHERE food_type = "+type;
+        String SQL = "SELECT * FROM FOOD WHERE food_type = '"+type+"'";
         try {
             con = ConnectionBuilder.getConnection();
+            System.out.println(SQL);
+            System.out.println(con);
             PreparedStatement ps = con.prepareStatement(SQL);
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
