@@ -3,12 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/src/java/Project/int303/model/ConnectionBuilder.java</file>
-            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/web/ListFood.jsp</file>
-            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/web/Food2.jsp</file>
-            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/web/Index.jsp</file>
-            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/src/java/Project/int303/model/Food.java</file>
-            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/web/html/map.html</file>
+            <file>file:/D:/Project/ProjectGroup/web/Footer.jsp</file>
+            <file>file:/D:/Project/ProjectGroup/src/java/Project/int303/model/Login.java</file>
+            <file>file:/D:/Project/ProjectGroup/src/java/Project/int303/model/Food.java</file>
+            <file>file:/D:/Project/ProjectGroup/web/WEB-INF/web.xml</file>
+            <file>file:/D:/Project/ProjectGroup/src/java/Project/int303/servlet/AddFoodServlet.java</file>
+            <file>file:/D:/Project/ProjectGroup/web/Index.jsp</file>
+            <file>file:/D:/Project/ProjectGroup/src/java/Project/int303/model/ConnectionBuilder.java</file>
         </group>
     </open-files>
 </project-private>

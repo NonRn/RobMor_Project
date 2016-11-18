@@ -23,21 +23,21 @@ public class ConnectionBuilder {
         }
         return con ;
     }
-//    public static Connection getConnection(){
-//        Connection con = null ;
-//        try {
-//            Class.forName("org.apache.derby.jdbc.ClientDriver");
-//            con = DriverManager.getConnection("jdbc:derby://localhost:1527/Robmor", "robmor", "robmor");
-//        } catch (Exception e) {
-//            System.out.println(e);
-//        }
-//        return con ;
-//    }
-     public static Connection getConnection(){
+    public static Connection getConnection(){
         Connection con = null ;
         try {
             Class.forName("org.apache.derby.jdbc.ClientDriver");
             con = DriverManager.getConnection("jdbc:derby://localhost:1527/Robmor", "robmor", "robmor");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return con ;
+    }
+     public static Connection geTestConnection(){
+        Connection con = null ;
+        try {
+            Class.forName("org.apache.derby.jdbc.ClientDriver");
+            con = DriverManager.getConnection("jdbc:derby://localhost:1527/TestRobmor", "test", "test");
         } catch (Exception e) {
             System.out.println(e);
         }
