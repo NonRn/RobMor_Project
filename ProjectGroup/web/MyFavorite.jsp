@@ -26,17 +26,19 @@
         <h1>${sessionScope.user}</h1>
         <hr>
         <%  
+            
             HashMap<Food,Integer> fs = (HashMap)request.getAttribute("ArFood");
-            int size = fs.size();
-            Iterator<Food> it=fs.keySet().iterator();
-            while(it.hasNext()){
-            Food f=it.next();
-            int value=fs.get(f); 
-            request.setAttribute("fff", f);
-            request.setAttribute("ratee", value);
+            if(fs!=null){
+                int size = fs.size();
+                Iterator<Food> it=fs.keySet().iterator();
+                while(it.hasNext()){
+                Food f=it.next();
+                int value=fs.get(f); 
+                request.setAttribute("fff", f);
+                request.setAttribute("ratee", value);
         %>
             ${fff.foodName}  ${ratee}
-        <%    }
+        <%    }}
         %>
         <jsp:include page="Footer.jsp"/>
     </body>

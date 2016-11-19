@@ -5,10 +5,12 @@
     <div class="row">
 <%
     List<Food> fs = Food.getFood("food");
-
-    if(fs!=null){
-    for (Food f : fs) {
-            request.setAttribute("f", f);
+    int i = 0;
+    if (fs != null) {
+        for (Food f : fs) {
+            if (i < 6) {
+                request.setAttribute("f", f);
+                i++;
           
 %>
         <div class="col-lg-4" style="margin-top: 5%">
@@ -16,7 +18,7 @@
             <img src="pic/${f.foodId}.png" class="img-responsive"><br>
             ${f.detail}
         </div>
-<%}}%>
+<%}}}%>
     </div>
 
     <div class="row">

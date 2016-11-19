@@ -31,11 +31,10 @@
                 <li><input type="submit"  value="Search" class="search-block"></li>
                 <div class="dropdown">
                     <li onclick="myFunction()" class="dropbtn">MENU</li>
-                    <div id="myDropdown" class="dropdown-content">
-                        <a class="list-group-item" href="SearchFoodServlet"><span class="glyphicon glyphicon-search"></span> Search Food</a>
+                    <div id="myDropdown" class="dropdown-content" style="text-align: left; background-color: #fff">
                         <a class="list-group-item" href="EditUser"><span class="glyphicon glyphicon-user"></span> Edit Profile</a>
                         <a class="list-group-item" href="AddFood"><span class="glyphicon glyphicon-pencil"></span> Add Food</a>
-                        <a class="list-group-item" href="Favorite"><span class="glyphicon glyphicon-star"></span> My Favortie</a>
+                        <a class="list-group-item" href="ListFavorite"><span class="glyphicon glyphicon-star"></span> My Favortie</a>
                         <% if (session.getAttribute("user") == null) { %>
                         <a class="list-group-item" href="Login"><span class="glyphicon glyphicon-off"></span> Login</a>
                         <%} else {%>
