@@ -363,8 +363,6 @@ public class Food {
         String SQL = "SELECT * FROM FOOD WHERE food_type = '"+type+"'";
         try {
             con = ConnectionBuilder.getConnection();
-            System.out.println(SQL);
-            System.out.println(con);
             PreparedStatement ps = con.prepareStatement(SQL);
             ResultSet rs = ps.executeQuery();
             while(rs.next()){

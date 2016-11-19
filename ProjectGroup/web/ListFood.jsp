@@ -3,12 +3,13 @@
 <%@page import="java.util.ArrayList"%>
 <%
     List<Food> fs = Food.getFood("food");
-    for(Food f : fs){
-        request.setAttribute("f", f);
+    if (fs != null){
+        for(Food f : fs){
+            request.setAttribute("f", f);
     
 %>
 <a href="Food?id=${f.foodId}">${f.foodName}</a><br>
-<%}%>
+<%}}%>
 <%
     List<Food> des = Food.getFood("dessert");
     for(Food f : des){
