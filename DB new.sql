@@ -23,7 +23,7 @@ insert into USERR(fname,lname,gender,dob,telno,username) values('suparerkSz','ph
 insert into USERR(fname,lname,gender,dob,telno,username) values('Ratchanon','Bunjumroon','female','2016-02-12','0909091123','non');
 insert into USERR(fname,lname,gender,dob,telno,username) values('Patchareeporn','Srirod','female','2016-07-25','0871230870','you');
 insert into USERR(fname,lname,gender,dob,telno,username) values('Suparerk','Pheangudom','male','2016-06-16','0876598070','yeen');
-**insert into USERR(fname,lname,gender,dob,telno,username) values('Panupong','Panupong','female','2016-07-09','0875193135','meen');**
+
 
 
 
