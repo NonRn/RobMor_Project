@@ -17,6 +17,7 @@
             <img class="poster" id="poster" src="pic/poster/poster.jpg">
         </div>
         <div style="margin-bottom: 5%"></div>
+
         <h1 style="text-align: center">Add Restaurant</h1>
         <form action="AddFood">
             <div class="form-group">
@@ -51,6 +52,7 @@
                 </div>
             </div>
             
+
         </form>
                     <%
             if (request.getAttribute("message") != null) {
@@ -64,8 +66,6 @@
         <% } else { %>
         <input type="button" class="btn btn-info" value="Back" onclick="history.back();">
         <%}%>
-            
-           
         <jsp:include page="Footer.jsp"></jsp:include>
     </body>
 </html>
