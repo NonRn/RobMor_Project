@@ -17,13 +17,34 @@
             <img class="poster" id="poster" src="pic/poster/poster.jpg">
         </div>
         <div style="margin-bottom: 5%"></div>
-        <h1>Add Restaurant ::</h1><hr>
-        <form action="AddFood">
-            Name :<input type="text" name="name" required=""><br>
-            Address :<textarea rows='10' cols='45' placeholder="ที่อยู่ร้าน" wrap="hard" name="address"></textarea><br>
-            Seat :<input type="number" name="seat"> <br>
-            <input type="text" value="123" name="fromrest" hidden="">
-            <input type="submit"><br>
+        <h1 style="text-align: center">Add Restaurant</h1><hr>
+        <form action="AddFood" class="form-horizontal">
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="name">Name :</label>  
+                <div class="col-md-4">
+                    <input id="username" name="name" type="text" placeholder="ชื่อร้านอาหาร" class="form-control input-md" required="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="address">Address :</label>  
+                <div class="col-md-4">
+                    <textarea rows='10' cols='45' name="address" type="text" placeholder="ที่อยู่" class="form-control input-md" required=""></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="username">Seat :</label>  
+                <div class="col-md-4">
+                    <input id="username" name="seat" type="number" placeholder="จำนวนที่นั่ง" class="form-control input-md" required="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="username"></label>
+                <div class="col-md-4">
+                    <input type="text" value="123" name="fromrest" hidden="">
+                    <br>
+                    <input type="submit" class="form-control input-md" style="background-color: lightcyan"><br>
+                </div>
+            </div>
         </form>
         <%
             if (request.getAttribute("message") != null) {
@@ -37,7 +58,7 @@
         <% } else { %>
         <input type="button" class="btn btn-info" value="Back" onclick="history.back();">
         <%}%>
-            <hr>
+        <hr>
         <jsp:include page="Footer.jsp"></jsp:include>
     </body>
 </html>
