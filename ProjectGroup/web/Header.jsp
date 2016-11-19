@@ -10,33 +10,66 @@
     <link rel="stylesheet" type="text/css" href="css/myStyle.css">
     <link rel="stylesheet" type="text/css" href="css/myStyle1.css">
     <link rel="stylesheet" type="text/css" href="css/myStyle2.css">
+    <link rel="stylesheet" type="text/css" href="css/dropdown.css">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-</head>
 
+</head>
 <div class="nav">
     <div class="navpic">
         <a href="Index.jsp"><img class="logo" src="pic/header/header1.png"></a>
+
     </div>
 
     <div class="navcontent">
         <form action="SearchFoodServlet" method="GET">
-        <ul class="navcontent">
-            <li><a class="link" href="food.html" >Food</a></li>
-            <li><a class="link" href="dessert.html">Dessert</a></li>
-            <li><a class="link" href="drink.html">Drink</a></li>
-            <li><input type="text" name="search" class="block"></li>
-            <li><input type="submit"  value="Search" class="search-block"></li>
-            
-            <% if(session.getAttribute("user")==null){ %>
-            <li><a class="link" href="Login">Login</a></li>
-            <%}else{%>
-            <li><a class="link" href="Logout">Logout</a></li>
-            <%}%>
-            	
-        </ul>
+            <ul class="navcontent">
+                <li><a class="link" href="food.html" >Food</a></li>
+                <li><a class="link" href="dessert.html">Dessert</a></li>
+                <li><a class="link" href="drink.html">Drink</a></li>
+                <li><input type="text" name="search" class="block"></li>
+                <li><input type="submit"  value="Search" class="search-block"></li>
+                <div class="dropdown">
+                    <li onclick="myFunction()" class="dropbtn">MENU</li>
+                    <div id="myDropdown" class="dropdown-content">
+                        <a class="list-group-item" href="SearchFoodServlet"><span class="glyphicon glyphicon-search"></span> Search Food</a>
+                        <a class="list-group-item" href="EditUser"><span class="glyphicon glyphicon-user"></span> Edit Profile</a>
+                        <a class="list-group-item" href="AddFood"><span class="glyphicon glyphicon-pencil"></span> Add Food</a>
+                        <a class="list-group-item" href="Favorite"><span class="glyphicon glyphicon-star"></span> My Favortie</a>
+                        <% if (session.getAttribute("user") == null) { %>
+                        <a class="list-group-item" href="Login"><span class="glyphicon glyphicon-off"></span> Login</a>
+                        <%} else {%>
+                        <a class="list-group-item" href="Logout"><span class="glyphicon glyphicon-off"></span> Logout</a>
+                        <%}%>
+                    </div>
+                </div>
+            </ul>
         </form>
-        
+
     </div>
 </div>
+
+
+<script>
+    /* When the user clicks on the button, 
+     toggle between hiding and showing the dropdown content */
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+// Close the dropdown if the user clicks outside of it
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>
+
 
