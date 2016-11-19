@@ -21,8 +21,8 @@
                     <input type="text" name="username" class="block" placeholder=" Username" style="color: #000"></h2> 
                 <h2 style="color: #fff" class="login-input">Password : &nbsp
                     <input type="password" name="password"  class="block" placeholder=" Password" style="color: #000"></h2><br><br>
-                    <input type="submit" class="block" value="Submit"><br><br>
-                <a href="Register.jsp">Register</a>
+                    <input type="submit" class="block" value="Submit">
+                    <a href="Register.jsp" class="block">Register</a>
             </form>
     </div>        
  

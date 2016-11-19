@@ -33,7 +33,11 @@
             <%}else{%>
             <li><a class="link" href="Logout">Logout</a></li>
             <%}%>
-            	
+            <li>
+                <select>
+                    <option><a href="EditUser">Edit Profile</a></option>
+                </select>
+            </li>
         </ul>
         </form>
         

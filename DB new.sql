@@ -27,8 +27,6 @@ insert into USERR(fname,lname,gender,dob,telno,username) values('Suparerk','Phea
 
 
 
-insert into FOOD(FOOD_NAME,price,FOOD_type,rest_id,rating,detail,writer) values('ส้มตำ',2000.0,'food',3000001,3.0,'อาหารใจกินเข้าไปแต่ได้อร่อยอาหารอ่อยกินเข้าไปอร่อยจุงเบย',2000001);
-insert into FOOD(FOOD_NAME,price,FOOD_type,rest_id,rating,detail,writer) values('น้ำส้มตราบีบมะนาวฆ่างู',30000.0,'drink',3000002,2.0,'โปเกม่อนโปเกม้อนบีบมะนาวฆ่างู พี่จะพาไปดูหนูและก็พาไปดูปู',2000002);
 insert into FOOD(FOOD_NAME,price,FOOD_type,rest_id,rating,detail,writer) values('ข้าวราดผงกะหรี่',35.0,'food',3000001,2.0,'ข้าวราดแกงกะหลี่ เป็นอาหารที่ทานง่าย และอร่อย หากนึกว่าไม่ออกว่าจะกินเมนูอะไรดี แนะนำให้สั่งเมนูนี้',2000004);
 insert into FOOD(FOOD_NAME,price,FOOD_type,rest_id,rating,detail,writer) values('สเต็กไก่',100.0,'food',3000002,3.0,'สเต็กไก่ร้าน fin steak ไก่ชิ้นโตมาพร้อมกับเครื่องเคียงอย่างสลัดและมันบด รสชาติอร่อยไม่แห้งจนเกินไป ปริมาณและคุณภาพคุ้มราคา',2000004);
 insert into FOOD(FOOD_NAME,price,FOOD_type,rest_id,rating,detail,writer) values('ข้าวไข่ข้น',40.0,'food',3000003,4.0,'ข้าวไข่ข้นของร้านนี้มีอยู่ด้วยกันสองแบบคือไข่ข้นแฮมและไข่ข้นเบคอน ซึ่งในบางครั้งทางร้านจะเพิ่มชีสโรยลงบนหน้าไข่ข้นให้อีกด้วย อิ่มอร่อยในราคา 40 บาท',2000004);
@@ -44,6 +42,7 @@ insert into RATING(FOOD_ID,RATING1,RATING2,RATING3,RATING4,RATING5) values(10000
 insert into RATING(FOOD_ID,RATING1,RATING2,RATING3,RATING4,RATING5) values(1000002,0,0,0,0,0);
 insert into FAVORITE(USER_ID,FOOD_ID,MY_RATING) values(2000001,1000001,4);
 insert into FAVORITE(USER_ID,FOOD_ID,MY_RATING) values(2000002,1000002,3);
+
 insert into COMMENT(USER_ID,FOOD_ID,COMMENTS,LIKE_COUNT) values(2000001,1000001,'อร๊อย อร่อย',3);
 insert into COMMENT(USER_ID,FOOD_ID,COMMENTS,LIKE_COUNT) values(2000002,1000002,'อร่อยมากๆเลย ไม่ควรพลาด',4);
 
