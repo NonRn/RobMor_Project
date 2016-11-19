@@ -17,15 +17,42 @@
             <img class="poster" id="poster" src="pic/poster/poster.jpg">
         </div>
         <div style="margin-bottom: 5%"></div>
-        <h1>Add Restaurant ::</h1><hr>
+        <h1 style="text-align: center">Add Restaurant</h1>
         <form action="AddFood">
-            Name :<input type="text" name="name" required=""><br>
-            Address :<textarea rows='10' cols='45' placeholder="ที่อยู่ร้าน" wrap="hard" name="address"></textarea><br>
-            Seat :<input type="number" name="seat"> <br>
+            <div class="form-group">
+                <label class="col-md-4 control-label" style="text-align: right">Restaurant Name</label>
+                <div class="col-md-4">
+                    <input name="name" type="text" placeholder="Enter restaurant name" required="" class="form-control input-md" style="margin-bottom: 15px">
+                </div>
+            </div>
+            
+            
+            <div class="form-group" style=" ">
+                <label class="col-md-4 control-label" style="text-align: right;" >Address</label>
+                <div class="col-md-4">
+                    <textarea rows='10' cols='45' name="address" type="text" placeholder="Enter address restaurant" wrap="hard" class="form-control input-md" style="margin-bottom: 15px">
+                    </textarea>
+                </div>
+            </div>
+            
+             <div class="form-group">
+                <label class="col-md-4 control-label" style="text-align: right">Number of Seat</label>
+                <div class="col-md-4">
+                    <input name="seat" type="number" class="form-control input-md" style="margin-bottom: 15px">
+                </div>
+            </div>
+            
             <input type="text" value="123" name="fromrest" hidden="">
-            <input type="submit"><br>
+            
+            <div class="form-group">
+                <label class="col-md-4 control-label"> </label>
+                <div class="col-md-4">
+                    <input type="submit" value="Submit" class="btn btn-info " style="margin-bottom: 15px"><br><br>
+                </div>
+            </div>
+            
         </form>
-        <%
+                    <%
             if (request.getAttribute("message") != null) {
         %>
         <script> window.alert("${message}");</script>
@@ -37,7 +64,8 @@
         <% } else { %>
         <input type="button" class="btn btn-info" value="Back" onclick="history.back();">
         <%}%>
-            <hr>
+            
+           
         <jsp:include page="Footer.jsp"></jsp:include>
     </body>
 </html>

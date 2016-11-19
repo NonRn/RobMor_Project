@@ -13,8 +13,8 @@
 %>
         <div class="col-lg-4" style="margin-top: 5%">
             <a href="Food?id=${f.foodId}">${f.foodName}</a><br><br><br>
-            <img src="pic/${f.foodId}.jpg" class="img-responsive"><br>
-            ${f.detail};
+            <img src="pic/${f.foodId}.png" class="img-responsive"><br>
+            ${f.detail}
         </div>
 <%}}%>
     </div>
@@ -28,8 +28,8 @@
 %>
         <div class="col-lg-4"  style="margin-top: 5%">
             <a href="Food?id=${f.foodId}">${f.foodName}</a><br>
-             <img src="pic/${f.foodId}.jpg" class="img-responsive">
-            ${f.detail};
+             <img src="pic/${f.foodId}.png" class="img-responsive">
+            ${f.detail}
         </div>
 <%}}%>
     </div>
@@ -44,8 +44,8 @@
 %>
         <div class="col-lg-4"  style="margin-top: 5%">
             <a href="Food?id=${f.foodId}">${f.foodName}</a><br>
-             <img src="pic/${f.foodId}.jpg" class="img-responsive">
-            ${f.detail};
+             <img src="pic/${f.foodId}.png" class="img-responsive">
+            ${f.detail}
         </div>
 <%}}%>
     </div>

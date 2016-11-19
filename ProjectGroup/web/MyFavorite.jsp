@@ -22,6 +22,7 @@
         <title>My Favorite</title>
     </head>
     <body>
+        <jsp:include page="Header.jsp"/>
         <h1>${sessionScope.user}</h1>
         <hr>
         <%  
@@ -37,5 +38,6 @@
             ${fff.foodName}  ${ratee}
         <%    }
         %>
+        <jsp:include page="Footer.jsp"/>
     </body>
 </html>

@@ -82,11 +82,11 @@
             </form>
                             <br>
                             <div class="form-group" style="width: 400px ; height: 10px ;">
-                            <div class="col-md-4">
-                                <input type="button" class="form-control input-md" value="Back" style="color: white; background-color: skyblue" onclick="history.back()">
+                                <div class="col-md-4">
+                                    <input type="button" class="form-control input-md" value="Back" style="color: white; background-color: skyblue" onclick="history.back()">
+                                </div>
                             </div>
-                        </div>
-            <hr>
+            
             <jsp:include page="Footer.jsp"></jsp:include>
             </body>
             </html>
