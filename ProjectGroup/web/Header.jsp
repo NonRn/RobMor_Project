@@ -24,14 +24,14 @@
         <form action="SearchFoodServlet" method="GET">
 
             <ul class="navcontent">
-                <li><a class="link" href="food.html" >Food</a></li>
-                <li><a class="link" href="dessert.html">Dessert</a></li>
-                <li><a class="link" href="drink.html">Drink</a></li>
+                <li><a class="link" href="food.jsp" >Food</a></li>
+                <li><a class="link" href="dessert.jsp">Dessert</a></li>
+                <li><a class="link" href="drink.jsp">Drink</a></li>
                 <li><input type="text" name="search" class="block"></li>
                 <li><input type="submit"  value="Search" class="search-block"></li>
                 <div class="dropdown">
                     <li onclick="myFunction()" class="dropbtn">MENU</li>
-                    <div id="myDropdown" class="dropdown-content" style="text-align: left; background-color: #fff">
+                    <div id="myDropdown" class="dropdown-content" style="text-align: left; background-color: #fff; font-size: 10pt">
                         <a class="list-group-item" href="EditUser"><span class="glyphicon glyphicon-user"></span> Edit Profile</a>
                         <a class="list-group-item" href="AddFood"><span class="glyphicon glyphicon-pencil"></span> Add Food</a>
                         <a class="list-group-item" href="ListFavorite"><span class="glyphicon glyphicon-star"></span> My Favortie</a>

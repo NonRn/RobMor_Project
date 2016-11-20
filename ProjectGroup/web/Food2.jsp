@@ -25,10 +25,10 @@
                 <img src="pic/${food.foodId}.png" width="50%" height="30%" style="margin-bottom: 5%;"><br>
             </center>
             <div class="col-md-12" style="width: 55%; float: none; margin-left: 23%">
-                <span style="font-size: 15pt;  margin-right: 30px" >Detail</span> ${food.detail}<br><br>
-                <span style="font-size: 15pt;  margin-right: 30px" >Price</span> ${food.price}<br><br>
-                <span style="font-size: 15pt;  margin-right: 30px" >Type</span> ${food.type}<br><br>
-                <span style="font-size: 15pt;  margin-right: 30px" >Rating</span> ${food.rating}<br><br>
+                <span style="font-size: 15pt;  margin-right: 30px" >Detail : </span> ${food.detail}<br><br>
+                <span style="font-size: 15pt;  margin-right: 30px" >Price : </span> ${food.price}<br><br>
+                <span style="font-size: 15pt;  margin-right: 30px" >Type : </span> ${food.type}<br><br>
+                <span style="font-size: 15pt;  margin-right: 30px" >Rating : </span> ${food.rating}<br><br>
             
             <form action="Favorite" method="get">
                 <input type="text" name="foodId" hidden="" value="${food.foodId}">

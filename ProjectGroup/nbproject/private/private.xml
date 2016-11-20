@@ -3,24 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
+            <file>file:/D:/Project/ProjectGroup/web/MyFavorite.jsp</file>
+            <file>file:/D:/Project/ProjectGroup/web/Team.jsp</file>
+            <file>file:/D:/Project/ProjectGroup/web/ListFood.jsp</file>
+            <file>file:/D:/Project/ProjectGroup/web/Food2.jsp</file>
+            <file>file:/D:/Project/ProjectGroup/web/Register.jsp</file>
             <file>file:/D:/Project/ProjectGroup/web/Footer.jsp</file>
-            <file>file:/D:/Project/ProjectGroup/src/java/Project/int303/model/Login.java</file>
+            <file>file:/D:/Project/ProjectGroup/web/Header.jsp</file>
+            <file>file:/D:/Project/ProjectGroup/web/EditProfile.jsp</file>
             <file>file:/D:/Project/ProjectGroup/src/java/Project/int303/model/Food.java</file>
-            <file>file:/D:/Project/ProjectGroup/web/WEB-INF/web.xml</file>
-            <file>file:/D:/Project/ProjectGroup/src/java/Project/int303/servlet/AddFoodServlet.java</file>
             <file>file:/D:/Project/ProjectGroup/web/Index.jsp</file>
+            <file>file:/D:/Project/ProjectGroup/web/AddRest.jsp</file>
+            <file>file:/D:/Project/ProjectGroup/web/AddFood.jsp</file>
             <file>file:/D:/Project/ProjectGroup/src/java/Project/int303/model/ConnectionBuilder.java</file>
-=======
-            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/web/SiteMap.jsp</file>
-            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/web/html/team.html</file>
-            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/web/Header.jsp</file>
-            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/src/java/Project/int303/servlet/FavoriteServlet.java</file>
-            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/web/Footer.jsp</file>
-            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/web/Team.jsp</file>
-            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/web/EditProfile.jsp</file>
-            <file>file:/D:/Non/RobMor-Project/INT303_proj_Robmor/ProjectGroup/src/java/Project/int303/model/Favorite.java</file>
->>>>>>> ead5f00599b263d87e98a9915729dbfd9029c468
         </group>
     </open-files>
 </project-private>
