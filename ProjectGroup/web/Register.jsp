@@ -157,6 +157,7 @@
         </script>
         <%}%>
         <hr>
+        <br><br><br><br>
         <jsp:include page="Footer.jsp"></jsp:include>
     </body>
 </html>

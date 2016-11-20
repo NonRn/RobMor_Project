@@ -23,19 +23,7 @@
 	</div>
         <div style="margin-bottom: 5%"></div>
        
-        <% if(session.getAttribute("user")==null){ %>
-        <a href="Login">Login</a><br>
-        <%}%>
-        <a href="Register.jsp">Register</a><br>
-        <a href="SearchFoodServlet">Search Food</a><br>
-        <a href="EditUser">Edit Profile</a><br>
-        <a href="AddFood">Add Food</a><br>
-        <a href="ListFavorite">My Favorite</a><br>
-        <% if(session.getAttribute("user")!=null){ %>
-        <a href="Logout">Logout</a><br>
-        <%}%>    
-        <hr>
-        <h2>Food ::</h2>
+        <center><h2>List Food</h2></center>
         
         <jsp:include page="ListFood.jsp"></jsp:include>
         <hr>
