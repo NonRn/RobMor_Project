@@ -131,4 +131,24 @@ public class Favorite {
             System.out.println(e);
         }
     }
+    
+    public static boolean check(int userId,int foodId){
+        String SQL = "SELECT * FROM favorite WHERE user_id = ? and food_id = "+foodId ;
+        Connection con = ConnectionBuilder.getConnection();
+        boolean b = true ;
+        try {
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.setInt(1, userId);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()){
+                b = false ;
+            } else {
+                b = true ;
+            }
+            return b ;
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return b ; 
+    }
 }

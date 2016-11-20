@@ -37,24 +37,27 @@ public class FavoriteServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
         String message = "";
-        int userId = User.getUser((String)session.getAttribute("user")).getUserId();
-        if (session.getAttribute("user")!=null){
-            Cookie[] cks = request.getCookies() ;
-            int myRate =0 ;
-            int food = 0 ;
-            for(Cookie cr : cks) {
-                if (cr.getName().equals("Rate"+request.getParameter("foodId")+User.getUser((String)session.getAttribute("user")).getUserId())) {
-                   myRate = Integer.parseInt(cr.getValue().substring(0, 1));
-                   food = Integer.parseInt(cr.getValue().substring(2, cr.getValue().length()));
-                } 
+        int userId = User.getUser((String) session.getAttribute("user")).getUserId();
+        if (session.getAttribute("user") != null) {
+            if (Favorite.check((User.getUser((String) session.getAttribute("user")).getUserId()), Integer.parseInt(request.getParameter("foodId")))) {
+                Cookie[] cks = request.getCookies();
+                int myRate = 0;
+                int food = 0;
+                for (Cookie cr : cks) {
+                    if (cr.getName().equals("Rate" + request.getParameter("foodId") + User.getUser((String) session.getAttribute("user")).getUserId())) {
+                        myRate = Integer.parseInt(cr.getValue().substring(0, 1));
+                        food = Integer.parseInt(cr.getValue().substring(2, cr.getValue().length()));
+                    }
+                }
+                if (myRate != 0) {
+                    Favorite f = new Favorite(food, userId, myRate);
+                } else {
+                    Favorite f = new Favorite(Integer.parseInt((String) request.getParameter("foodId")), userId);
+                }
+                getServletContext().getRequestDispatcher("/Food?id=" + Integer.parseInt(request.getParameter("foodId"))).forward(request, response);
             }
-            if (myRate != 0){
-                Favorite f = new Favorite(food, userId, myRate);
-            } else {
-                Favorite f = new Favorite(Integer.parseInt((String)request.getParameter("foodId")), userId);
-            }
-            getServletContext().getRequestDispatcher("/Food?id="+Integer.parseInt(request.getParameter("foodId"))).forward(request, response);
-        }else {
+            getServletContext().getRequestDispatcher("/Food?id=" + Integer.parseInt(request.getParameter("foodId"))).forward(request, response);
+        } else {
             getServletContext().getRequestDispatcher("/Login").forward(request, response);
         }
     }

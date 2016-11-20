@@ -46,7 +46,7 @@
                                 <input type="submit" value="Submit" class="btn btn-info btn-block">
                             </div>
                         <div class="col-xs-6 col-md-6">
-                            <input type="button" class="btn btn-default btn-block" value="Back" onclick="history.back()">
+                            <input type="button" class="btn btn-default btn-block" value="Back" onclick="window.location.replace('AddFood')">
                         </div>
                     </form>
                 </div>

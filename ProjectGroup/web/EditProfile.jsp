@@ -78,8 +78,9 @@
                    <input type="submit" class="btn btn-primary btn-block" value="EDIT"> 
                 </div>
                 <div class="col-xs-6 col-md-6">
-                    <input type="button" class="btn btn-default btn-block" value="Back" onclick="history.back()">
+                    <input type="button" class="btn btn-default btn-block" value="Back" onclick="window.location.replace('Index.jsp')">
                 </div>
+                
             </form>
         </div>
     </div>

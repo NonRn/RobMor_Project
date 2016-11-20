@@ -5,12 +5,14 @@
     <div class="row">
         <%
             List<Food> fs = Food.getFood("food");
-            int a = 0;
+            int a = fs.size();
+            int b = 0 ;
             if (fs != null) {
                 for (Food f : fs) {
-                    if (a < 6) {
+                    b++;
+                    if (b > a-6) {
                         request.setAttribute("f", f);
-                        a++;
+                        
 
         %>
         <div class="col-lg-4" style="margin-bottom: 5%">
@@ -24,12 +26,14 @@
     <div class="row">
         <%
             List<Food> des = Food.getFood("dessert");
-            int b = 0;
+            int d = des.size() ;
+            int c = 0;
             if (des != null) {
                 for (Food f : des) {
-                    if (b < 6) {
+                    c++;
+                    if (c > d-6) {
                         request.setAttribute("f", f);
-                        b++;
+                        
         %>
         <div class="col-lg-4"  style="margin-bottom: 5%">
             <h3><a href="Food?id=${f.foodId}">${f.foodName}</a></h3><br>
@@ -42,12 +46,13 @@
     <div class="row">
         <%
             List<Food> drs = Food.getFood("drink");
-            int c = 0;
+            int g = drs.size() ;
+            int e = 0;
             if (drs != null) {
                 for (Food f : drs) {
-                    if (c < 6) {
+                    g++ ;
+                    if (e > g-6) {
                         request.setAttribute("f", f);
-                        c++;
         %>
         <div class="col-lg-4"  style="margin-bottom: 5%">
             <h3><a href="Food?id=${f.foodId}">${f.foodName}</a></h3><br>
