@@ -36,7 +36,7 @@
             <%if (foods != null) {%>
             <table class="row">
                 <tr>
-                    <td class="col-md-2">Picture</td>
+                    <td class="col-md-2" >Picture</td>
                     <td class="col-md-1">Food Name</td>
                     <td class="col-md-1">Type</td>
                     <td class="col-md-1">Price</td>
@@ -44,11 +44,11 @@
                 </tr>
                 <% for (Food f : foods) {%>
                 <tr>
-                    <td class="col-md-2"><img src="pic/<%=f.getFoodId()%>.png" class="img-responsive"></td>
-                    <td class="col-md-1"><a href="Food?id=<%=f.getFoodId()%>"><%=f.getFoodName()%></a></td>
-                    <td class="col-md-1"><%=f.getType()%></td>
-                    <td class="col-md-1"><%=f.getPrice()%></td>
-                    <td class="col-md-1"><%=f.getRating()%></td>
+                    <td class="col-md-2"><img src="pic/<%=f.getFoodId()%>.png" class="img-responsive" style="margin-bottom: 5%; margin-top: 5%"></td>
+                    <td class="col-md-1" style="margin-bottom: 5%; margin-top: 5%"><a href="Food?id=<%=f.getFoodId()%>"><%=f.getFoodName()%></a></td>
+                    <td class="col-md-1" style="margin-bottom: 5%; margin-top: 5%"><%=f.getType()%></td>
+                    <td class="col-md-1" style="margin-bottom: 5%; margin-top: 5%"><%=f.getPrice()%></td>
+                    <td class="col-md-1" style="margin-bottom: 5%; margin-top: 5%"><%=f.getRating()%></td>
                 </tr>
                 <%}%>
             

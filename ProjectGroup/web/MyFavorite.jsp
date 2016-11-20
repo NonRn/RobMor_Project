@@ -54,11 +54,11 @@
             %>
             
             <tr>
-                <td class="col-md-2"><img src="pic/<%=f.getFoodId()%>.png" class="img-responsive"></td>
-                <td class="col-md-1">${fff.foodName} </td> 
-                <td class="col-md-1">${fff.price}</td>   
-                <td class="col-md-1">${ratee}</td>   
-            </tr>  
+                <td class="col-md-2"><img src="pic/<%=f.getFoodId()%>.png" class="img-responsive" style="margin-bottom: 5%; margin-top: 5%"></td>
+                <td class="col-md-1" style="margin-bottom: 5%; margin-top: 5%">${fff.foodName} </td> 
+                <td class="col-md-1" style="margin-bottom: 5%; margin-top: 5%">${fff.price}</td>   
+                <td class="col-md-1" style="margin-bottom: 5%; margin-top: 5%">${ratee}</td>   
+            </tr>
                 <%}}%>
             </table>
         </div>
