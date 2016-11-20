@@ -22,24 +22,46 @@
         <title>My Favorite</title>
     </head>
     <body>
-        <jsp:include page="Header.jsp"/>
-        <h1>${sessionScope.user}</h1>
-        <hr>
-        <%  
+       <jsp:include page="Header.jsp"/>
+        <div id="header">
+            <img class="poster" id="poster" src="pic/poster/poster.jpg">
+        </div>
+        <div style="margin-bottom: 5%"></div>
+        
+        <div class="container">
+            <center><h3>My Favorite</h3></center><br><br>
+            <table class="row">
+                
+                    <tr>
+                        <td class="col-md-2">Picture</td>
+                        <td class="col-md-1">Food Name</td>
+                        <td class="col-md-1">Price</td> 
+                        <td class="col-md-1">Rate</td>
+                    </tr>
+                
             
-            HashMap<Food,Integer> fs = (HashMap)request.getAttribute("ArFood");
-            if(fs!=null){
-                int size = fs.size();
-                Iterator<Food> it=fs.keySet().iterator();
-                while(it.hasNext()){
-                Food f=it.next();
-                int value=fs.get(f); 
-                request.setAttribute("fff", f);
-                request.setAttribute("ratee", value);
-        %>
-            ${fff.foodName}  ${ratee}
-        <%    }}
-        %>
+            <%
+
+                HashMap<Food, Integer> fs = (HashMap) request.getAttribute("ArFood");
+                if (fs != null) {
+                    int size = fs.size();
+                    Iterator<Food> it = fs.keySet().iterator();
+                    while (it.hasNext()) {
+                        Food f = it.next();
+                        int value = fs.get(f);
+                        request.setAttribute("fff", f);
+                        request.setAttribute("ratee", value);
+            %>
+            
+            <tr>
+                <td class="col-md-2"><img src="pic/<%=f.getFoodId()%>.png" class="img-responsive"></td>
+                <td class="col-md-1">${fff.foodName} </td> 
+                <td class="col-md-1">${fff.price}</td>   
+                <td class="col-md-1">${ratee}</td>   
+            </tr>  
+                <%}}%>
+            </table>
+        </div>
         <jsp:include page="Footer.jsp"/>
     </body>
 </html>

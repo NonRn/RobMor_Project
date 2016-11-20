@@ -15,7 +15,7 @@
         %>
         <div class="col-lg-4" style="margin-bottom: 5%">
             <h3><a href="Food?id=${f.foodId}">${f.foodName}</a></h3><br>
-            <img src="pic/${f.foodId}.png" class="img-responsive"><br>
+            <center><img src="pic/${f.foodId}.png" class="img-responsive"><br></center>
             ${f.detail}
         </div>
         <%}}}%>
@@ -33,7 +33,7 @@
         %>
         <div class="col-lg-4"  style="margin-bottom: 5%">
             <h3><a href="Food?id=${f.foodId}">${f.foodName}</a></h3><br>
-            <img src="pic/${f.foodId}.png" class="img-responsive"><br>
+            <center><img src="pic/${f.foodId}.png" class="img-responsive"><br></center>
             ${f.detail}
         </div>
         <%}}}%>
@@ -51,7 +51,7 @@
         %>
         <div class="col-lg-4"  style="margin-bottom: 5%">
             <h3><a href="Food?id=${f.foodId}">${f.foodName}</a></h3><br>
-            <img src="pic/${f.foodId}.png" class="img-responsive"><br>
+            <center><img src="pic/${f.foodId}.png" class="img-responsive"><br></center>
             ${f.detail}
         </div>
         <%}}}%>
