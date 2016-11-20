@@ -24,38 +24,35 @@
 	</div>
 
 	<!-- body -->
-	<div class="row">
+        <div class="container">
+            <div class="row">
 
-		<div class="colum1">
+                <div class="col-md-3" style="margin-top: 7% ; margin-bottom: 7%">
 			<img src="pic/pic/team/team1.png" alt="non">
-			<h2>Ratchanon Bunchamroon</h2>
-			<h3>JavaScript Dev.</h3>
+			<h3>Ratchanon Bunchamroon</h3>
+			<h5>Model & Servlet Dev.</h5>
+			<h5>58130500062</h5>
+                        
 		</div>
-		<div class="colum1">
-			<img src="pic/pic/team/team2.png" alt="nun">
-			<h2>Nattanun Supattanaporn</h2>
-			<h3>HTML Dev.</h3>
+		<div class="col-md-3" style="margin-top: 7% ; margin-bottom: 7%">
+			<img src="pic/pic/team/team7.png" alt="yeen">
+			<h3>Suparerk Phueangudom </h3>
+			<h5>Font-End Dev.</h5>
+                        <h5>58130500073</h5>
 		</div>
-		<div class="colum1">
+		<div class="col-md-3" style="margin-top: 7% ; margin-bottom: 7%">
 			<img src="pic/pic/team/team3.png" alt="meen">
-			<h2>Panupong Choragam</h2>
-			<h3>HTML & CSS Dev.</h3>
+			<h3>Panupong Choragam</h3>
+			<h5>Font-End & Servlet Dev.</h5>
+                        <h5>58130500058</h5>
 		</div>
-		<div class="colum1">
+		<div class="col-md-3" style="margin-top: 7% ; margin-bottom: 7%">
 			<img src="pic/pic/team/team4.png" alt="you">
-			<h2>Patchareeporn Sricharoen</h2>
-			<h3>HTML Dev.</h3>
+			<h3>Patchareeporn Sricharoen</h3>
+			<h5>Font-End Dev.</h5>
+                        <h5>58130500055</h5>
 		</div>
-		<div class="colum1">
-			<img src="pic/pic/team/team5.png" alt="jam">
-			<h2>Phimonphan Chobchit</h2>
-			<h3>Reviewer</h3>
-		</div>
-		<div class="colum1">
-			<img src="pic/pic/team/team6.png" alt="new">
-			<h2>Teerasint Thitithammarach</h2>
-			<h3>HTML Dev.</h3>
-		</div>
+            </div>
 	</div>
 
 
