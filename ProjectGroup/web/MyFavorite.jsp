@@ -30,6 +30,7 @@
         
         <div class="container">
             <center><h3>My Favorite</h3></center><br><br>
+                
             <table class="row">
                 
                     <tr>
@@ -38,7 +39,6 @@
                         <td class="col-md-1">Price</td> 
                         <td class="col-md-1">Rate</td>
                     </tr>
-                
             
             <%
 
@@ -51,15 +51,20 @@
                         int value = fs.get(f);
                         request.setAttribute("fff", f);
                         request.setAttribute("ratee", value);
+                        
             %>
+            
             
             <tr>
                 <td class="col-md-2"><img src="pic/<%=f.getFoodId()%>.png" class="img-responsive" style="margin-bottom: 5%; margin-top: 5%"></td>
-                <td class="col-md-1" style="margin-bottom: 5%; margin-top: 5%">${fff.foodName} </td> 
+                <td class="col-md-1" style="margin-bottom: 5%; margin-top: 5%"><a href="Food?id=<%=f.getFoodId()%>">${fff.foodName}</a> </td> 
                 <td class="col-md-1" style="margin-bottom: 5%; margin-top: 5%">${fff.price}</td>   
                 <td class="col-md-1" style="margin-bottom: 5%; margin-top: 5%">${ratee}</td>   
             </tr>
-                <%}}%>
+            <%}
+                } if(fs.size()==0){%>
+                <center><h3>Does not exits</h3></center><br>
+                <%}%>
             </table>
         </div>
         <jsp:include page="Footer.jsp"/>

@@ -4,6 +4,8 @@
     Author     : Ratchanon
 --%>
 
+<%@page import="Project.int303.model.Food"%>
+<%@page import="Project.int303.model.Restaurant"%>
 <%@page import="Project.int303.model.User"%>
 <%@page import="Project.int303.model.Comment"%>
 <%@page import="java.util.ArrayList"%>
@@ -29,7 +31,12 @@
                 <span style="font-size: 15pt;  margin-right: 30px" >Price : </span> ${food.price}<br><br>
                 <span style="font-size: 15pt;  margin-right: 30px" >Type : </span> ${food.type}<br><br>
                 <span style="font-size: 15pt;  margin-right: 30px" >Rating : </span> ${food.rating}<br><br>
-                <span style="font-size: 15pt;  margin-right: 30px" >Restaurant : </span> ${food.restuarant}<br><br>
+                <%
+                    Restaurant rs = new Restaurant();
+                    String name = ((Food)request.getAttribute("food")).getRestuarant();
+                %>
+                
+                <span style="font-size: 15pt;  margin-right: 30px" >Restaurant : </span><a href="restaurant.jsp?ResId=<%=Restaurant.getId(name)%>"> ${food.restuarant}</a><br><br>
             <form action="Favorite" method="get">
                 <input type="text" name="foodId" hidden="" value="${food.foodId}">
                 <input type="submit" value="Favorite" class="btn btn-info">

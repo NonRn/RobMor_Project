@@ -72,7 +72,7 @@
                                 <div class="form-group">
                                     <label class="col-sm-4 control-label">Detail</label>
                                     <div class="col-sm-8">
-                                        <textarea rows='3' cols='45' name="detail" type="text" placeholder="Enter Detail" wrap="hard" class="form-control">
+                                        <textarea rows='3' cols='45' name="detail" type="text"  wrap="hard" class="form-control">
                                         </textarea>
                                     </div>
                                 </div>

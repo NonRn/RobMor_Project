@@ -147,6 +147,7 @@ public class Restaurant {
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
+                r=new Restaurant();
                 r.setName(rs.getString("rest_name"));
                 r.setAddress(rs.getString("address"));
                 r.setRating(rs.getInt("rating"));
