@@ -25,6 +25,7 @@
        
         <center><h2>List Food</h2></center>
         
+        
         <jsp:include page="ListFood.jsp"></jsp:include>
         <hr>
         <jsp:include page="Footer.jsp"></jsp:include>
