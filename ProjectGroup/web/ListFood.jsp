@@ -11,13 +11,17 @@
                 for (Food f : fs) {
                     b++;
                     if (b > a-6) {
+                       // System.out.print(b);
                         request.setAttribute("f", f);
                         
 
         %>
         <div class="col-lg-4" style="margin-bottom: 5%">
             <h3><a href="Food?id=${f.foodId}">${f.foodName}</a></h3><br>
-            <center><img src="pic/${f.foodId}.png" class="img-responsive"><br></center>
+            <center><img src="pic/${f.foodId}.png" class="img-responsive" width="85%" height="85%"><br></center>
+            <hr>
+            ${f.restuarant}
+            <hr>
             ${f.detail}
         </div>
         <%}}}%>
@@ -32,12 +36,16 @@
                 for (Food f : des) {
                     c++;
                     if (c > d-6) {
+                     //   System.out.print(c);
                         request.setAttribute("f", f);
                         
         %>
         <div class="col-lg-4"  style="margin-bottom: 5%">
             <h3><a href="Food?id=${f.foodId}">${f.foodName}</a></h3><br>
-            <center><img src="pic/${f.foodId}.png" class="img-responsive"><br></center>
+            <center><img src="pic/${f.foodId}.png" class="img-responsive" width="85%" height="85%"><br></center>
+            <hr>
+            ${f.restuarant}
+            <hr>
             ${f.detail}
         </div>
         <%}}}%>
@@ -50,13 +58,17 @@
             int e = 0;
             if (drs != null) {
                 for (Food f : drs) {
-                    g++ ;
+                    e++ ;
                     if (e > g-6) {
                         request.setAttribute("f", f);
+                        //System.out.print("e" + e);
         %>
         <div class="col-lg-4"  style="margin-bottom: 5%">
             <h3><a href="Food?id=${f.foodId}">${f.foodName}</a></h3><br>
-            <center><img src="pic/${f.foodId}.png" class="img-responsive"><br></center>
+            <center><img src="pic/${f.foodId}.png" class="img-responsive" width="85%" height="85%"><br></center>
+            <hr>
+            ${f.restuarant}
+            <hr>
             ${f.detail}
         </div>
         <%}}}%>

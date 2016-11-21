@@ -44,7 +44,7 @@ public class Food {
         int i = rs.getInt("REST_ID") ;
         rating = rs.getDouble("RATING");
         detail = rs.getString("detail");
-        
+        restuarant = Restaurant.getName(rs.getInt("rest_id"));
     }
     
     public int getFoodId() {

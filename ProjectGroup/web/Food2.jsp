@@ -29,7 +29,7 @@
                 <span style="font-size: 15pt;  margin-right: 30px" >Price : </span> ${food.price}<br><br>
                 <span style="font-size: 15pt;  margin-right: 30px" >Type : </span> ${food.type}<br><br>
                 <span style="font-size: 15pt;  margin-right: 30px" >Rating : </span> ${food.rating}<br><br>
-            
+                <span style="font-size: 15pt;  margin-right: 30px" >Restaurant : </span> ${food.restuarant}<br><br>
             <form action="Favorite" method="get">
                 <input type="text" name="foodId" hidden="" value="${food.foodId}">
                 <input type="submit" value="Favorite" class="btn btn-info">

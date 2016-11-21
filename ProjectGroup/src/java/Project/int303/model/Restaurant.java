@@ -127,7 +127,7 @@ public class Restaurant {
         try {
             con = ConnectionBuilder.getConnection();
             PreparedStatement ps = con.prepareStatement(SQL);
-            ps.setString(1, name);
+            ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
                 name = rs.getString("rest_name");
@@ -136,5 +136,26 @@ public class Restaurant {
             System.out.println(e);
         }
         return name ;
+    }
+    public static Restaurant getRestaurant(int id){
+        Restaurant r = null ;
+        String SQL = "SELECT * FROM restaurant WHERE rest_id = ?";
+        Connection con = null ;
+        try {
+            con = ConnectionBuilder.getConnection();
+            PreparedStatement ps = con.prepareStatement(SQL);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            if(rs.next()){
+                r.setName(rs.getString("rest_name"));
+                r.setAddress(rs.getString("address"));
+                r.setRating(rs.getInt("rating"));
+                r.setRestId(rs.getInt("rest_id"));
+                r.setSeat(rs.getInt("seat"));
+            }
+        } catch (Exception e){
+            System.out.println(e);
+        }
+        return r ;
     }
 }
